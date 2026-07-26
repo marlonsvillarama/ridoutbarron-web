@@ -1,0 +1,38 @@
+:root {
+    --white: #fff;
+
+    --lightest: #FCFCFC;
+    --lighter: #F6F6F6;
+    --light: #EDEDED;
+    --semi-light: #E8E8E8;
+
+    --darkest: #1B1B1B;
+    --darker: #2E2E30;
+    --dark: #59595B;
+    --semi-dark: #a3a3a3;
+
+    --accent: #BA8D55;
+
+    --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+    --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* --shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-default);
+    margin: 0;
+}
+
+.container {
+    /* border: 1px solid red; */
+    /* margin: 0 auto; */
+    width: min(85rem, 100%);
+}

@@ -1,0 +1,62 @@
+header.hero {
+    background-image: url(../images/calgary_skyline.jpg);
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 0;
+}
+header.hero > .header {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    /* border: 1px solid red; */
+}
+/* header.hero > .header > img {
+    width: 12rem;
+    height: auto;
+} */
+header.hero > .header > .logo {
+    color: #fff;
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+header.hero > .header > .logo::before {
+    content: "";
+    position: absolute;
+    width: 1.125rem;
+    height: 3px;
+    background-color: var(--accent);
+    top: 0;
+    left: 0.5rem;
+}
+.header > nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.header > nav > a {
+    color: var(--white);
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    letter-spacing: 0.25px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 150ms ease;
+}
+.header > nav > a:hover {
+    border-color: var(--accent);
+}
+.header > nav > a#contact {
+    background-color: var(--accent);
+    border-top: 3px solid transparent;
+    border-radius: 0.5rem;
+    transition: box-shadow 150ms ease;
+}
+.header > nav > a#contact:hover {
+    box-shadow: var(--shadow);
+}
