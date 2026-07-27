@@ -11,7 +11,12 @@
     --dark: #59595B;
     --semi-dark: #a3a3a3;
 
+    --accent-lighter: #decbaa;
+    --accent-light: #caaa7a;
     --accent: #BA8D55;
+    --accent-bg: #BA8D5540;
+    --accent-dark: #ab7a47;
+    --accent-darker: #93613b;
 
     --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
@@ -24,6 +29,8 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -32,7 +39,5 @@ body {
 }
 
 .container {
-    /* border: 1px solid red; */
-    /* margin: 0 auto; */
-    width: min(85rem, 100%);
+    width: min(120rem, 90%);
 }

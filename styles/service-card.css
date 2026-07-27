@@ -1,0 +1,51 @@
+.service-card {
+    width: 100%;
+    height: 23rem;
+    /* background-color: var(--accent-bg); */
+    /* border-bottom: 4px solid var(--accent-dark); */
+    border-radius: 1rem;
+    color: var(--white);
+    /* corner-shape: scoop; */
+    position: relative;
+    /* background-blend-mode: overlay; */
+    background-position: center;
+    background-size: cover;
+}
+.service-card > .content {
+    /* border: 1px solid red; */
+    height: 100%;
+    padding: 2.5rem 2.5rem;
+    /* position: absolute; */
+    /* top: 55%; */
+    /* left: 2rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.service-card > .content > h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.service-card > .content > p {
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+.service-card#litigation {
+    background-image:
+        linear-gradient(to bottom, var(--accent-bg) 40%, var(--accent) 100%),
+        url(/images/courtroom.jpg);
+        /* var(--accent-bg), */
+}
+.service-card#corporate {
+    background-image:
+        linear-gradient(to bottom, var(--accent-bg) 40%, var(--accent) 100%),
+        url(/images/corporate.jpg);
+}
+.service-card#real-estate {
+    background-image: url(/images/real-estate-003.jpg);
+}
+.service-card#wills-estates {
+    background-image: url(/images/wills-estate-001.jpg);
+}
