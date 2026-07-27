@@ -14,11 +14,14 @@
     --accent-lighter: #decbaa;
     --accent-light: #caaa7a;
     --accent: #BA8D55;
-    --accent-bg: #BA8D5540;
+    --accent-bg-pale: #BA8D5520;
+    --accent-bg-light: #BA8D5540;
+    --accent-bg: #BA8D55AA;
     --accent-dark: #ab7a47;
     --accent-darker: #93613b;
 
     --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-serif: "Bodoni Moda", serif;
 
     --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     /* --shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */

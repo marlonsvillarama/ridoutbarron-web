@@ -34,18 +34,22 @@
 
 .service-card#litigation {
     background-image:
-        linear-gradient(to bottom, var(--accent-bg) 40%, var(--accent) 100%),
+        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
         url(/images/courtroom.jpg);
         /* var(--accent-bg), */
 }
 .service-card#corporate {
     background-image:
-        linear-gradient(to bottom, var(--accent-bg) 40%, var(--accent) 100%),
+        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
         url(/images/corporate.jpg);
 }
 .service-card#real-estate {
-    background-image: url(/images/real-estate-003.jpg);
+    background-image:
+        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
+        url(/images/real-estate-002.png);
 }
 .service-card#wills-estates {
-    background-image: url(/images/wills-estate-001.jpg);
+    background-image:
+        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
+        url(/images/wills-estate-001.jpg);
 }

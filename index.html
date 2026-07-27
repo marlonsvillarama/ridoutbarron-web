@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ridout Barron Barristers & Solicitors</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
@@ -14,6 +17,9 @@
 <body>
     
     <header class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="/videos/calgary-002.mp4" type="video/mp4" />
+        </video>
         <div class="container">
             <div class="top">
                 <div class="logo">
@@ -42,7 +48,7 @@
     </header>
 
     <main>
-        <section class="expertise">
+        <section id="expertise">
             <div class="container">
                 <div id="brief">
                     <h2>Responsive. Practical. Client Focused.</h2>
@@ -103,53 +109,28 @@
             </div>
         </section>
 
-        <section class="real-estate-quote">
+        <!-- <section class="real-estate-quote">
             <h2>Real Estate Quote</h2>
             <p>We believe you should know in advance everything you can expect to spend to purchase/sell/mortgage your property. This is one of your biggest investments and you should not be surprised by any hidden fees or costs.</p>
             <p>To prepare a detailed quote for you, fill out and submit the Real Estate Quote form and we'll be in touch shortly with your quote.</p>
             <a href="/">Request a Real Estate Quote</a>
-            <!-- <form action="" method="POST">
-                <div class="field">
-                    <label for="property-type">Property Type</label>
-                    <select id="property-type" name="property-type">
-                        <option value="condo">Condominium</option>
-                    </select>
-                </div>
-                <div class="radio-switch">
-                    <div class="radio">
-                        <input type="radio" name="transaction-type" id="transaction-type-buy" data-transaction-type="buy">
-                        <label for="transaction-type-buy">Purchase</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" name="transaction-type" id="transaction-type-sell" data-transaction-type="sell">
-                        <label for="transaction-type-sell">Sell</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" name="transaction-type" id="transaction-type-mortgage" data-transaction-type="mortgage">
-                        <label for="transaction-type-mortgage">Mortgage</label>
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="property-type">Price</label>
-                    <input type="text" id="price" />
-                </div>
-                <div class="field">
-                    <label for="property-type">Price</label>
-                    <input type="text" id="price" />
-                </div>
-            </form> -->
-        </section>
+        </section> -->
 
-        <section class="estates-questionnaire">
+        <!-- <section class="estates-questionnaire">
             <h2>Estates Questionnaire</h2>
             <p>Whether you need to write new documents or update the old ones, the first step is filling out our questionnaire.</p>
             <p>Don't worry if you can't answer a question at this time. We'll be in touch once we receive your questionnaire to review it and fill in any gaps in information.</p>
             <a href="/">Start Questionnaire</a>
-        </section>
-
-        <!-- <section class="testimonials">
-            <h2>Recognised by Our Clients</h2>
         </section> -->
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Recognised by Our Clients</h2>
+                <div class="review">
+                    review
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
