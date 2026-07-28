@@ -214,20 +214,45 @@ main > section > .container {
 }
 #testimonials > .container > .split > .testimonial {
     /* background-color: var(--white); */
+    /* border: 1px solid red; */
     border-radius: 0.5rem;
     /* box-shadow: var(--shadow); */
     /* width: min(30rem, 100%); */
-    width: 80%;
-    padding: 0 3rem;
+    /* width: 80%; */
+    /* padding: 0 3rem; */
     text-align: center;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
 }
-#testimonials > .container > .split > .testimonial > .content > .ph-quotes {
+#testimonials > .container > .split > .testimonial > .ph-quotes {
     color: var(--accent);
     font-size: 3rem;
     /* font-style: italic; */
+}
+#testimonials > .container > .split > .testimonial > .content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+#testimonials > .container > .split > .testimonial > .content > .nav {
+    /* padding: 0 2rem; */
+    height: 3rem;
+    width: 8rem;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    /* font-weight: 500; */
+    outline: 0;
+}
+#testimonials > .container > .split > .testimonial > .content > .nav:hover {
+    background-color: var(--accent-dark);
 }
 #testimonials > .container > .split > .testimonial > .content > p.quote {
     font-family: var(--font-serif);
@@ -235,6 +260,8 @@ main > section > .container {
     line-height: 3rem;
 }
 #testimonials > .container > .split > .testimonial > .footer {
+    color: var(--dark);
+    opacity: 0.8;
     margin-top: 1rem;
     font-size: 1.125rem;
     /* font-style: italic; */
@@ -249,4 +276,10 @@ main > section > .container {
 #testimonials > .container > .split > .testimonial > .footer > .company {
     font-family: var(--font-serif);
     font-size: 0.75rem;
+}
+
+/* COMMUNITY */
+#community {
+    background-image: url(/images/ridoutbarron_pattern-001.svg);
+    padding-top: 4rem;
 }
