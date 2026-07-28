@@ -20,6 +20,7 @@
         <video class="hero-video" autoplay loop muted playsinline>
             <source src="/videos/calgary-002.mp4" type="video/mp4" />
         </video>
+        <div class="overlay"></div>
         <div class="container">
             <div class="top">
                 <div class="logo">
@@ -30,7 +31,11 @@
                     <a href="/expertise">Expertise</a>
                     <a href="/guides">Guides</a>
                     <a href="/community">Community</a>
-                    <a href="/contact" id="contact">Get In Touch</a>
+                    <div class="phone">
+                        <i class="ph ph-phone"></i>
+                        <span>403-278-3730</span>
+                    </div>
+                    <!-- <a href="/contact" id="contact">Get In Touch</a> -->
                 </nav>
             </div>
             <div class="cta">
@@ -48,60 +53,74 @@
     </header>
 
     <main>
-        <section id="expertise">
-            <div class="container">
-                <div id="brief">
+        <section id="brief">
+            <div class="container split">
+                <div>
                     <h2>Responsive. Practical. Client Focused.</h2>
                     <div class="blurb">
-                        <p>We provide clear, thoughtful legal advice and practical solutions for families and individuals.
-                            <!-- Our approach is grounded in transparency, professionalism, and a commitment to serving clients with integrity and care. -->
-                        </p>
-                        <p>Our approach is grounded in transparency, professionalism, and a commitment to serving clients with integrity and care.</p>
+                        <p>For over 100 years, the lawyers at Ridout Barron (formerly Barron and Barron) have provided legal services in Calgary and the surrounding areas, maintaining a high level of integrity and skill. Our diverse practice includes <a href="/services/wills">wills and estates</a>, <a href="/services/corporate">corporate and commercial law</a>, <a href="/services/litigation">business litigation</a>, and <a href="/services/real-estate">real estate</a>.</p>
+                        <p>At Ridout Barron, we believe in communication, creativity, and flexibility. Whether you contact us in regard to a lease, lien, contract dispute, will or other issues, we will take the time to get to know you and your situation thoroughly, give you a realistic appraisal of your case, and explain your options while keeping your bottom line in mind.</p>
                     </div>
+                    <a href="/contact">Contact Us</a>
                 </div>
+                <div></div>
+                <img src="/images/crowd-001.jpg" alt="Stampede" />
+            </div>
+        </section>
 
-                <div id="services">
+        <section id="services">
+            <div class="container">
+                <h2>Our Expertise</h2>
+                <div class="split">
                     <div id="litigation" class="service-card">
                         <div class="content">
+                            <div class="overlay"></div>
                             <h3>Civil Litigation</h3>
                             <p>
                                 Construction Law<br/>
                                 Condominium Disputes<br/>
                                 Professional Negligence<br/>
-                                Shareholder Disputes
+                                Shareholder Disputes<br/>
+                                <a href="/services/litigation">Read More...</a>
                             </p>
                         </div>
                     </div>
                     <div id="corporate" class="service-card">
                         <div class="content">
+                            <div class="overlay"></div>
                             <h3>Corporate & Commercial</h3>
                             <p>
                                 Incorporations<br/>
                                 Minute Book Upkeep<br/>
                                 Shareholder Matters<br/>
-                                Commercial Contracts
+                                Commercial Contracts<br/>
+                                <a href="/services/corporate">Read More...</a>
                             </p>
                         </div>
                     </div>
                     <div id="real-estate" class="service-card">
                         <div class="content">
+                            <div class="overlay"></div>
                             <h3>Real Estate</h3>
                             <p>
                                 Residential Purchases<br/>
                                 Residential Sales<br/>
                                 Refinancing & Mortgages<br/>
-                                Commercial Real Estate
+                                Commercial Real Estate<br/>
+                                <a href="/services/real-estate">Read More...</a>
                             </p>
                         </div>
                     </div>
                     <div id="wills-estates" class="service-card">
                         <div class="content">
+                            <div class="overlay"></div>
                             <h3>Wills & Estates</h3>
                             <p>
                                 Wills<br/>
                                 Enduring Power of Attorney<br/>
                                 Personal Directives<br/>
-                                Probate & Estate Administration
+                                Probate & Estate Administration<br/>
+                                <a href="/services/estate">Read More...</a>
                             </p>
                         </div>
                     </div>
@@ -109,28 +128,114 @@
             </div>
         </section>
 
-        <!-- <section class="real-estate-quote">
-            <h2>Real Estate Quote</h2>
-            <p>We believe you should know in advance everything you can expect to spend to purchase/sell/mortgage your property. This is one of your biggest investments and you should not be surprised by any hidden fees or costs.</p>
-            <p>To prepare a detailed quote for you, fill out and submit the Real Estate Quote form and we'll be in touch shortly with your quote.</p>
-            <a href="/">Request a Real Estate Quote</a>
-        </section> -->
-
-        <!-- <section class="estates-questionnaire">
-            <h2>Estates Questionnaire</h2>
-            <p>Whether you need to write new documents or update the old ones, the first step is filling out our questionnaire.</p>
-            <p>Don't worry if you can't answer a question at this time. We'll be in touch once we receive your questionnaire to review it and fill in any gaps in information.</p>
-            <a href="/">Start Questionnaire</a>
-        </section> -->
-
-        <section id="testimonials">
+        <section id="history">
+            <div class="overlay"></div>
             <div class="container">
-                <h2>Recognised by Our Clients</h2>
-                <div class="review">
-                    review
+                <div>
+                    <h2>Our History</h2>
+                    <p>For over a century, Ridout Barron has maintained a high-quality legal practice and a commitment to finding solutions for our clients.</p>
+                    <p>Throughout our history, our Calgary lawyers have maintained our principles of integrity, quality, and flexibility. Our clients' success have always been our priority.</p>
+                </div>
+
+                <div></div>
+                
+                <div id="timeline">
+                    <div class="period">
+                        <div class="image" id="timeline-001"></div>
+                        <div class="content">
+                            <div class="article">
+                                <div class="aside">
+                                    <div class="dot"></div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="main">
+                                    <h3 class="date">1913</h3>
+                                    <span class="title">Barron and Barron is established by brothers Jacob and Abraham Barron.</span>
+                                    <p>For more than half a century, they practice law and philanthropy, establish oil patch head offices in Calgary in the Barron Building and own and operate several Calgary theatres, including the Palace, the Grand, the Odeon, and the Uptown theatres.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="period">
+                        <div class="image" id="timeline-002"></div>
+                        <div class="content">
+                            <div class="article">
+                                <div class="aside">
+                                    <div class="dot"></div>
+                                    <div class="line"></div>
+                                </div>
+                                <div class="main">
+                                    <h3 class="date">1938</h3>
+                                    <span class="title">Robert Barron graduates from law school.</span>
+                                    <p>He goes on to continue his father Jacob's legacy in a career that spans 64 years and includes successfully overturning the Supreme Court of Canada as one of the last lawyers to appear before the Privy Council in England. He eventually practices with all three of his daughters (Deborah, Tamara, and Jacqueline).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="period">
+                        <div class="image" id="timeline-003"></div>
+                        <div class="content">
+                            <div class="article">
+                                <div class="aside">
+                                    <div class="dot"></div>
+                                </div>
+                                <div class="main">
+                                    <h3 class="date">1996</h3>
+                                    <span class="title">Jacqueline Barron and Peter Ridout join the firm.</span>
+                                    <p>The firm eventually becomes the Ridout Barron Law Firm.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="split">
+                    <div class="testimonial">
+                        <div class="content">
+                            <i class="ph-fill ph-quotes"></i>
+                            <p class="quote">I have been enlisting the services of Ridout Barron off and on for the last 15 years. They are wonderful people and operate a competent, professional, knowledgeable, and personable firm. Additionally, they are available, easy to contact, and a friendly human voice greets you when you call.</p>
+                        </div>
+                        <div class="footer">
+                            <span class="author">Gregory Davis</span>
+                            <span class="company">&nbsp;</span>
+                        </div>
+                    </div>
+                    <!-- <div class="testimonial">
+                        <div class="content">
+                            <i class="ph-fill ph-quotes"></i>
+                            <p class="quote">I am thankful we chose Jacqueline Barron, of Ridout Barron, to guide s through the legal challenges of settling my mother's estate. Jacqueline understands her client's needs, is very insightful, and is truly an expert in her field... Should the need arise, I would not hesitate to call on Jacqueline and her team again. Thanks!!!</p>
+                        </div>
+                        <div class="footer">
+                            <span class="author">P. Maclean</span>
+                            <span class="company">&nbsp;</span>
+                        </div>
+                    </div> -->
+                    <!-- <div class="testimonial">
+                        <div class="content">
+                            <i class="ph-fill ph-quotes"></i>
+                            <p class="quote">We have found the team at Ridout Barron to be top notch in servicing our clients. They are always available to answer questions, provide direction where needed, and provide a professional, thorough, and friendly experience from start to finish. We have worked with many over the years but can confidently say they are among the very best!</p>
+                        </div>
+                        <div class="footer">
+                            <span class="author">Jason Hunter &amp; Odell Ramcharan</span>
+                            <span class="company">Coldwell Banker Home Smart Real Estate</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="community">
+            community
+        </section>
     </main>
+
+    <footer>
+        footer
+    </footer>
 </body>
 </html>

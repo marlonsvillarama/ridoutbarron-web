@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(/fonts/PlayfairDisplay-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --white: #fff;
 
@@ -11,17 +18,24 @@
     --dark: #59595B;
     --semi-dark: #a3a3a3;
 
+    --accent-very-light: #f8f5ee;
+    --accent-lightest: #eee5d3;
     --accent-lighter: #decbaa;
     --accent-light: #caaa7a;
     --accent: #BA8D55;
     --accent-bg-pale: #BA8D5520;
-    --accent-bg-light: #BA8D5540;
-    --accent-bg: #BA8D55AA;
+    --accent-bg-lightest: #BA8D5540;
+    --accent-bg-lighter: #BA8D5560;
+    --accent-bg-light: #BA8D5880;
+    --accent-bg-semi-light: #BA8D58AA;
+    --accent-bg: #BA8D55DC;
     --accent-dark: #ab7a47;
     --accent-darker: #93613b;
+    --accent-darkest: #764a32;
+    --accent-very-dark: #643e2f;
 
     --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif;
-    --font-serif: "Bodoni Moda", serif;
+    --font-serif: "Playfair Display", "Bodoni Moda", serif;
 
     --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     /* --shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
@@ -39,6 +53,7 @@
 body {
     font-family: var(--font-default);
     margin: 0;
+	-webkit-font-smoothing: antialiased;
 }
 
 .container {

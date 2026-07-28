@@ -14,37 +14,163 @@ main > section > .container {
     margin: 0 auto;
     width: min(120rem, 90%);
 }
-#brief {
-    display: flex;
+
+/* BRIEF */
+/* #brief { */
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 5rem;
+    margin-bottom: 5rem; */
+    /* padding: 4rem 0; */
+    /* border: 1px solid red; */
+/* } */
+#brief > .split {
+    background-image: linear-gradient(
+        310deg,
+        hsl(17deg 36% 29%) 0%,
+        hsl(20deg 34% 34%) 3%,
+        hsl(23deg 32% 39%) 8%,
+        hsl(26deg 30% 45%) 13%,
+        hsl(29deg 29% 50%) 20%,
+        hsl(31deg 34% 55%) 30%,
+        hsl(34deg 40% 61%) 42%,
+        hsl(36deg 42% 62%) 57%,
+        hsl(35deg 41% 60%) 70%,
+        hsl(34deg 40% 57%) 81%,
+        hsl(33deg 40% 55%) 88%,
+        hsl(32deg 39% 52%) 93%,
+        hsl(31deg 38% 50%) 97%,
+        hsl(31deg 41% 47%) 100%
+    );
+    border-radius: 0.5rem;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 40% 15% 45%;
 }
-#brief > h2 {
-    color: var(--accent-dark);
-    font-size: 2rem;
-    font-weight: 500;
-}
-#brief > .blurb {
+#brief > .split > :first-child {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 3rem;
+    color: var(--white);
 }
-#brief > .blurb > p {
-    /* border: 1px solid red; */
-    color: var(--dark);
-    /* font-size: 1.125rem; */
-    /* font-weight: 400; */
+#brief > .split > :first-child > h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 400;
 }
+#brief > .split > :first-child > .blurb {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+#brief > .split > :first-child > .blurb > p {
+    line-height: 1.625rem;
+}
+#brief > .split > :first-child > .blurb > p > a {
+    color: var(--darkest);
+}
+#brief > .split > :first-child > a {
+    padding: 1rem 1.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: var(--accent-darker);
+    color: var(--white);
+    font-size: 0.875rem;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+}
+#brief > .split > img {
+    border-radius: 0.5rem;
+    height: auto;
+    width: 100%;
+}
+
+/* SERVICES */
 #services {
+    background-image: url(/images/ridoutbarron_pattern-001.svg);
+    padding-top: 4rem;
+}
+#services > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#services > .container > h2 {
+    color: var(--accent-darkest);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+#services > .container > .split {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
+/* HISTORY  */
+#history {
+    --bg-alpha: 0.9;
+    --bg-alpha-2: 0.8;
+    background-image:
+        linear-gradient(
+            270deg,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 0%,
+            hsl(13deg 37% 17% / var(--bg-alpha)) 5%,
+            hsl(14deg 37% 20% / var(--bg-alpha)) 11%,
+            hsl(16deg 38% 23% / var(--bg-alpha)) 18%,
+            hsl(18deg 39% 26% / var(--bg-alpha)) 27%,
+            hsl(19deg 40% 29% / var(--bg-alpha)) 37%,
+            hsl(20deg 40% 32% / var(--bg-alpha)) 49%,
+            hsl(20deg 40% 32% / var(--bg-alpha)) 60%,
+            hsl(19deg 40% 29% / var(--bg-alpha)) 70%,
+            hsl(18deg 39% 26% / var(--bg-alpha)) 78%,
+            hsl(16deg 38% 23% / var(--bg-alpha)) 85%,
+            hsl(14deg 37% 20% / var(--bg-alpha)) 91%,
+            hsl(13deg 37% 17% / var(--bg-alpha)) 96%,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 100%
+        ),
+        url(/images/stampede-002.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+#history > .overlay {
+    background-color: linear-gradient();
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+#history > .container {
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 40% 15% 45%;
+}
+/* #history > .container > :first-child {
+    height: 30rem;
+} */
+#history > .container > :first-child > h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+}
+#history > .container > :first-child > p {
+    line-height: 1.625rem;
+}
+#history > .container > :first-child > p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* TESTIMONIALS */
 #testimonials {
-    background: linear-gradient(300deg, rgba(202, 170, 122, 0.4) 0%, rgba(222, 203, 170, 0.1) 100%);
-    padding-top: 10rem;
+    /* background-color: var(--accent-lightest); */
+    /* background: linear-gradient(300deg, rgba(202, 170, 122, 0.4) 0%, rgba(222, 203, 170, 0.1) 100%); */
+    /* padding-top: 10rem; */
+    padding-top: 4rem;
 }
 #testimonials > .container {
     /* border: 1px solid red; */
@@ -52,7 +178,12 @@ main > section > .container {
     /* z-index: 10; */
 }
 #testimonials > .container > h2 {
-    color: var(--accent-lighter);
+    color: var(--accent-darkest);
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    /* color: var(--accent-lighter);
     opacity: 0.7;
     position: absolute;
     font-family: var(--font-serif);
@@ -60,13 +191,62 @@ main > section > .container {
     font-weight: 100;
     font-style: italic;
     letter-spacing: -1.5px;
-    top: -7.5rem;
+    top: -7.5rem; */
     /* top: -2rem; */
     /* z-index: -1; */
 }
-#testimonials > .container > .review {
+/* #testimonials > .container > .review {
     padding: 3rem;
     background-color: var(--white);
     width: min(80rem, 80%);
     margin: 0 auto;
+} */
+#testimonials > .container > .split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem; */
+    /* display: flex;
+    align-items: flex-start;
+    justify-content: space-between; */
+}
+#testimonials > .container > .split > .testimonial {
+    /* background-color: var(--white); */
+    border-radius: 0.5rem;
+    /* box-shadow: var(--shadow); */
+    /* width: min(30rem, 100%); */
+    width: 80%;
+    padding: 0 3rem;
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+#testimonials > .container > .split > .testimonial > .content > .ph-quotes {
+    color: var(--accent);
+    font-size: 3rem;
+    /* font-style: italic; */
+}
+#testimonials > .container > .split > .testimonial > .content > p.quote {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 3rem;
+}
+#testimonials > .container > .split > .testimonial > .footer {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    /* font-style: italic; */
+    /* text-align: right; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+#testimonials > .container > .split > .testimonial > .footer > .author::before {
+    content: "- ";
+}
+#testimonials > .container > .split > .testimonial > .footer > .company {
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
 }

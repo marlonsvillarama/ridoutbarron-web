@@ -21,35 +21,66 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+}
+.service-card > .content > .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
 }
 .service-card > .content > h3 {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1rem;
+    z-index: 10;
 }
 .service-card > .content > p {
+    font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.5rem;
+    z-index: 10;
+    /* border: 1px solid red; */
+    text-align: right;
+}
+.service-card > .content > p > a {
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-lighter);
+    text-decoration: none;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--accent-bg-light);
+    /* border: 1px solid var(--accent-lightest); */
+    border-radius: 0.5rem;
+    transition: background-color 150ms ease;
+}
+.service-card > .content > p > a:hover {
+    background-color: var(--accent-bg);
+    /* color: var(--accent-very-dark); */
 }
 
 .service-card#litigation {
     background-image:
-        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
+        /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
         url(/images/courtroom.jpg);
         /* var(--accent-bg), */
 }
 .service-card#corporate {
     background-image:
-        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
+        /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
         url(/images/corporate.jpg);
 }
 .service-card#real-estate {
     background-image:
-        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
+        /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
         url(/images/real-estate-002.png);
 }
 .service-card#wills-estates {
     background-image:
-        linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%),
+        /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
         url(/images/wills-estate-001.jpg);
 }
