@@ -40,7 +40,7 @@
 }
 .service-card > .content > p {
     font-size: 0.875rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5rem;
     z-index: 10;
     /* border: 1px solid red; */
@@ -48,18 +48,20 @@
 }
 .service-card > .content > p > a {
     font-size: 0.75rem;
+    font-weight: 400;
     display: inline-block;
     margin-top: 1rem;
-    color: var(--accent-lighter);
+    color: var(--darker);
+    /* color: var(--accent-lighter); */
     text-decoration: none;
     padding: 0.25rem 0.75rem;
-    background-color: var(--accent-bg-light);
+    background-color: var(--accent-light);
     /* border: 1px solid var(--accent-lightest); */
     border-radius: 0.5rem;
     transition: background-color 150ms ease;
 }
 .service-card > .content > p > a:hover {
-    background-color: var(--accent-bg);
+    background-color: var(--accent-lighter);
     /* color: var(--accent-very-dark); */
 }
 
