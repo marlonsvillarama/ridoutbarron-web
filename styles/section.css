@@ -44,8 +44,12 @@ main > section > .container {
     );
     border-radius: 0.5rem;
     padding: 3rem;
-    display: grid;
-    grid-template-columns: 40% 15% 45%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10rem;
+    /* display: grid; */
+    /* grid-template-columns: 40% 15% 45%; */
 }
 #brief > .split > :first-child {
     display: flex;
@@ -53,6 +57,8 @@ main > section > .container {
     align-items: flex-start;
     gap: 3rem;
     color: var(--white);
+    width: min(100rem, 100%);
+    /* border: 1px solid red; */
 }
 #brief > .split > :first-child > h2 {
     color: var(--white);
@@ -75,6 +81,7 @@ main > section > .container {
     border: 0;
     border-radius: 0.5rem;
     background-color: var(--accent-darker);
+    /* background-color: var(--accent-darker); */
     color: var(--white);
     font-size: 0.875rem;
     box-shadow: var(--shadow);
@@ -110,7 +117,7 @@ main > section > .container {
 
 /* HISTORY  */
 #history {
-    --bg-alpha: 0.9;
+    --bg-alpha: 0.8;
     --bg-alpha-2: 0.8;
     background-image:
         linear-gradient(
@@ -130,9 +137,10 @@ main > section > .container {
             hsl(13deg 37% 17% / var(--bg-alpha)) 96%,
             hsl(12deg 36% 14% / var(--bg-alpha)) 100%
         ),
-        url(/images/stampede-002.jpg);
+        url(/images/banff-001.jpg);
+        /* url(/images/stampede-002.jpg); */
     background-size: cover;
-    background-position: center;
+    background-position: 0 30%;
     position: relative;
 }
 #history > .overlay {
@@ -165,16 +173,190 @@ main > section > .container {
     margin-bottom: 1rem;
 }
 
+/* TEAM */
+#team {
+    /* background-image: url(/images/ridoutbarron_pattern-001.svg); */
+    padding-top: 4rem;
+    /* border: 1px solid red; */
+}
+/* #team {
+    --bg-alpha: 0.8;
+    --bg-alpha-2: 0;
+    background-image:
+        linear-gradient(
+            270deg,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 0%,
+            hsl(13deg 37% 17% / var(--bg-alpha)) 5%,
+            hsl(14deg 37% 20% / var(--bg-alpha)) 11%,
+            hsl(16deg 38% 23% / var(--bg-alpha)) 18%,
+            hsl(18deg 39% 26% / var(--bg-alpha)) 27%,
+            hsl(19deg 40% 29% / var(--bg-alpha-2)) 37%,
+            hsl(20deg 40% 32% / var(--bg-alpha-2)) 49%,
+            hsl(20deg 40% 32% / var(--bg-alpha-2)) 60%,
+            hsl(19deg 40% 29% / var(--bg-alpha-2)) 70%,
+            hsl(18deg 39% 26% / var(--bg-alpha)) 78%,
+            hsl(16deg 38% 23% / var(--bg-alpha)) 85%,
+            hsl(14deg 37% 20% / var(--bg-alpha)) 91%,
+            hsl(13deg 37% 17% / var(--bg-alpha)) 96%,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 100%
+        ),
+        url(/images/team-001.png);
+    background-size: cover;
+} */
+#team > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#team > .container > h2 {
+    color: var(--darker);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+#team > .container > .split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+#team > .container > .split > .member {
+    background-color: var(--lighter);
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    /* border-radius: 1rem; */
+    display: flex;
+    /* align-items: flex-start; */
+    /* gap: 1.5rem; */
+    /* flex-direction: column; */
+    /* align-items: flex-start;
+    gap: 2rem; */
+    /* border: 1px solid red; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+#team > .container > .split > .member > .img {
+    width: 24rem;
+    height: 40rem;
+    border-top-left-radius: 3rem;
+    background-size: cover;
+    background-position: center;
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+#team > .container > .split > .member.peter > .img {
+    background-image: url(/images/ryan-001.jpg);
+}
+#team > .container > .split > .member.jacqui > .img {
+    background-image: url(/images/margot-001.webp);
+    /* background-position: top center; */
+}
+#team > .container > .split > .member > .bio {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 1.75rem;
+    width: 100%;
+}
+#team > .container > .split > .member > .bio > .header > h3 {
+    /* border: 1px solid red; */
+    color: var(--accent-dark);
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+    border-bottom: 3px solid var(--light);
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+#team > .container > .split > .member > .bio > .header > .title {
+    color: var(--dark);
+    /* font-family: var(--font-serif); */
+    /* font-size: 1.125rem; */
+    font-weight: 500;
+}
+#team > .container > .split > .member > .bio > .education {
+    display: flex;
+    flex-direction: column;
+}
+#team > .container > .split > .member > .bio > .education > .school {
+    color: var(--darker);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+#team > .container > .split > .member > .bio > .education > .year {
+    color: var(--semi-dark);
+    font-size: 1rem;
+    font-weight: 500;
+}
+#team > .container > .split > .member > .bio > .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+#team > .container > .split > .member > .bio > .contact > .row {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: var(--darker);
+}
+#team > .container > .split > .member > .bio > .contact > .row > i {
+    color: var(--accent-light);
+    font-size: 1.5rem;
+}
+#team > .container > .split > .member > .bio > p {
+    opacity: 0.6;
+    line-height: 1.75rem;
+}
+
+
+
 /* TESTIMONIALS */
 #testimonials {
     /* background-color: var(--accent-lightest); */
     /* background: linear-gradient(300deg, rgba(202, 170, 122, 0.4) 0%, rgba(222, 203, 170, 0.1) 100%); */
     /* padding-top: 10rem; */
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
+    --bg-alpha: 0.7;
+    --bg-alpha-2: 0.8;
+    background-image:
+        linear-gradient(
+            to bottom,
+            #fff 20%,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 20%),
+        url(/images/stampede-002.jpg);
+    /* background-image:
+        linear-gradient(
+            270deg,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 0%,
+            hsl(13deg 37% 17% / var(--bg-alpha)) 5%,
+            hsl(14deg 37% 20% / var(--bg-alpha)) 11%,
+            hsl(16deg 38% 23% / var(--bg-alpha)) 18%,
+            hsl(18deg 39% 26% / var(--bg-alpha)) 27%,
+            hsl(19deg 40% 29% / var(--bg-alpha)) 37%,
+            hsl(20deg 40% 32% / var(--bg-alpha)) 49%,
+            hsl(20deg 40% 32% / var(--bg-alpha)) 60%,
+            hsl(19deg 40% 29% / var(--bg-alpha)) 70%,
+            hsl(18deg 39% 26% / var(--bg-alpha)) 78%,
+            hsl(16deg 38% 23% / var(--bg-alpha)) 85%,
+            hsl(14deg 37% 20% / var(--bg-alpha)) 91%,
+            hsl(13deg 37% 17% / var(--bg-alpha)) 96%,
+            hsl(12deg 36% 14% / var(--bg-alpha)) 100%
+        ),
+        url(/images/stampede-002.jpg); */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 0rem;
+    padding-bottom: 20rem;
 }
 #testimonials > .container {
     /* border: 1px solid red; */
+    background-color: var(--lighter);
+    /* opacity: 0.9; */
     position: relative;
+    padding: 4rem;
     /* z-index: 10; */
 }
 #testimonials > .container > h2 {
@@ -237,12 +419,14 @@ main > section > .container {
 }
 #testimonials > .container > .split > .testimonial > .content > .nav {
     /* padding: 0 2rem; */
-    height: 3rem;
-    width: 8rem;
+    /* height: 3rem; */
+    /* width: 4rem; */
     border: 0;
-    border-radius: 50%;
-    background-color: var(--accent);
-    color: var(--white);
+    /* border-radius: 50%; */
+    /* background-color: var(--accent); */
+    background-color: transparent;
+    /* color: var(--white); */
+    color: var(--accent-darker);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -250,16 +434,23 @@ main > section > .container {
     font-size: 1.5rem;
     /* font-weight: 500; */
     outline: 0;
+    padding: 1rem 1rem;
+    transition: background-color 150ms ease, color 150ms ease;
 }
 #testimonials > .container > .split > .testimonial > .content > .nav:hover {
-    background-color: var(--accent-dark);
+    background-color: var(--accent-light);
+    color: var(--white);
 }
-#testimonials > .container > .split > .testimonial > .content > p.quote {
+#testimonials > .container > .split > .testimonial > .content > .quote {
+    /* box-shadow: var(--shadow); */
+    padding: 0 3rem;
+}
+#testimonials > .container > .split > .testimonial > .content > .quote > p {
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 3rem;
 }
-#testimonials > .container > .split > .testimonial > .footer {
+#testimonials > .container > .split > .testimonial > .content > .quote > .footer {
     color: var(--dark);
     opacity: 0.8;
     margin-top: 1rem;
@@ -280,6 +471,11 @@ main > section > .container {
 
 /* COMMUNITY */
 #community {
-    background-image: url(/images/ridoutbarron_pattern-001.svg);
-    padding-top: 4rem;
+    /* background-image: url(/images/ridoutbarron_pattern-001.svg); */
+    background-image: linear-gradient(to bottom, #fff 30%, #eee5d3 30%);
+    /* padding-top: 0rem; */
+}
+#community > .container {
+    /* border: 1px solid red; */
+    background-color: var(--lighter);
 }
