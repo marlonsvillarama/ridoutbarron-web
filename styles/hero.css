@@ -128,15 +128,16 @@ header > .container > .top > nav > ul > li.phone > .ph-phone {
 }
 header > .container > .top > nav > ul > li.phone > span {
     font-weight: 500;
+    color: var(--white);
 }
 
 header > .container > .slogan {
     color: var(--white);
-    /* position: absolute;
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%); */
+    transform: translateY(-50%);
     /* border: 1px solid red; */
-    width: max(50%, 22rem);
+    width: max(60%, 22rem);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -162,12 +163,12 @@ header > .container > .slogan > p {
         display: block;
     }
 }
-header > .container > .cta > .actions {
+header > .container > .slogan > .cta > .actions {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-header > .container > .cta > .actions > a {
+header > .container > .slogan > .cta > .actions > a {
     /* background-color: var(--accent-lighter); */
     border: 1px solid transparent;
     /* border-bottom: 3px solid transparent; */
@@ -180,20 +181,20 @@ header > .container > .cta > .actions > a {
     text-decoration: none;
     transition: border 150ms ease;
 }
-header > .container > .cta > .actions > a:hover {
+header > .container > .slogan > .cta > .actions > a:hover {
     border: 1px solid var(--accent);
     /* border-bottom: 4px solid var(--accent-dark); */
 }
-header > .container > .cta > .actions > a > i {
+header > .container > .slogan > .cta > .actions > a > i {
     font-size: 1.5rem;
 }
-header > .container > .cta > .actions > a#consult {
+header > .container > .slogan > .cta > .actions > a#consult {
     background-color: var(--accent-dark);
     /* border-bottom: 4px solid var(--accent-dark); */
     box-shadow: var(--shadow);
     transition: background-color 150ms ease;
 }
-header > .container > .cta > .actions > a#consult:hover {
+header > .container > .slogan > .cta > .actions > a#consult:hover {
     background-color: var(--accent);
     /* border-bottom: 4px solid var(--accent-dark); */
     box-shadow: var(--shadow);
