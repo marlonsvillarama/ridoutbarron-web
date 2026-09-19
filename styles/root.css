@@ -34,7 +34,8 @@
     --accent-darkest: #764a32;
     --accent-very-dark: #643e2f;
 
-    --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    /* --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif; */
+    --font-default: ui-sans-serif, system-ui, -apple-system, sans-serif;
     --font-serif: "Playfair Display", "Bodoni Moda", serif;
 
     --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -51,9 +52,10 @@
 }
 
 body {
+    color: var(--darker);
     font-family: var(--font-default);
     margin: 0;
-	-webkit-font-smoothing: antialiased;
+	/* -webkit-font-smoothing: antialiased; */
 }
 
 .container {
