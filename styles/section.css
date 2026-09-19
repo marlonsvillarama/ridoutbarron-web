@@ -185,7 +185,7 @@ main > section > .container {
     #services > .container > .split {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 5rem;
+        gap: 3rem;
     }
 }
 

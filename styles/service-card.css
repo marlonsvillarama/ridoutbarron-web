@@ -43,7 +43,7 @@
     color: var(--white);
     /* color: var(--accent); */
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 200;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--accent);
