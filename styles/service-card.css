@@ -1,23 +1,23 @@
 .service-card {
     width: 100%;
-    height: 12rem;
+    /* height: 12rem; */
     /* background-color: var(--accent-bg); */
     /* border-bottom: 4px solid var(--accent-dark); */
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     color: var(--white);
     /* corner-shape: scoop; */
-    position: relative;
+    /* position: relative; */
     /* background-blend-mode: overlay; */
-    background-position: center;
-    background-size: cover;
+    /* background-position: center; */
+    /* background-size: cover; */
 }
-@media (min-width: 60rem) {
+/* @media (min-width: 60rem) {
     .service-card { height: 23rem }
-}
+} */
 .service-card > .content {
     /* border: 1px solid red; */
-    height: 100%;
-    padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+    /* height: 100%; */
+    /* padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem); */
     /* position: absolute; */
     /* top: 55%; */
     /* left: 2rem; */
@@ -26,7 +26,7 @@
     justify-content: space-between;
     position: relative;
 }
-.service-card > .content > .overlay {
+/* .service-card > .content > .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -34,9 +34,29 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
-}
+} */
 .service-card > .content > h3 {
-    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* color: var(--accent); */
+    color: var(--white);
+    /* color: var(--accent); */
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 200;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--accent);
+    /* border-bottom: 1px solid var(--off-white); */
+    margin-bottom: 0.5rem;
+}
+/* .service-card > .content > .title > :first-child {
+    font-size: 3rem;
+} */
+/* .service-card > .content > .title > :last-child {
+} */
+/* .service-card > .content > h3 {
+    font-size: 3rem;
     font-weight: 300;
     margin-bottom: 1rem;
     z-index: 10;
@@ -44,39 +64,38 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    /* border: 1px solid red; */
     width: 100%;
     text-align: center;
-}
-@media (min-width: 60rem) {
+} */
+/* @media (min-width: 60rem) {
     .service-card > .content > h3 {
         position: relative;
         top: 0;
         left: 0;
         transform: none;
         text-align: left;
-        font-size: 1.5rem;
-        /* font-weight: 200; */
     }
-}
-.service-card > .content > .details {
+} */
+/* .service-card > .content > .details {
     text-align: right;
-}
-.service-card > .content > .details > p {
+} */
+.service-card > .content > p {
     /* font-size: 0.875rem; */
-    display: none;
+    /* display: none; */
     opacity: 0.85;
     font-weight: 400;
-    line-height: 1.5rem;
-    z-index: 10;
+    line-height: 1.75rem;
+    margin-left: 1rem;
+    opacity: 0.8;
+    /* z-index: 10; */
     /* border: 1px solid red; */
     /* text-align: right; */
 }
-@media (min-width: 60rem) {
+/* @media (min-width: 60rem) {
     .service-card > .content > .details > p {
         display: block;
     }
-}
+} */
 .service-card > .content > .details > a {
     font-size: 0.75rem;
     font-weight: 400;
@@ -96,24 +115,24 @@
     /* color: var(--accent-very-dark); */
 }
 
-.service-card#litigation {
-    background-image:
+/* .service-card#litigation {
+    background-image: */
         /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
-        url(/images/courtroom.jpg);
+        /* url(/images/courtroom.jpg); */
         /* var(--accent-bg), */
-}
-.service-card#corporate {
-    background-image:
+/* } */
+/* .service-card#corporate {
+    background-image: */
         /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
-        url(/images/corporate.jpg);
-}
-.service-card#real-estate {
-    background-image:
+        /* url(/images/corporate.jpg); */
+/* } */
+/* .service-card#real-estate {
+    background-image: */
         /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
-        url(/images/real-estate-002.png);
-}
-.service-card#wills-estates {
-    background-image:
+        /* url(/images/real-estate-002.png);
+} */
+/* .service-card#wills-estates {
+    background-image: */
         /* linear-gradient(to bottom, var(--accent-bg-light) 40%, var(--accent-bg) 150%), */
-        url(/images/wills-estate-001.jpg);
-}
+        /* url(/images/wills-estate-001.jpg);
+} */

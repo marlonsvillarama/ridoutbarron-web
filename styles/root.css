@@ -7,12 +7,14 @@
 
 :root {
     --white: #fff;
+    --off-white: #f5f1e8;
 
     --lightest: #FCFCFC;
     --lighter: #F6F6F6;
     --light: #EDEDED;
     --semi-light: #E8E8E8;
 
+    --charcoal: #343333;
     --darkest: #1B1B1B;
     --darker: #2E2E30;
     --dark: #59595B;
@@ -52,8 +54,9 @@
 }
 
 body {
-    color: var(--darker);
+    color: var(--charcoal);
     font-family: var(--font-default);
+    font-size: 1.125rem;
     margin: 0;
 	/* -webkit-font-smoothing: antialiased; */
 }

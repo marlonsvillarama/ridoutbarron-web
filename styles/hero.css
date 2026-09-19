@@ -155,7 +155,7 @@ header > .container > .slogan > p {
     display: none;
     font-weight: 300;
     /* font-size: 1.125rem; */
-    line-height: 1.5rem;
+    line-height: 1.75rem;
     margin: 0;
 }
 @media (min-height: 30rem) {
@@ -172,7 +172,7 @@ header > .container > .slogan > .cta > .actions > a {
     /* background-color: var(--accent-lighter); */
     border: 1px solid transparent;
     /* border-bottom: 3px solid transparent; */
-    /* border-radius: 0.5rem; */
+    border-radius: 0.5rem;
     color: var(--white);
     display: flex;
     align-items: center;
