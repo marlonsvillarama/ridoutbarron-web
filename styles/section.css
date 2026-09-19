@@ -47,12 +47,13 @@ main > section > .container {
         hsl(31deg 41% 47%) 100%
     ); */
     /* border-radius: 0.5rem; */
-    padding: 5rem 0;
-    display: grid;
-    grid-template-columns: 35% 65%;
+    padding: clamp(3.5rem, 5vw, 5rem) 0;
     /* align-items: flex-start; */
     /* justify-content: space-between; */
     /* gap: 10rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     /* display: grid; */
     /* grid-template-columns: 40% 15% 45%; */
 }
@@ -60,16 +61,22 @@ main > section > .container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3rem;
+    gap: clamp(1.5rem, 5vw, 2rem);
     /* color: var(--white); */
     /* width: min(100rem, 100%); */
     /* border: 1px solid red; */
 }
+@media (min-width: 60rem) {
+    #brief > .split {
+        display: grid;
+        grid-template-columns: 35% 65%;
+    }
+}
 #brief > .split > :first-child > h2 {
     /* color: var(--white); */
     color: var(--accent-darkest);
-    font-size: 2.5rem;
-    line-height: 2.25rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    line-height: clamp(1.75rem, 5vw, 2.25rem);
     font-weight: 500;
 }
 #brief > .split > :last-child {
@@ -115,7 +122,8 @@ main > section > .container {
     background-image: url(/images/ridoutbarron_pattern-001.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
+    padding-top: clamp(3.5rem, 5vw, 5rem);
 }
 #services > .container {
     display: flex;
@@ -124,7 +132,8 @@ main > section > .container {
 }
 #services > .container > h2 {
     color: var(--accent-darkest);
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 500;
     text-align: center;
 }
@@ -174,6 +183,7 @@ main > section > .container {
         /* url(/images/stampede-002.jpg); */
     background-size: cover;
     background-position: 0 30%;
+    padding-top: clamp(3.5rem, 5vw, 5rem);
     position: relative;
 }
 #history > .overlay {
@@ -186,21 +196,32 @@ main > section > .container {
 }
 #history > .container {
     color: var(--white);
-    display: grid;
-    grid-template-columns: 40% 15% 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* display: grid; */
+    /* grid-template-columns: 40% 15% 45%; */
+}
+@media (min-width: 80rem) {
+    #history > .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
 }
 /* #history > .container > :first-child {
     height: 30rem;
 } */
 #history > .container > :first-child > h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 400;
     border-bottom: 3px solid var(--accent);
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 #history > .container > :first-child > p {
     line-height: 1.625rem;
+    opacity: 0.8;
 }
 #history > .container > :first-child > p:not(:last-child) {
     margin-bottom: 1rem;
@@ -352,14 +373,14 @@ main > section > .container {
     /* background: linear-gradient(300deg, rgba(202, 170, 122, 0.4) 0%, rgba(222, 203, 170, 0.1) 100%); */
     /* padding-top: 10rem; */
     /* padding-top: 4rem; */
-    --bg-alpha: 0.7;
+    /* --bg-alpha: 0.7;
     --bg-alpha-2: 0.8;
     background-image:
         linear-gradient(
             to bottom,
             #fff 20%,
             hsl(12deg 36% 14% / var(--bg-alpha)) 20%),
-        url(/images/peace-bridge-001.jpg);
+        url(/images/peace-bridge-001.jpg); */
         /* url(/images/stampede-002.jpg); */
     /* background-image:
         linear-gradient(
@@ -380,25 +401,61 @@ main > section > .container {
             hsl(12deg 36% 14% / var(--bg-alpha)) 100%
         ),
         url(/images/stampede-002.jpg); */
-    background-size: cover;
-    background-position: 0 20%;
+    /* background-size: cover; */
+    /* background-position: 0 20%; */
     position: relative;
-    padding-top: 0rem;
-    padding-bottom: 16rem;
-}
-#testimonials > .container {
+    /* padding-top: 0rem; */
+    /* padding-bottom: 16rem; */
+    /* padding: 2rem; */
+    padding: 0;
+    overflow: hidden;
     /* border: 1px solid red; */
-    background-color: var(--lighter);
-    /* opacity: 0.9; */
-    position: relative;
-    padding: 4rem;
-    /* z-index: 10; */
 }
-#testimonials > .container > h2 {
+/* @media (min-width: 60rem) { */
+    /* #testimonials {
+        --bg-alpha: 0.7;
+        --bg-alpha-2: 0.8; */
+        /* background-image: */
+            /* linear-gradient(
+                to bottom,
+                #fff 20%,
+                hsl(12deg 36% 14% / var(--bg-alpha)) 20%), */
+            /* url(/images/peace-bridge-001.jpg); */
+        /* background-size: cover; */
+        /* background-position: 0 20%; */
+        /* background-position: center; */
+        /* padding: 3rem 0; */
+        /* padding-top: 0rem; */
+        /* padding-bottom: 12rem; */
+    /* } */
+    
+/* } */
+/* #testimonials > .container { */
+/* #testimonials > .split { */
+    /* border: 1px solid red; */
+    /* background-color: var(--lighter); */
+    /* opacity: 0.9; */
+    /* position: relative; */
+    /* padding: 4rem; */
+    /* z-index: 10; */
+/* } */
+@media (min-width: 60rem) {
+    #testimonials > .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+#testimonials > .split > .content {
+    padding-top: clamp(3.5rem, 5vw, 5rem);
+    padding-bottom: clamp(3.5rem, 5vw, 5rem);
+}
+#testimonials > .split > .content > h2 {
     color: var(--accent-darkest);
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 500;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     text-align: center;
     /* color: var(--accent-lighter);
     opacity: 0.7;
@@ -418,7 +475,7 @@ main > section > .container {
     width: min(80rem, 80%);
     margin: 0 auto;
 } */
-#testimonials > .container > .split {
+#testimonials > .split > .content > .text {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -429,7 +486,7 @@ main > section > .container {
     align-items: flex-start;
     justify-content: space-between; */
 }
-#testimonials > .container > .split > .testimonial {
+#testimonials > .split > .content > .text > .testimonial {
     /* background-color: var(--white); */
     /* border: 1px solid red; */
     border-radius: 0.5rem;
@@ -442,22 +499,33 @@ main > section > .container {
     flex-direction: column;
     justify-content: space-between; */
 }
-#testimonials > .container > .split > .testimonial > .ph-quotes {
+#testimonials > .split > .content > .text > .testimonial > .ph-quotes {
     color: var(--accent);
     font-size: 3rem;
     /* font-style: italic; */
 }
-#testimonials > .container > .split > .testimonial > .content {
+#testimonials > .split > .content > .text > .testimonial > .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+/* #testimonials > .split > .content > .text > .testimonial > .content > .nav-buttons > button {
+    display: none;
+} */
+/* @media (min-width: 40rem) { */
+
+#testimonials > .split > .content > .text > .testimonial > .content > .nav-buttons {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
 }
-#testimonials > .container > .split > .testimonial > .content > .nav {
+#testimonials > .split > .content > .text > .testimonial > .content > .nav-buttons > button {
     /* padding: 0 2rem; */
-    /* height: 3rem; */
-    /* width: 4rem; */
-    border: 0;
-    /* border-radius: 50%; */
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid var(--accent-light);
+    border-radius: 50%;
     /* background-color: var(--accent); */
     background-color: transparent;
     /* color: var(--white); */
@@ -472,20 +540,21 @@ main > section > .container {
     padding: 1rem 1rem;
     transition: background-color 150ms ease, color 150ms ease;
 }
+/* } */
 #testimonials > .container > .split > .testimonial > .content > .nav:hover {
     background-color: var(--accent-light);
     color: var(--white);
 }
-#testimonials > .container > .split > .testimonial > .content > .quote {
+#testimonials > .split > .content > .text > .testimonial > .content > .quote {
     /* box-shadow: var(--shadow); */
-    padding: 0 3rem;
+    padding: 0 1rem;
 }
-#testimonials > .container > .split > .testimonial > .content > .quote > p {
+#testimonials > .split > .content > .text > .testimonial > .content > .quote > p {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    line-height: 3rem;
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    line-height: clamp(2rem, 5vw, 2.5rem);
 }
-#testimonials > .container > .split > .testimonial > .content > .quote > .footer {
+#testimonials > .split > .content > .text > .testimonial > .content > .quote > .footer {
     color: var(--dark);
     opacity: 0.8;
     margin-top: 1rem;
@@ -496,12 +565,35 @@ main > section > .container {
     flex-direction: column;
     gap: 0.125rem;
 }
-#testimonials > .container > .split > .testimonial > .footer > .author::before {
+#testimonials > .split > .content > .text > .testimonial > .footer > .author::before {
     content: "- ";
 }
-#testimonials > .container > .split > .testimonial > .footer > .company {
+#testimonials > .split > .content > .text > .testimonial > .footer > .company {
     font-family: var(--font-serif);
     font-size: 0.75rem;
+}
+/* #testimonials > .image {
+    display: none;
+} */
+@media (min-width: 60rem) {
+    #testimonials > .split { gap: 5rem }
+    #testimonials > .image {
+        /* border: 2px solid red; */
+        z-index: 100;
+        position: absolute;
+        /* height: min(30rem, 100%); */
+        height: 70%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        /* right: 0; */
+        background-image: url(/images/crowd-001.jpg);
+        background-size: cover;
+        background-position: 50% 0%;
+        /* background-position: center; */
+        /* background-repeat: no-repeat; */
+    }
 }
 
 /* COMMUNITY */
