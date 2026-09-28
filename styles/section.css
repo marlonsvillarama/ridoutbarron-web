@@ -186,6 +186,8 @@ main > section > .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 3rem;
+        /* margin-left: -1rem;
+        margin-right: -1rem; */
     }
 }
 
@@ -530,10 +532,11 @@ main > section > .container {
     /* padding: 4rem; */
     /* z-index: 10; */
 /* } */
-@media (min-width: 60rem) {
+@media (min-width: 80rem) {
     #testimonials > .split {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: center;
         gap: 3rem;
     }
 }
@@ -678,24 +681,64 @@ main > section > .container {
 /* #testimonials > .image {
     display: none;
 } */
-@media (min-width: 60rem) {
-    #testimonials > .split { gap: 5rem }
-    #testimonials > .image {
+#testimonials > .split > .image > .layers {
+    display: none;
+}
+@media (min-width: 80rem) {
+    #testimonials > .split {
+        /* display: block; */
+        gap: 6rem;
+        /* flex-direction: row; */
+        /* border: 1px solid red; */
+    }
+    /* #testimonials > .split > .image { */
+        /* position: relative; */
         /* border: 2px solid red; */
-        z-index: 100;
+        /* z-index: 100; */
         /* position: absolute; */
         /* height: min(30rem, 100%); */
-        height: 100%;
-        width: 30%;
+        /* height: 100%; */
+        /* width: 30%; */
         /* top: 50%; */
         /* left: 50%; */
         /* transform: translateY(-50%); */
         /* right: 0; */
-        background-image: url(/images/barron_bldg.jpg);
-        background-size: cover;
+        /* background-image: url(/images/barron_bldg.jpg); */
+        /* background-size: cover; */
         /* background-position: 50% 0%; */
-        background-position: center;
+        /* background-position: center; */
         /* background-repeat: no-repeat; */
+    /* } */
+    #testimonials > .split > .image > .layers {
+        display: block;
+        position: relative;
+        /* border: 1px solid red; */
+        height: 44rem;
+    }
+    #testimonials > .split > .image > .layers > img {
+        border-radius: 0.5rem;
+        /* height: clamp(24rem, 24rem + 2vw, 30rem); */
+        height: 30rem;
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* transform: translateX(-55%) translateY(-45%); */
+        transform: translateX(-55%) translateY(-55%);
+        z-index: 100;
+    }
+    #testimonials > .split > .image > .layers > .backdrop {
+        background-color: var(--accent);
+        border-radius: 0.5rem;
+        /* height: clamp(24rem, 5vw, 30rem); */
+        height: 30rem;
+        /* width: clamp(18rem, 5vw, 23rem); */
+        width: 23rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* transform: translateX(-35%) translateY(-55%); */
+        transform: translateX(-35%) translateY(-45%);
     }
 }
 
