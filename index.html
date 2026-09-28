@@ -13,40 +13,45 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/main.js"></script>
 </head>
 <body>
-    
-    <header class="hero">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>ridout barron</span>
+            </div>
+            <nav>
+                <!-- <a href="/firm">Our Firm</a> -->
+                <ul>
+                    <li><a href="/team">Expertise</a></li>
+                    <li><a href="/history">The Team</a></li>
+                    <li><a href="/expertise">About</a></li>
+                </ul>
+                    <!-- <li class="phone"> -->
+                    <!-- </li> -->
+                <button type="button" class="menu">
+                    <!-- <button type="button">Menu</button> -->
+                    <i class="menu ph ph-list"></i>
+                </button>
+                <!-- <a href="/community">Community</a> -->
+                <!-- <div class="phone">
+                </div> -->
+                <!-- <a href="/contact" id="contact">Get In Touch</a> -->
+            </nav>
+            <div class="phone">
+                <i class="ph ph-phone"></i>
+                <span>403-278-3730</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
         <video class="hero-video" autoplay loop muted playsinline>
             <source src="/videos/calgary-002.mp4" type="video/mp4" />
         </video>
         <div class="overlay"></div>
         <div class="container">
-            <div class="top">
-                <div class="logo">
-                    <span>ridout barron</span>
-                </div>
-                <nav>
-                    <!-- <a href="/firm">Our Firm</a> -->
-                    <ul>
-                        <li><a href="/expertise">What We Do</a></li>
-                        <li><a href="/team">Who We Are</a></li>
-                        <li><a href="/history">Our History</a></li>
-                        <li class="phone">
-                            <i class="ph ph-phone"></i>
-                            <span>403-278-3730</span>
-                        </li>
-                    </ul>
-                    <button type="button" class="menu">
-                        <!-- <button type="button">Menu</button> -->
-                        <i class="menu ph ph-list"></i>
-                    </button>
-                    <!-- <a href="/community">Community</a> -->
-                    <!-- <div class="phone">
-                    </div> -->
-                    <!-- <a href="/contact" id="contact">Get In Touch</a> -->
-                </nav>
-            </div>
             <div class="slogan">
                 <h1>Prairie Roots.<br/>Forward Thinking.</h1>
                 <p>We aim to be a full-service firm to families and individuals, addressing all of life's legal needs as they arise - from wills, to corporate matters, to real estate and, if necessary, litigation.</p>
@@ -61,7 +66,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
     <main>
         <section id="brief">
@@ -98,12 +103,16 @@
                             </h3>
                             <!-- <div class="details"> -->
                                 <p>
-                                    Construction Law<br/>
-                                    Condominium Disputes<br/>
-                                    Professional Negligence<br/>
-                                    Shareholder Disputes<br/>
+                                    <span><i class="ph ph-dot-outline"></i><span>Construction Law</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Condominium Disputes</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Professional Negligence</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Shareholder Disputes</span></span>
                                 </p>
                             <!-- </div> -->
+                            <div class="learn-more">
+                                <i class="ph ph-dot-outline"></i>
+                                <a href="/">Learn more...</a>
+                            </div>
                         </div>
                     </div>
                     <div id="corporate" class="service-card">
@@ -112,12 +121,16 @@
                             <h3>Corporate & Commercial</h3>
                             <!-- <div class="details"> -->
                                 <p>
-                                    Incorporations<br/>
-                                    Minute Book Upkeep<br/>
-                                    Shareholder Matters<br/>
-                                    Commercial Contracts<br/>
+                                    <span><i class="ph ph-dot-outline"></i><span>Incorporations</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Minute Book Upkeep</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Shareholder Matters</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Commercial Contracts</span></span>
                                 </p>
                             <!-- </div> -->
+                            <div class="learn-more">
+                                <i class="ph ph-dot-outline"></i>
+                                <a href="/">Learn more...</a>
+                            </div>
                         </div>
                     </div>
                     <div id="real-estate" class="service-card">
@@ -126,12 +139,16 @@
                             <h3>Real Estate</h3>
                             <!-- <div class="details"> -->
                                 <p>
-                                    Residential Purchases<br/>
-                                    Residential Sales<br/>
-                                    Refinancing & Mortgages<br/>
-                                    Commercial Real Estate<br/>
+                                    <span><i class="ph ph-dot-outline"></i><span>Residential Purchases</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Residential Sales</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Refinancing & Mortgages</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Commercial Real Estate</span></span>
                                 </p>
                             <!-- </div> -->
+                            <div class="learn-more">
+                                <i class="ph ph-dot-outline"></i>
+                                <a href="/">Learn more...</a>
+                            </div>
                         </div>
                     </div>
                     <div id="wills-estates" class="service-card">
@@ -140,12 +157,16 @@
                             <h3>Wills & Estates</h3>
                             <!-- <div class="details"> -->
                                 <p>
-                                    Wills<br/>
-                                    Enduring Power of Attorney<br/>
-                                    Personal Directives<br/>
-                                    Probate & Estate Administration<br/>
+                                    <span><i class="ph ph-dot-outline"></i><span>Wills</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Enduring Power of Attorney</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Personal Directives</span></span>
+                                    <span><i class="ph ph-dot-outline"></i><span>Probate & Estate Administration</span></span>
                                 </p>
                             <!-- </div> -->
+                            <div class="learn-more">
+                                <i class="ph ph-dot-outline"></i>
+                                <a href="/">Learn more...</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -368,7 +389,12 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="image"></div>
+                <div class="image">
+                    <div class="layers">
+                        <img src="/images/barron_bldg.webp" alt="Barron Building" />
+                        <div class="backdrop"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
