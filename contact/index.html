@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridout Barron - Barristers & Solicitors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/page/page.css">
+    <link rel="stylesheet" href="/styles/page/contact/content.css">
+    <script src="/scripts/main.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>ridout barron</span>
+            </div>
+            <nav>
+                <!-- <a href="/firm">Our Firm</a> -->
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/expertise">Expertise</a></li>
+                    <li><a href="/team">The Team</a></li>
+                    <li><a href="/guide">Guide</a></li>
+                    <!-- <li><a href="/about">About</a></li> -->
+                    <li><a href="/contact" class="active">Contact Us</a></li>
+                </ul>
+                    <!-- <li class="phone"> -->
+                    <!-- </li> -->
+                <button type="button" class="menu">
+                    <!-- <button type="button">Menu</button> -->
+                    <i class="menu ph ph-list"></i>
+                </button>
+                <!-- <a href="/community">Community</a> -->
+                <!-- <div class="phone">
+                </div> -->
+                <!-- <a href="/contact" id="contact">Get In Touch</a> -->
+            </nav>
+            <div class="phone">
+                <i class="ph ph-phone"></i>
+                <span>403-278-3730</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero contact">
+        <div class="container">
+            <!-- <div class="crumbs">
+                <ul>
+                    <li><a href="/" title="Home">Home</a></li>
+                    <li><a href="/contact" title="Contact Us">Contact Us</a></li>
+                </ul>
+            </div> -->
+            <div class="slogan">
+                <h1>Contact Us</h1>
+                <!-- <p>Tell us what's going on.</p> -->
+                <p>Whether you have a question, need guidance, or are ready to move forward, we're here to help.</p>
+                <p>Reach out for a confidential conversation - no obligation, just practical advice.</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="contact container">
+        <section id="message">
+            <h2>Send Us A Message</h2>
+            <p class="blurb">Fill out the form below and a member of our team will be in touch shortly.</p>
+            <div id="message-form">
+                <div class="row">
+                    <div class="field required">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" maxlength="80" placeholder="" />
+                    </div>
+                    <div class="field required">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" maxlength="80" placeholder="" />
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="field required" id="email">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" maxlength="100" placeholder="" />
+                </div>
+                <div class="field required" id="phone">
+                    <label for="phone">Phone Number</label>
+                    <input type="phone" id="phone" name="phone" maxlength="15" placeholder="" />
+                </div>
+                </div>
+
+                <div class="field" id="category">
+                    <label for="category">How can we help?</label>
+                    <select id="category" name="category">
+                        <option value="litigation">Civil Litigation</option>
+                        <option value="corporate">Corporate & Commercial</option>
+                        <option value="rea-estate">Real Estate</option>
+                        <option value="wills">Wills & Estates</option>
+                    </select>
+                </div>
+                
+                <div class="field">
+                    <label for="description">Your Message</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <div class="confidential">
+                    <i class="ph ph-lock"></i>
+                    <p>Your information is confidential. We will never share your information without your consent.</p>
+                </div>
+
+                <button type="button">Send Message</button>
+            </div>
+        </section>
+
+        <aside>
+            <div id="office">
+                <h2>Our Office</h2>
+                <div class="row">
+                    <i class="ph ph-map-pin"></i>
+                    <div class="details">
+                        <span class="title">Address</span>
+                        <p>
+                        802 13th Avenue SW<br/>
+                        Calgary, Alberta T2R 0L2
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="ph ph-phone"></i>
+                    <div class="details">
+                        <span class="title">Phone</span>
+                        <p>+1-403-278-3730</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="ph ph-printer"></i>
+                    <div class="details">
+                        <span class="title">Fax</span>
+                        <p>+1-403-271-8016</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="ph ph-envelope"></i>
+                    <div class="details">
+                        <span class="title">Email</span>
+                        <p>info@ridoutbarron.com</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="ph ph-clock"></i>
+                    <div class="details">
+                        <span class="title">Office Hours</span>
+                        <p>
+                            Monday - Friday (excluding holidays)<br/>
+                            9:00 am - 5:00 pm
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.6485585381924!2d-114.08197642300138!3d51.041111371711054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170278fff30cd%3A0xf718434eeb109f71!2sRidout%20Barron!5e0!3m2!1sen!2snz!4v1790815414091!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+
+            <div id="advice">
+                <!-- <i class="ph ph-question"></i> -->
+                <h2>New to working with a lawyer?</h2>
+                <p>
+                    It's normal to have questions. We're here to make the process straightforward and comfortable from the start.
+                </p>
+                <a href="/guide" title="Guide">View Our Guide <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container split">
+            <div class="logo">
+                <img src="/images/ridoutbarron_logo-001.jpg" alt="Ridout Barron" />
+                <p class="serves">
+                    Ridout Barron serves clients in Calgary, Red Deer, Lethbridge, Medicine Hat, Canmore, Okotoks, Airdrie, High River, Chestermere, Strathmore, Cochrane, and surrounding areas of southern Alberta.
+                </p>
+                <!-- <p>&copy;2026 Ridout Barron. All rights reserved.</p> -->
+            </div>
+            <div class="links">
+                <div>
+                    Main links go here...
+                </div>
+                <div>
+                    Secondary links go here...
+                </div>
+            </div>
+            <div class="details">
+                <div>
+                    <div class="disclaimer">
+                        <h4>Disclaimer</h4>
+                        <p>The information you obtain at this site is not, nor is it intended to be, legal advice. You should consult a lawyer for advice regarding your individual situation. We invite you to contact us and welcome your calls, letters and electronic mail. Contacting us does not create a lawyer-client relationship. Please do not send any confidential information to us until such time as a lawyer-client relationship has been established.</p>
+                    </div>
+                    <p>&copy;2026 Ridout Barron. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

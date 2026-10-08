@@ -1,4 +1,4 @@
-header {
+.hero {
     /* background-image: url(../images/calgary_skyline.jpg); */
     height: 100vh;
     min-height: 100vh;
@@ -8,16 +8,16 @@ header {
     padding: 2rem 0;
     position: relative;
 }
-header > .container {
-    margin: 0 auto;
-    height: 100%;
-    position: relative;
+.hero > .container {
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
     /* border: 1px solid red; */
 }
-header > .hero-video {
+.hero > .hero-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@ header > .hero-video {
     object-fit: cover;
     z-index: -1;
 }
-header > .overlay {
+.hero > .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -34,104 +34,7 @@ header > .overlay {
     width: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 80%);
 }
-header > .container > .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-/* header.hero > .header > img {
-    width: 12rem;
-    height: auto;
-} */
-header > .container > .top > .logo {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    position: relative;
-}
-header > .container > .top > .logo::before {
-    content: "";
-    position: absolute;
-    width: 1.125rem;
-    height: 3px;
-    background-color: var(--accent);
-    top: 0;
-    left: 0.5rem;
-}
-header > .container > .top > nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-header > .container > .top > nav > ul {
-    list-style-type: none;
-    display: none;
-    gap: 0.75rem;
-    /* border: 1px solid red; */
-}
-header > .container > .top > nav > .menu {
-    background: transparent;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    display: inline-block;
-    color: var(--white);
-    font-size: 24px;
-}
-/* header > .container > .top > nav > .menu {
-} */
-/* header > .container > .top > nav > ul > li:not(.phone) {
-    display: none;
-} */
-@media (min-width: 60rem) {
-    header > .container > .top > nav > ul {
-        display: flex;
-    }
-    header > .container > .top > nav > .menu {
-        display: none;
-    }
-    /* header > .container > .top > nav > ul > li:not(.phone) {
-        display: inline-block;
-    } */
-}
-header > .container > .top > nav > ul > li > a {
-    color: var(--white);
-    padding: 0.75rem 1.25rem;
-    text-decoration: none;
-    letter-spacing: -0.25px;
-    border-bottom: 4px solid transparent;
-    transition: border-color 150ms ease;
-}
-header > .container > .top > nav > ul > li > a:hover {
-    border-color: var(--accent);
-}
-header > .container > .top > nav > ul > li > a#contact {
-    background-color: var(--accent);
-    border: 1px solid var(--accent-dark);
-    border-bottom: 4px solid var(--accent-dark);
-    border-radius: 0.5rem;
-    transition: box-shadow 150ms ease;
-}
-header > .container > .top > nav > a#contact:hover {
-    /* background-color: var(--accent-light); */
-    box-shadow: var(--shadow);
-}
-header > .container > .top > nav > ul > li.phone {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    color: var(--white);
-}
-header > .container > .top > nav > ul > li.phone > .ph-phone {
-    font-size: 1.25rem;
-}
-header > .container > .top > nav > ul > li.phone > span {
-    font-weight: 500;
-    color: var(--white);
-}
-
-header > .container > .slogan {
+.hero > .container > .slogan {
     color: var(--white);
     position: absolute;
     top: 50%;
@@ -142,7 +45,7 @@ header > .container > .slogan {
     flex-direction: column;
     gap: 2rem;
 }
-header > .container > .slogan > h1 {
+.hero > .container > .slogan > h1 {
     /* color: var(--white); */
     font-family: var(--font-serif);
     font-size: clamp(2.5rem, 5vw, 6rem);
@@ -151,7 +54,7 @@ header > .container > .slogan > h1 {
     line-height: clamp(3rem, 5vw, 6rem);
     margin: 0;
 }
-header > .container > .slogan > p {
+.hero > .container > .slogan > p {
     display: none;
     font-weight: 300;
     /* font-size: 1.125rem; */
@@ -159,20 +62,20 @@ header > .container > .slogan > p {
     margin: 0;
 }
 @media (min-height: 30rem) {
-    header > .container > .slogan > p {
+    .hero > .container > .slogan > p {
         display: block;
     }
 }
-header > .container > .slogan > .cta > .actions {
+.hero > .container > .slogan > .cta > .actions {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-header > .container > .slogan > .cta > .actions > a {
+.hero > .container > .slogan > .cta > .actions > a {
     /* background-color: var(--accent-lighter); */
     border: 1px solid transparent;
     /* border-bottom: 3px solid transparent; */
-    border-radius: 0.5rem;
+    border-radius: 3rem;
     color: var(--white);
     display: flex;
     align-items: center;
@@ -181,20 +84,20 @@ header > .container > .slogan > .cta > .actions > a {
     text-decoration: none;
     transition: border 150ms ease;
 }
-header > .container > .slogan > .cta > .actions > a:hover {
+.hero > .container > .slogan > .cta > .actions > a:hover {
     border: 1px solid var(--accent);
     /* border-bottom: 4px solid var(--accent-dark); */
 }
-header > .container > .slogan > .cta > .actions > a > i {
+.hero > .container > .slogan > .cta > .actions > a > i {
     font-size: 1.5rem;
 }
-header > .container > .slogan > .cta > .actions > a#consult {
+.hero > .container > .slogan > .cta > .actions > a#consult {
     background-color: var(--accent-dark);
     /* border-bottom: 4px solid var(--accent-dark); */
     box-shadow: var(--shadow);
     transition: background-color 150ms ease;
 }
-header > .container > .slogan > .cta > .actions > a#consult:hover {
+.hero > .container > .slogan > .cta > .actions > a#consult:hover {
     background-color: var(--accent);
     /* border-bottom: 4px solid var(--accent-dark); */
     box-shadow: var(--shadow);

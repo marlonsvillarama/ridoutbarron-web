@@ -1,0 +1,185 @@
+main {
+    /* border: 1px solid red; */
+    align-items: flex-start;
+    display: flex;
+    gap: 3rem;
+    margin: 3rem auto 5rem;
+}
+#message {
+    /* border: 1px solid red; */
+    flex: 1;
+}
+#message > h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+#message > .blurb {
+    /* font-size: 0.875rem; */
+    opacity: 0.6;
+    margin-bottom: 2rem;
+}
+#message-form {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+#message-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+#message-form > .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+#message-form > .row > .field {
+    flex: 1;
+}
+#message-form .field > label {
+    /* font-size: 0.875rem; */
+    /* font-family: var(--font-serif); */
+    opacity: 0.7;
+}
+#message-form .field.required > label {
+    font-weight: 500;
+    opacity: 1.0;
+}
+#message-form .field > input[type=email],
+#message-form .field > input[type=phone],
+#message-form .field > input[type=text],
+#message-form .field > select,
+textarea {
+    border: 1px solid var(--accent-lightest);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    outline: none;
+    /* outline: 1px solid transparent; */
+    padding: 0.75rem 1rem;
+}
+#message-form .field > input[type=email]:focus,
+#message-form .field > input[type=phone]:focus,
+#message-form .field > input[type=text]:focus,
+#message-form .field > select:focus,
+textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+/* #message-form .field > #email {
+    width: 30rem;
+} */
+#message-form .field > #phone {
+    width: 10rem;
+}
+#message-form .field > #description {
+    font-family: var(--font-default);
+    height: 8rem;
+    resize: none;
+    overflow: auto;
+}
+#message-form > .confidential {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#message-form > .confidential > i {
+    color: var(--accent);
+    font-size: 2rem;
+}
+#message-form > .confidential > p {
+    font-weight: bold;
+}
+#message-form > button {
+    background-color: var(--accent);
+    border: none;
+    /* border-bottom: 3px solid transparent; */
+    border-radius: 3rem;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1rem;
+    /* display: flex;
+    align-items: center;
+    gap: 0.5rem; */
+    padding: 1rem 1.5rem;
+    /* text-decoration: none; */
+    text-transform: uppercase;
+    transition: opacity 150ms ease, box-shadow 150ms ease;
+    opacity: 0.8;
+}
+#message-form > button:hover {
+    box-shadow: var(--shadow);
+    opacity: 1.0;
+}
+aside {
+    /* height: 200px; */
+    width: min(35%, 30rem);
+    border-left: 1px solid var(--accent-lightest);
+    /* border: 1px solid red; */
+    padding-left: 3rem;
+}
+#office > h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+#office > .row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+#office > .row > i {
+    font-size: 1.75rem;
+    color: var(--accent);
+}
+#office > .row > .details {
+    margin-top: 0.125rem;
+    line-height: 1.5rem;
+    /* border: 1px solid red; */
+}
+#office > .row > .details > .title {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+#office > .row > .details > p {
+    opacity: 0.7;
+}
+
+#advice {
+    padding: 2rem;
+    /* padding: 1.5rem 1.75rem; */
+    background-color: var(--accent-lightest);
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 1.5rem;
+}
+#advice > h2 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    /* margin-bottom: 1rem; */
+}
+#advice > p {
+    line-height: 1.5rem;
+    opacity: 0.7;
+    /* margin-bottom */
+}
+#advice > a {
+    background-color: var(--accent);
+    border-radius: 3rem;
+    color: var(--white);
+    font-weight: 500;
+    opacity: 0.8;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    transition: opacity 150ms ease;
+    width: 100%;
+}
+#advice > a:hover {
+    opacity: 1.0;
+}

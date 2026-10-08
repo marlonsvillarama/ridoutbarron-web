@@ -1,0 +1,77 @@
+@import url(/styles/root.css);
+@import url(/styles/page/header.css);
+@import url(/styles/page/crumbs.css);
+/* @import url(/styles/page/content.css); */
+@import url(/styles/footer.css);
+
+.hero {
+    height: 35rem;
+    /* width: 100vw; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 3rem;
+}
+.hero.expertise {
+    background-image: 
+        linear-gradient(to right, var(--off-white) 20%, transparent 80%),
+        url(/images/building-vertical.jpg);
+        /* url(/images/peace-bridge-001.webp); */
+    background-position: center 45%;
+    /* background-position: center 45%; */
+}
+.hero.team {
+    background-image: 
+        linear-gradient(to right, var(--off-white) 20%, transparent 80%),
+        url(/images/team/team_wacky.webp);
+        /* url(/images/peace-bridge-001.webp); */
+    background-position: 50% 5%;
+    /* background-position: center 45%; */
+}
+.hero.guide {
+    background-image: 
+        linear-gradient(to right, var(--off-white) 20%, transparent 80%),
+        url(/images/peak.jpg);
+    background-position: 50% 35%;
+    /* background-position: center; */
+        /* url(/images/sign-001.jpg); */
+        /* url(/images/moose-001.jpg); */
+}
+.hero.about {
+    background-image: 
+        linear-gradient(to right, var(--off-white) 20%, transparent 80%),
+        url(/images/peace-bridge-001.webp);
+    background-position: center;
+}
+.hero.contact {
+    background-image: 
+        linear-gradient(to right, var(--off-white) 20%, transparent 80%),
+        url(/images/peace-bridge-inner.jpg);
+        /* url(/images/peace-bridge-001.webp); */
+    /* background-position: 50% 50%; */
+    background-position: 50% 70%;
+}
+.hero > .container {
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    /* padding-top: 10rem; */
+    padding: 2rem 0 0;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero > .container > .slogan {
+    /* border: 1px solid red; */
+    width: 45%;
+}
+.hero > .container > .slogan > h1 {
+    color: var(--accent);
+    font-size: 4rem;
+    font-family: var(--font-serif);
+    margin-bottom: 1rem;
+}
+.hero > .container > .slogan > p {
+    color: var(--darkest);
+    line-height: 1.5rem;
+}

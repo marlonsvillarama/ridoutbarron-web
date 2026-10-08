@@ -30,14 +30,20 @@
     --accent-bg-lighter: #BA8D5560;
     --accent-bg-light: #BA8D5880;
     --accent-bg-semi-light: #BA8D58AA;
+    --accent-bg-semi-opaque: #BA8D58CC;
     --accent-bg: #BA8D55DC;
     --accent-dark: #ab7a47;
     --accent-darker: #93613b;
     --accent-darkest: #764a32;
     --accent-very-dark: #643e2f;
+    --dark-bg-pale: #1B1B1B20;
+    --dark-bg-lightest: #1B1B1B40;
+    --dark-bg-lighter: #1B1B1B60;
+    --dark-bg-light: #1B1B1B80;
+    --dark-bg-semi-light: #1B1B1BAA;
+    --dark-bg-semi-opaque: #1B1B1BCC;
 
-    /* --font-default: "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, sans-serif; */
-    --font-default: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-default: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
     --font-serif: "Playfair Display", "Bodoni Moda", serif;
 
     --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -63,4 +69,16 @@ body {
 
 .container {
     width: min(120rem, 90%);
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.show-block {
+    display: block;
 }
