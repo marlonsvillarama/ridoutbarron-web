@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         profileBtn.addEventListener('mouseup', (e) => {
-            profileDialog.showModal();
+            // profileDialog.showModal();
             console.log('clicked', e.target.dataset.id);
-            return;
+            // return;
 
             profiles.forEach(p => {
                 // console.log('p', p);
