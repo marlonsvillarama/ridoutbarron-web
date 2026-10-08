@@ -1,14 +1,12 @@
 <script>
     import Hero from "#lib/components/hero.svelte";
+    import Brief from "#lib/components/home/brief.svelte";
 </script>
 
 <Hero />
 
 <main>
-    <div class="brief">
-        <div class="container split">
-        </div>
-    </div>
+    <Brief />
 </main>
 
 <style>
