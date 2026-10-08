@@ -91,13 +91,13 @@
 .hero > .container > .slogan > .cta > .actions > a > i {
     font-size: 1.5rem;
 }
-.hero > .container > .slogan > .cta > .actions > a#consult {
+.hero > .container > .slogan > .cta > .actions > a {
     background-color: var(--accent-dark);
     /* border-bottom: 4px solid var(--accent-dark); */
     box-shadow: var(--shadow);
     transition: background-color 150ms ease;
 }
-.hero > .container > .slogan > .cta > .actions > a#consult:hover {
+.hero > .container > .slogan > .cta > .actions > a:hover {
     background-color: var(--accent);
     /* border-bottom: 4px solid var(--accent-dark); */
     box-shadow: var(--shadow);
