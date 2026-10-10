@@ -70,8 +70,7 @@
         font-size: 1rem;
     }
     .phone > span {
-        font-size: 0.875rem;
-        font-weight: 500;
+        font: 500 0.875rem var(--font-default);
         color: var(white);
     }
 </style>

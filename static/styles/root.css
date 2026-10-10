@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: 'Playfair Display';
     src: url(/fonts/PlayfairDisplay-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 :root {
     --white: #fff;
@@ -60,7 +60,7 @@
 }
 
 body {
-    background-color: var(--off-white);
+    background-color: var(--white);
     color: var(--charcoal);
     font-family: var(--font-default);
     font-size: 1rem;

@@ -5,8 +5,7 @@
 <style>
     .logo {
         color: var(--white);
-        font-size: 2rem;
-        font-weight: 300;
+        font: 300 2rem var(--font-default);
         letter-spacing: 0.5px;
         position: relative;
     }

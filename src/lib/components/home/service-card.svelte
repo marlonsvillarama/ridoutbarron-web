@@ -14,10 +14,10 @@
                 <span><i class="ph ph-dot-outline"></i><span>{item}</span></span>
             {/each}
         </p>
-        <div class="learn-more">
+        <!-- <div class="learn-more">
             <i class="ph ph-dot-outline"></i>
             <a href="/" title="Learn more">Learn more...</a>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -39,9 +39,7 @@
         align-items: center;
         gap: 1rem;
         color: var(--white);
-        font-family: var(--font-serif);
-        font-size: 1.5rem;
-        font-weight: 200;
+        font: 200 1.5rem var(--font-serif);
         padding-bottom: 0.5rem;
         border-bottom: 1px solid var(--accent);
         margin-bottom: 0.5rem;
@@ -56,16 +54,16 @@
         flex-direction: column;
         gap: 0.625rem;
     }
-    .service-card > .content > p > span,
-    .service-card > .content > .learn-more {
+    /* .service-card > .content > .learn-more { */
+    .service-card > .content > p > span {
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
-    .service-card > .content > .learn-more > i {
+    /* .service-card > .content > .learn-more > i {
         color: transparent;
-    }
-    .service-card > .content > .learn-more > a {
+    } */
+    /* .service-card > .content > .learn-more > a {
         background-color: var(--accent);
         color: var(--white);
         display: flex;
@@ -75,13 +73,8 @@
         font-size: 0.875rem;
         text-decoration: none;
         transition: background-color 150ms ease;
-    }
-    .service-card > .content > .learn-more > a:hover {
+    } */
+    /* .service-card > .content > .learn-more > a:hover {
         background-color: var(--accent-light);
-    }
-    /* .service-card > .content > .details > a {
-        font-size: 0.75rem;
-        font-weight: 400;
-        display: inline-block;
     } */
 </style>
