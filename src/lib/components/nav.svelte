@@ -1,12 +1,16 @@
+<script>
+    import { page } from "$app/state";
+</script>
+
 <nav>
     <ul>
-        <li><a href="/" title="Home">Home</a></li>
-        <li><a href="/" title="Expertise">Expertise</a></li>
-        <li><a href="/" title="The Team">The Team</a></li>
-        <li><a href="/" title="Guide">Guide</a></li>
-        <li><a href="/" title="Contact Us">Contact Us</a></li>
+        <li><a href="/" title="Home" class:active={page.url.pathname === '/'}>Home</a></li>
+        <li><a href="/expertise" title="Expertise" class:active={page.url.pathname.startsWith('/expertise')}>Expertise</a></li>
+        <li><a href="/team" title="The Team" class:active={page.url.pathname.startsWith('/team')}>The Team</a></li>
+        <li><a href="/guide" title="Guide" class:active={page.url.pathname.startsWith('/guide')}>Guide</a></li>
+        <li><a href="/contact" title="Contact Us" class:active={page.url.pathname.startsWith('/contact')}>Contact Us</a></li>
     </ul>
-    <button type="button" class="menu">
+    <button type="button" class="menu" title="Menu">
         <i class="menu ph ph-list"></i>
     </button>
     <div class="phone">
