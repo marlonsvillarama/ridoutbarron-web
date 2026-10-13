@@ -4,9 +4,13 @@ date: "2026-01-22"
 category: "Civil Litigation"
 featured: true
 draft: false
+duration: 10
+brief: "Litigation rarely moves in a straight line. There may be periods of significant activity followed by stretches when documents are being exchanged, responses are outstanding, settlement discussions are underway, or the next procedural step is still some time away."
 ---
 
-Litigation rarely moves in a straight line. There may be periods of significant activity followed by stretches when documents are being exchanged, responses are outstanding, settlement discussions are underway, or the next procedural step is still some time away. 
+<p class="summary">
+Litigation rarely moves in a straight line. There may be periods of significant activity followed by stretches when documents are being exchanged, responses are outstanding, settlement discussions are underway, or the next procedural step is still some time away.
+</p>
 
 That does not necessarily mean your file has stalled. Civil litigation can take time. In Alberta, the Court of King’s Bench has established a target of moving non-family civil actions to trial within 36 months of the first Statement of Defence, although many matters resolve before reaching trial and more complex cases may take longer. 
 

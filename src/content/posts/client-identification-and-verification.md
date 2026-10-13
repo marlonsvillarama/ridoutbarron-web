@@ -4,9 +4,13 @@ date: "2025-09-02"
 category: "From The Firm"
 featured: false
 draft: false
+duration: 5
+brief: "If we ask for your address, occupation, identification, or information about where your funds are coming from, we promise we are not being nosy."
 ---
 
-If we ask for your address, occupation, identification, or information about where your funds are coming from, we promise we are not being nosy. {.summary}
+<p class="summary">
+If we ask for your address, occupation, identification, or information about where your funds are coming from, we promise we are not being nosy.
+</p>
 
 Lawyers in Alberta are required by the Law Society of Alberta to collect certain information about the people and organizations they represent. These requirements help lawyers confirm who they are acting for and form part of the legal profession's safeguards against fraud, money laundering, and other illegal activity. 
 

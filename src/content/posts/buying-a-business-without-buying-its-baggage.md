@@ -4,9 +4,13 @@ date: "2025-12-25"
 category: "Corporate & Commercial"
 featured: false
 draft: false
+duration: 5
+brief: "Buying an existing business can be a great way to skip the start-up stage. You may be acquiring customers, equipment, employees, contracts, and a business that is already up and running. The important question is what else may come with it."
 ---
 
-Buying an existing business can be a great way to skip the start-up stage. You may be acquiring customers, equipment, employees, contracts, and a business that is already up and running. The important question is what else may come with it. {.summary}
+<p class="summary">
+Buying an existing business can be a great way to skip the start-up stage. You may be acquiring customers, equipment, employees, contracts, and a business that is already up and running. The important question is what else may come with it.
+</p>
 
 One of the first decisions is whether you are buying the assets of the business or the shares of the corporation. 
 

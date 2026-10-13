@@ -4,9 +4,13 @@ date: "2025-04-01"
 category: "Civil Litigation"
 featured: false
 draft: false
+duration: 7
+brief: "A legal dispute can be disruptive, expensive, and difficult to navigate. Our role is to help you understand the issues, assess your options, and determine the most practical way forward."
 ---
 
-A legal dispute can be disruptive, expensive, and difficult to navigate. Our role is to help you understand the issues, assess your options, and determine the most practical way forward. {.summary}
+<p class="summary">
+A legal dispute can be disruptive, expensive, and difficult to navigate. Our role is to help you understand the issues, assess your options, and determine the most practical way forward.
+</p>
 
 At Ridout Barron, we do not approach every dispute as though it belongs in court. Litigation is an important tool, but it is only one of several ways to resolve a conflict. Depending on the circumstances, your matter may be better addressed through negotiation, mediation, or settlement discussions.
 

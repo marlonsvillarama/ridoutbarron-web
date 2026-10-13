@@ -4,9 +4,13 @@ date: "2025-08-13"
 category: "Civil Litigation"
 featured: false
 draft: false
+duration: 7
+brief: "Meeting with a lawyer for the first time can feel daunting, particularly when you are already dealing with a dispute. Our goal is to make the process straightforward and to ensure that your consultation is focused on the issues that matter most."
 ---
 
-Meeting with a lawyer for the first time can feel daunting, particularly when you are already dealing with a dispute. Our goal is to make the process straightforward and to ensure that your consultation is focused on the issues that matter most. {.summary}
+<p class="summary">
+Meeting with a lawyer for the first time can feel daunting, particularly when you are already dealing with a dispute. Our goal is to make the process straightforward and to ensure that your consultation is focused on the issues that matter most.
+</p>
 
 When you contact Ridout Barron to request a consultation, a member of our team will gather some initial information about your matter, help coordinate the next steps, and arrange a meeting with one of our lawyers by Microsoft Teams. 
 

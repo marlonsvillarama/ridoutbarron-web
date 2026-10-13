@@ -4,9 +4,13 @@ date: "2026-04-11"
 category: "Civil Litigation"
 featured: false
 draft: false
+duration: 7
+brief: "Being served with a lawsuit can be unsettling, particularly if you were not expecting it. The most important thing to know is that being sued does not mean the other side has already proven its case. It means a legal process has started, and you now have an opportunity to respond."
 ---
 
-Being served with a lawsuit can be unsettling, particularly if you were not expecting it. The most important thing to know is that being sued does not mean the other side has already proven its case. It means a legal process has started, and you now have an opportunity to respond. {.summary}
+<p class="summary">
+Being served with a lawsuit can be unsettling, particularly if you were not expecting it. The most important thing to know is that being sued does not mean the other side has already proven its case. It means a legal process has started, and you now have an opportunity to respond.
+</p>
 
 The first step is to review the documents carefully and take note of when and how you were served. In Alberta, the deadline to respond depends on the court and where service took place. For example, a defendant served in Alberta with a Statement of Claim in the Court of King’s Bench generally has 20 days to file and serve a Statement of Defence. Different timelines apply when service occurs outside Alberta. 
 

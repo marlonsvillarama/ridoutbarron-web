@@ -4,9 +4,13 @@ date: "2025-09-02"
 category: "From The Firm"
 featured: false
 draft: false
+duration: 3
+brief: "Legal bills come with their own vocabulary, and two words you will see often are fees and disbursements."
 ---
 
-Legal bills come with their own vocabulary, and two words you will see often are fees and disbursements. 
+<p class="summary">
+Legal bills come with their own vocabulary, and two words you will see often are fees and disbursements.
+</p>
 
 Legal fees are what you pay for the professional work done on your matter. Depending on the type of file, those fees may be based on the time spent, a fixed fee, or another arrangement discussed with you at the beginning of the retainer. 
 

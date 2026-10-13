@@ -4,9 +4,13 @@ date: "2026-11-30"
 category: "Corporate & Commercial"
 featured: false
 draft: false
+duration: 7
+brief: "If you are starting a business in Alberta, one of the first decisions you may run into is whether to incorporate provincially in Alberta or federally."
 ---
 
-If you are starting a business in Alberta, one of the first decisions you may run into is whether to incorporate provincially in Alberta or federally. {.summary}
+<p class="summary">
+If you are starting a business in Alberta, one of the first decisions you may run into is whether to incorporate provincially in Alberta or federally.
+</p>
 
 Both options create a corporation that is legally separate from you as an individual. The real difference is where the corporation is created, which rules it follows, and what registrations you may need afterward. 
 

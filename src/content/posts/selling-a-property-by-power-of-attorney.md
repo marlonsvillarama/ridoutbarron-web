@@ -4,9 +4,13 @@ date: "2025-09-23"
 category: "Real Estate"
 featured: true
 draft: false
+duration: 8
+brief: "Sometimes a property owner cannot handle a sale personally and another person needs to act on their behalf under a Power of Attorney."
 ---
 
-Sometimes a property owner cannot handle a sale personally and another person needs to act on their behalf under a Power of Attorney. 
+<p class="summary">
+Sometimes a property owner cannot handle a sale personally and another person needs to act on their behalf under a Power of Attorney.
+</p>
 
 In Alberta, a Power of Attorney allows a person, or several persons, called the attorney or attorneys, to make financial decisions for another person, called the donor. An Enduring Power of Attorney can continue to operate if the donor later loses capacity, depending on how the document is written and when it takes effect. 
 

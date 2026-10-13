@@ -4,9 +4,13 @@ date: "2025-12-26"
 category: "Corporate & Commercial"
 featured: false
 draft: false
+duration: 4
+brief: "A corporate minute book is meant to be the official record of your company. It should show how the corporation was set up, who the directors and shareholders are, what shares have been issued, and what important decisions have been made over time."
 ---
 
-A corporate minute book is meant to be the official record of your company. It should show how the corporation was set up, who the directors and shareholders are, what shares have been issued, and what important decisions have been made over time. {.summary}
+<p class="summary">
+A corporate minute book is meant to be the official record of your company. It should show how the corporation was set up, who the directors and shareholders are, what shares have been issued, and what important decisions have been made over time.
+</p>
 
 In real life, minute books do not always stay perfectly up to date. Annual resolutions may go unsigned, a director may change without the Corporate Registry filing being updated, or share certificates may be missing. Sometimes the minute book simply no longer matches what everyone understands to be true about the company. That can become a problem when someone suddenly needs to rely on those records. 
 

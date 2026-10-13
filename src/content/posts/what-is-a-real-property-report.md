@@ -4,9 +4,13 @@ date: "2025-09-02"
 category: "Real Estate"
 featured: false
 draft: false
+duration: 7
+brief: "A Real Property Report, or RPR, is a legal document prepared by an Alberta Land Surveyor. It shows the boundaries of a property and the location of visible improvements, such as the house, garage, deck, fence, shed, or retaining wall."
 ---
 
-A Real Property Report, or RPR, is a legal document prepared by an Alberta Land Surveyor. It shows the boundaries of a property and the location of visible improvements, such as the house, garage, deck, fence, shed, or retaining wall. 
+<p class="summary">
+A Real Property Report, or RPR, is a legal document prepared by an Alberta Land Surveyor. It shows the boundaries of a property and the location of visible improvements, such as the house, garage, deck, fence, shed, or retaining wall.
+</p>
 
 An RPR can reveal issues that may not be obvious from looking at the property. For example, it may show that a structure encroaches onto a neighbouring property or onto land belonging to the City, or that an improvement does not match the current layout of the property. 
 

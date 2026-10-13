@@ -1,12 +1,16 @@
 ---
 title: "Grants: Probate vs. Administration"
 date: "2026-04-05"
-category: "Wills & Estates"
+category: "Wills & Estate"
 featured: false
 draft: false
+duration: 5
+brief: "When someone passes away, the legal and administrative steps that follow can feel like a lot to take on at once."
 ---
 
-When someone passes away, the legal and administrative steps that follow can feel like a lot to take on at once. {.summary}
+<p class="summary">
+When someone passes away, the legal and administrative steps that follow can feel like a lot to take on at once.
+</p>
 
 In Alberta, a grant is a court document that confirms who has authority to deal with an estate. The type of grant usually depends on whether the deceased left a valid Will and who will be responsible for administering the estate. 
 

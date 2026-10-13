@@ -1,12 +1,16 @@
 ---
-title: "Federal vs. Provincial Registration"
+title: "Shareholders, Directors, & Officers: What's The Difference?"
 date: "2026-11-30"
 category: "Corporate & Commercial"
 featured: false
 draft: false
+duration: 5
+brief: "When a business is incorporated, the same person may wear several different hats. You can be a shareholder, a director, and an officer of the same corporation, but those roles are not interchangeable."
 ---
 
-When a business is incorporated, the same person may wear several different hats. You can be a shareholder, a director, and an officer of the same corporation, but those roles are not interchangeable. {.summary}
+<p class="summary">
+When a business is incorporated, the same person may wear several different hats. You can be a shareholder, a director, and an officer of the same corporation, but those roles are not interchangeable.
+</p>
 
 A shareholder is an owner of the corporation. Shareholders hold shares and may have voting, dividend, or other rights depending on the class of shares they own. They generally make certain major decisions, such as electing directors or approving matters that require shareholder approval. 
 

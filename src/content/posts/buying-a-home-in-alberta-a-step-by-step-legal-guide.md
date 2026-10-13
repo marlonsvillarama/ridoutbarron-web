@@ -4,9 +4,13 @@ date: "2025-07-07"
 category: "Real Estate"
 featured: false
 draft: false
+duration: 10
+brief: "Once your offer has been accepted, there are several legal and financial steps between signing the purchase contract and getting your name on title. Your lawyer handles much of this work behind the scenes, but knowing the general timeline can make the process easier to follow."
 ---
 
-Once your offer has been accepted, there are several legal and financial steps between signing the purchase contract and getting your name on title. Your lawyer handles much of this work behind the scenes, but knowing the general timeline can make the process easier to follow. {.summary}
+<p class="summary">
+Once your offer has been accepted, there are several legal and financial steps between signing the purchase contract and getting your name on title. Your lawyer handles much of this work behind the scenes, but knowing the general timeline can make the process easier to follow.
+</p>
 
 ## Once your conditions are removed 
 

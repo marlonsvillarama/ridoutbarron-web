@@ -3,18 +3,23 @@
         brief = 'Brief',
         category = 'category',
         date = '',
-        link = '/',
+        slug = '/',
         title = 'Title',
     } = $props();
+    let dateText = $derived(
+        (new Date(date)).toLocaleDateString('en', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        })
+    );
 </script>
 
-<a class="row" href={link}>
+<a class="row" href="/guide/article/{slug}">
     <i class="ph ph-arrow-circle-right"></i>
     <h4>{title}</h4>
     <div class="subheader">
         <span class="category">{category}</span>
         <i class="ph ph-dot"></i>
-        <span class="date">{date}</span>
+        <span class="date">{dateText}</span>
     </div>
     <p class="brief">{brief}</p>
     <span class="read">Click to read more...</span>
@@ -30,7 +35,7 @@
         transition: background-color 150ms ease;
     }
     .row:hover {
-        background-color: var(--accent-bg-pale);
+        background-color: var(--accent-very-light);
     }
     .row > i {
         position: absolute;
@@ -49,7 +54,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin: 0.25rem 0;
+        margin: 0.25rem 0 0.5rem;
     }
     .row > .subheader > .category {
         color: var(--accent);
@@ -63,6 +68,9 @@
         letter-spacing: -0.25px;
         line-height: 1.375rem;
         margin-bottom: 0.75rem;
+        width: 100%;
+        font-size: 0.875rem;
+        opacity: 0.7;
     }
     .row > .read {
         /* color: var(--accent); */

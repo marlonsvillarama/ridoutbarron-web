@@ -4,9 +4,13 @@ date: "2026-07-04"
 category: "Wills & Estate"
 featured: false
 draft: false
+duration: 12
+brief: "Estate planning is not only about what happens after you die. It is also about making sure the right people can step in if you are ever unable to make decisions for yourself."
 ---
 
-Estate planning is not only about what happens after you die. It is also about making sure the right people can step in if you are ever unable to make decisions for yourself. {.summary}
+<p class="summary">
+Estate planning is not only about what happens after you die. It is also about making sure the right people can step in if you are ever unable to make decisions for yourself.
+</p>
 
 In Alberta, there are three core documents that work together:
 1. a Will

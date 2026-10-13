@@ -6,13 +6,12 @@ const slugify = (value = '') => {
 };
 
 export async function load() {
-    const postFiles = import.meta.glob('/src/content/posts/*.md', { eager: true });
-    const posts = Object.entries(postFiles).map(([path, file]) => {
+    const postFiles = import.meta.glob('/src/content/posts/*.md', { eager: true, import: 'metadata' });
+    const posts = Object.entries(postFiles).map(([path, meta]) => {
         const slug = path.split('/').pop()?.replace(/\.md$/, '');
         return {
-            slug,
-            title: file.metadata.title,
-            date: file.metadata.date
+            ...meta,
+            slug
         };
     })
     .filter(p => !p.draft)
@@ -20,7 +19,7 @@ export async function load() {
 
     const counts = new Map();
     for (const p of posts) {
-        counts.set(p.category, (counts.get(p.category)) + 1);
+        counts.set(p.category, (counts.get(p.category) || 0) + 1);
     }
 
     return {

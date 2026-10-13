@@ -4,9 +4,13 @@ date: "2026-02-14"
 category: "Wills & Estate"
 featured: false
 draft: false
+duration: 8
+brief: "Choosing an executor is one of the most important decisions you will make when preparing your Will."
 ---
 
-Choosing an executor is one of the most important decisions you will make when preparing your Will. {.summary}
+<p class="summary">
+Choosing an executor is one of the most important decisions you will make when preparing your Will.
+</p>
 
 Your executor is the person responsible for carrying out your wishes after you die. That can include locating and securing assets, dealing with banks and investments, paying debts and taxes, applying for probate if necessary, selling property, communicating with beneficiaries, and eventually distributing the estate. 
 

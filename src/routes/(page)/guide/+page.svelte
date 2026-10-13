@@ -6,7 +6,7 @@
     import Featured from "#lib/components/guide/featured.svelte";
     import Latest from "#lib/components/guide/latest.svelte";
 
-    const featuredArticles = [
+    /* const featuredArticles = [
         {
             category: 'Real Estate',
             title: 'Selling a Property by Power of Attorney',
@@ -22,9 +22,9 @@
             title: 'How to Avoid Litigation Limbo',
             link: '/guide'
         },
-    ];
+    ]; */
 
-    const latestArticles = [
+    /* const latestArticles = [
         {
             brief: 'Being served with a lawsuit can be unsettling, particularly if you were not expecting it.The most important thing to know is...',
             category: 'Civil Litigation',
@@ -46,9 +46,9 @@
             link: '/',
             title: 'Buying a Home in Alberta: A Step-by-step Legal Guide',
         },
-    ];
+    ]; */
 
-    const articleCategories = [
+    /* const articleCategories = [
         {
             id: 'litigation',
             title: 'Civil Litigation',
@@ -74,10 +74,13 @@
             title: 'From The Firm',
             count: 8
         },
-    ];
+    ]; */
 
     let { data } = $props();
-    console.log('guide data', data);
+    console.log('guide categories', data.categories);
+    const featuredArticles = data.posts.filter(d => d.featured).slice(0, 3);
+    const latestArticles = data.posts.filter(d => !d.featured).slice(0, 5);
+    const articleCategories = data.categories;
 </script>
 
 <svelte:head>
@@ -93,7 +96,7 @@
 />
 
 <main class="guide container">
-    <div class="header">
+    <!-- <div class="header">
         <ul class="categories">
             <li><a href="/guide">All Resources</a></li>
             <li><a href="/guide">Construction</a></li>
@@ -103,7 +106,7 @@
         </ul>
 
         <SearchBox onsearch={() => {}} />
-    </div>
+    </div> -->
 
     <section class="featured">
         <h3>Featured Articles</h3>
@@ -124,21 +127,23 @@
                     {/each}
                 </div>
             </section>
-
-            <section class="categories">
-                <h3>Browse Guides By Category</h3>
-                <div class="split">
-                    {#each articleCategories as category}
-                        {@render articleCategory(category.id, category.title, category.count)}
-                    {/each}
-                </div>
-            </section>
         </div>
 
         <aside>
-            <h3>Stay Informed</h3>
-            <p>Get the latest guides and insights delivered to your inbox.</p>
-            <button type="button">Subscribe</button>
+            <div class="stay-informed">
+                <h3>Stay Informed</h3>
+                <p>Get the latest guides and insights delivered to your inbox.</p>
+                <button type="button">Subscribe</button>
+            </div>
+
+            <div class="categories">
+                <h3>Browse Guides By Category</h3>
+                <div class="split">
+                    {#each articleCategories as category}
+                        {@render articleCategory(category.id, category.name, category.count)}
+                    {/each}
+                </div>
+            </div>
         </aside>
     </div>
 </main>
@@ -157,18 +162,18 @@
         gap: 3rem;
         margin: 3rem auto 5rem;
     }
-    .guide > .header {
+    /* .guide > .header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-    .guide > .header > .categories {
+    } */
+    /* .guide > .header > .categories {
         list-style-type: none;
         display: flex;
         align-items: center;
         gap: 1.5rem;
-    }
-    .guide > .header > .categories > li > a {
+    } */
+    /* .guide > .header > .categories > li > a {
         color: var(--darkest);
         font-weight: 500;
         text-decoration: none;
@@ -176,11 +181,11 @@
         border-bottom: 2px solid transparent;
         opacity: 0.7;
         transition: border-color 150ms ease, opacity 150ms ease;
-    }
-    .guide > .header > .categories > li > a:not(.active):hover {
+    } */
+    /* .guide > .header > .categories > li > a:not(.active):hover {
         opacity: 1.0;
         border-color: var(--accent-lighter);
-    }
+    } */
     :global(.guide > .header > .categories > li > a.active) {
         color: var(--accent);
         border-color: var(--accent);
@@ -212,11 +217,12 @@
     .latest > .list {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
     }
     .categories > .split {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns: 1fr 1fr; */
         gap: 1rem;
     }
     .categories > .split > .category {
@@ -247,6 +253,11 @@
     }
     .guide > .split > aside {
         width: min(30%, 30rem);
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .guide > .split > aside > .stay-informed {
         background:
             linear-gradient(to bottom, var(--dark-bg-semi-light) 0%, var(--dark-bg-semi-light) 100%),
             url(/images/banff-001.webp);
@@ -256,15 +267,15 @@
         flex-direction: column;
         gap: 1rem;
     }
-    .guide > .split > aside > h3 {
+    .guide > .split > aside > .stay-informed > h3 {
         color: var(--white);
         font: 500 2rem var(--font-serif);
     }
-    .guide > .split > aside > p {
+    .guide > .split > aside > .stay-informed > p {
         color: var(--off-white);
         margin-bottom: 1rem;
     }
-    .guide > .split > aside > button {
+    .guide > .split > aside > .stay-informed > button {
         background-color: var(--accent-bg-semi-light);
         color: var(--white);
         text-transform: uppercase;
@@ -275,7 +286,7 @@
         padding: 1rem;
         transition: background-color 150ms ease;
     }
-    .guide > .split > aside > button {
+    .guide > .split > aside > .stay-informed > button {
         background-color: var(--accent);
     }
 </style>

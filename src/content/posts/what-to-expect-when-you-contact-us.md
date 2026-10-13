@@ -4,9 +4,13 @@ date: "2025-09-02"
 category: "From The Firm"
 featured: false
 draft: false
+duration: 5
+brief: "Reaching out to a law firm can feel like a big step, especially if you are already dealing with a stressful or unfamiliar situation."
 ---
 
-Reaching out to a law firm can feel like a big step, especially if you are already dealing with a stressful or unfamiliar situation. 
+<p class="summary">
+Reaching out to a law firm can feel like a big step, especially if you are already dealing with a stressful or unfamiliar situation.
+</p>
 
 When you contact Ridout Barron, the first thing we will do is gather some basic information about you and the reason you are calling. This helps us understand what kind of matter you have and who at the firm may be best suited to assist. 
 

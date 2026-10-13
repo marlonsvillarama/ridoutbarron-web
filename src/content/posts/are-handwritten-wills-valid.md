@@ -1,12 +1,16 @@
 ---
 title: "Are Handwritten Wills Valid"
 date: "2025-11-16"
-category: "Wills & Estates"
+category: "Wills & Estate"
 featured: true
 draft: false
+duration: 5
+brief: "In Alberta, a handwritten Will can be valid, but that does not always mean it is a good estate plan."
 ---
 
-In Alberta, a handwritten Will can be valid, but that does not always mean it is a good estate plan. {.summary}
+<p class="summary">
+In Alberta, a handwritten Will can be valid, but that does not always mean it is a good estate plan.
+</p>
 
 A handwritten Will is known as a holograph Will. Under Alberta’s Wills and Succession Act, it must be written entirely in the testator’s own handwriting and signed by the testator. Unlike a formal Will, a holograph Will does not require witnesses. 
 
