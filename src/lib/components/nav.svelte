@@ -75,6 +75,6 @@
     }
     .phone > span {
         font: 500 0.875rem var(--font-default);
-        color: var(white);
+        color: var(--white);
     }
 </style>
