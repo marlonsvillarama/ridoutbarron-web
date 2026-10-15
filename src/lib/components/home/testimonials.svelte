@@ -38,9 +38,6 @@
                                 <span class="info">{items[index]?.info}</span>
                             </div>
                         </div>
-                        <!-- <div class="nav-buttons">
-                            <button class="nav"></button>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -79,41 +76,61 @@
         color: var(--accent);
         font: 500 clamp(2rem, 5vw, 2.5rem) var(--font-serif);
         margin-bottom: 1rem;
+        text-align: center;
     }
-    #testimonials > .split > .content > .text > .testimonial {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
+    @media (min-width: 40rem) {
+        #testimonials > .split > .content > h2 {
+            text-align: left;
+        }
     }
-    #testimonials > .split > .content > .text > .testimonial > .ph-quotes {
-        color: var(--accent);
-        font-size: 3rem;
-    }
-    #testimonials > .split > .content > .text > .testimonial > .content {
+    .testimonial {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-    #testimonials > .split > .content > .text > .testimonial > .content > .quote {
+    @media (min-width: 40rem) {
+        .testimonial {
+            align-items: flex-start;
+            flex-direction: row;
+        gap: 0.5rem;
+        }
+    }
+    .testimonial > .ph-quotes {
+        color: var(--accent);
+        font-size: 3rem;
+    }
+    .testimonial > .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .testimonial > .content > .quote {
         padding: 0 1rem;
     }
-    #testimonials > .split > .content > .text > .testimonial > .content > .quote > p {
+    .testimonial > .content > .quote > p {
         font: clamp(1.125rem, 2vw, 1.25rem)/clamp(2rem, 5vw, 2.5rem) var(--font-serif);
     }
-    #testimonials > .split > .content > .text > .testimonial > .content > .quote > .footer {
+    .testimonial > .content > .quote > .footer {
         color: var(--dark);
         margin-top: 1rem;
         font-size: 1.125rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 0.125rem;
     }
-    #testimonials > .split > .content > .text > .testimonial > .content > .quote > .footer > .author {
+    @media (min-width: 40rem) {
+        .testimonial > .content > .quote > .footer {
+            align-items: start;
+        }
+    }
+    .testimonial > .content > .quote > .footer > .author {
         letter-spacing: 1px;
         text-transform: uppercase;
     }
-    #testimonials > .split > .content > .text > .testimonial > .content > .quote > .footer > .info {
+    .testimonial > .content > .quote > .footer > .info {
         font: italic 400 1rem var(--font-serif);
         opacity: 0.8;
     }

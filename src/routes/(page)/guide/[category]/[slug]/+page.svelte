@@ -1,10 +1,10 @@
 <script>
     import Crumbs from "#lib/components/crumbs.svelte";
-    import Category from "../../../../../lib/components/guide/category.svelte";
+    import Category from "#lib/components/guide/category.svelte";
 
     let { data } = $props();
-    console.log('article data', data);
     const Content = $derived(data.content);
+
     let dateText = $derived(
         (new Date(data.meta.date)).toLocaleDateString('en', {
             weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
@@ -91,15 +91,6 @@
     .article > .split > .content > .header > .subheader > .duration {
         font-style: italic;
     }
-    /* .article > .split > .content > .header > .divider {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    } */
-    /* .article > .split > .content > img {
-        width: 100%;
-        height: auto;
-    } */
     :global(.article > .split > .content > h2) {
         margin-top: 1rem;
         font-weight: 500;

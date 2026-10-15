@@ -86,8 +86,15 @@
     }
     section > .group > .row {
         display: flex;
-        gap: 3rem;
-        align-items: flex-start;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    @media (min-width: 60rem) {
+        section > .group > .row {
+            flex-direction: row;
+            gap: 3rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
     }
 </style>

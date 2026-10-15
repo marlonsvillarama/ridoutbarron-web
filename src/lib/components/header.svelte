@@ -1,4 +1,5 @@
 <script>
+    import { page } from "$app/state";
     import Logo from "./logo.svelte";
     import Nav from "./nav.svelte";
 
@@ -7,7 +8,7 @@
 
 <svelte:window bind:scrollY />
 
-<header class:scrolled={scrollY > 50}>
+<header class:scrolled={scrollY > 50 || page.url.pathname.length > 1}>
     <div class="container">
         <Logo />
         <Nav />

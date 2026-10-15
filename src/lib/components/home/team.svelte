@@ -37,7 +37,8 @@
     }
     #team > .container > h2 {
         color: var(--charcoal);
-        font: 500 4rem var(--font-serif);
+        font: 500 clamp(3rem, 3vw, 4rem) var(--font-serif);
+        /* font: 500 4rem var(--font-serif); */
     }
     #team > .container > .divider {
         background-color: var(--accent);
@@ -46,8 +47,11 @@
         margin: 2rem auto;
     }
     #team > .container > p {
-        font-size: 1.125rem;
-        opacity: 0.8;
+        font-size: 1rem;
+        line-height: 1.625rem;
         margin-bottom: 2rem;
+        opacity: 0.8;
+        text-align: center;
+        max-width: 40rem;
     }
 </style>

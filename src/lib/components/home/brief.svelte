@@ -1,13 +1,13 @@
 <section id="brief">
     <div class="container split">
-        <h2>
-            Clear advice <i class="ph ph-dot"></i>
-            Practical options <i class="ph ph-dot"></i>
-            People you can talk to
-        </h2>
+        <div class="slogan">
+            <span class="s">Clear advice</span><i class="ph ph-dot"></i>
+            <span class="s">Practical options</span><i class="ph ph-dot"></i>
+            <span class="s">People you can talk to</span>
+        </div>
         <div class="blurb">
             <p>At Ridout Barron, we believe in communication creativity, and flexibility. Whether you contact us in regard to a lease, lien, contract dispute, will, or other issues, we will take the time to get to know you and your situation thoroughly, give you a realistic appraisal of your case, and explain your options while keeping your bottom line in mind.</p>
-            <a href="/" title="Talk to us" class="cta">Talk to us</a>
+            <a href="/contact" title="Talk to us" class="cta">Talk to us</a>
         </div>
     </div>
 </section>
@@ -26,25 +26,48 @@
         gap: 2rem;
         margin: 0 auto;
     }
-    #brief > .split > h2 {
+    #brief > .split > .slogan {
         display: flex;
         align-items: center;
+        flex-direction: column;
         gap: 0.5rem;
+    }
+    #brief > .split > .slogan > span.s {
+        display: block;
         color: var(--accent);
-        font: 500 clamp(2rem, 5vw, 3rem)/clamp(1.75rem, 5vw, 2.75rem) var(--font-serif);
+        font: 500 clamp(2rem, 3vw, 3rem)/clamp(2rem, 3vw, 3.5rem) var(--font-serif);
         letter-spacing: -0.25px;
         text-align: center;
+        /* border: 1px solid red; */
     }
-    #brief > .split > h2 > i {
-        font-size: 3rem;
+    #brief > .split > .slogan > i {
+        visibility: hidden;
+    }
+    @media (min-width: 60rem) {
+        #brief > .split > .slogan {
+            flex-direction: row;
+            align-items: center;
+        }
+        #brief > .split > .slogan > i {
+            color: var(--accent);
+            font-size: 3rem;
+            visibility: visible;
+        }
     }
     #brief > .split > .blurb {
+        /* border: 1px solid red; */
         display: flex;
         align-items: center;
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
-        width: 60%;
+        width: 100%;
+        max-width: 40rem;
+    }
+    @media (min-width: 60rem) {
+        #brief > .split > .blurb {
+            max-width: 60%;
+        }
     }
     #brief > .split > .blurb > p {
         line-height: 1.75rem;

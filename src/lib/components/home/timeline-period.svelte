@@ -82,12 +82,12 @@
     }
     .period > .content > .article > .main > .title {
         display: inline-block;
-        font: 500 1.125rem/1.375rem var(--font-default);
+        font: 500 1.125rem/1.75rem var(--font-default);
         margin-bottom: 0.5rem;
     }
     .period > .content > .article > .main > p {
-        line-height: 1.375rem;
-        opacity: 0.75;
+        line-height: 1.5rem;
+        opacity: 0.7;
         padding-left: 1rem;
     }
 </style>

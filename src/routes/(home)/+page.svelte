@@ -5,7 +5,6 @@
     import Team from "#lib/components/home/team.svelte";
     import History from "#lib/components/home/history.svelte";
     import Testimonials from "#lib/components/home/testimonials.svelte";
-    import Footer from "#lib/components/footer.svelte";
 </script>
 
 <Hero />
@@ -17,8 +16,6 @@
     <History />
     <Testimonials />
 </main>
-
-<Footer />
 
 <style>
     :global(main > section a.cta) {

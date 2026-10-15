@@ -59,7 +59,7 @@
         </div>
 
         <div class="learn">
-            <a href="/" title="Learn More" class="cta">Learn More</a>
+            <a href="/expertise" title="Learn More" class="cta">Learn More</a>
         </div>
     </div>
 </section>
@@ -104,6 +104,7 @@
         }
     }
     #services > .container > .learn {
+        margin-top: 2rem;
         display: flex;
         justify-content: center;
     }

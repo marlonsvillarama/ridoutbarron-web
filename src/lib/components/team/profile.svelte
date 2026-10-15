@@ -5,7 +5,8 @@
         name = '',
         fullname = '',
         role = '',
-        children
+        children,
+        onOpen
     } = $props();
 
     let isOpen = $state(false);
@@ -19,7 +20,7 @@
             {@render children?.()}
         </div>
     </div>
-    <button type="button" class="profile-btn" data-id={id} onclick={() => isOpen = !isOpen}><i class="ph ph-info"></i> {name}'s bio</button>
+    <button type="button" class="profile-btn" data-id={id} onclick={() => isOpen = !isOpen}><i class="ph ph-info"></i> Profile</button>
 </div>
 
 <style>
@@ -46,7 +47,7 @@
         transition: top 500ms cubic-bezier(0.34, 1.4, 0.64, 1);
     }
     :global(.profile > .details.read) {
-        top: 10%;
+        top: 0%;
     }
     .profile > .details > .name {
         display: block;
@@ -63,7 +64,7 @@
         text-align: center;
         opacity: 0.6;
         color: var(--white);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
     :global(.profile > .details > .bio) {
         opacity: 0;
