@@ -3,7 +3,7 @@
         brief = 'Brief',
         category = 'category',
         date = '',
-        slug = '/',
+        link = '/',
         title = 'Title',
     } = $props();
     let dateText = $derived(
@@ -13,7 +13,7 @@
     );
 </script>
 
-<a class="row" href="/guide/article/{slug}">
+<a class="latest" href={link}>
     <i class="ph ph-arrow-circle-right"></i>
     <h4>{title}</h4>
     <div class="subheader">
@@ -26,7 +26,7 @@
 </a>
 
 <style>
-    .row {
+    .latest {
         color: var(--darkest);
         cursor: pointer;
         position: relative;
@@ -34,21 +34,21 @@
         text-decoration: none;
         transition: background-color 150ms ease;
     }
-    .row:hover {
+    .latest:hover {
         background-color: var(--accent-very-light);
     }
-    .row > i {
+    .latest > i {
         position: absolute;
         top: 12px;
         left: 0.5rem;
         font-size: 2rem;
         color: var(--accent);
     }
-    .row > h4 {
+    .latest > h4 {
         font: 600 1.25rem var(--font-default);
         letter-spacing: -0.25px;
     }
-    .row > .subheader {
+    .latest > .subheader {
         font: 400 0.875rem var(--font-default);
         opacity: 0.7;
         display: flex;
@@ -56,15 +56,15 @@
         gap: 1rem;
         margin: 0.25rem 0 0.5rem;
     }
-    .row > .subheader > .category {
+    .latest > .subheader > .category {
         color: var(--accent);
         font-weight: 600;
         text-transform: uppercase;
     }
-    .row > .subheader > i {
+    .latest > .subheader > i {
         font-size: 1.5rem;
     }
-    .row > p.brief {
+    .latest > p.brief {
         letter-spacing: -0.25px;
         line-height: 1.375rem;
         margin-bottom: 0.75rem;
@@ -72,7 +72,7 @@
         font-size: 0.875rem;
         opacity: 0.7;
     }
-    .row > .read {
+    .latest > .read {
         /* color: var(--accent); */
         opacity: 0.7;
         font-family: var(--font-serif);

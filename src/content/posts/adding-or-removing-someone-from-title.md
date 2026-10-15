@@ -9,7 +9,7 @@ brief: "Adding or removing someone from the title to your property may sound str
 
 <p class="summary">
 Adding or removing someone from the title to your property may sound straightforward, but a change in ownership can affect more than the Land Titles record.
-<p>
+</p>
 
 In Alberta, changing the registered ownership of a property generally requires a Transfer of Land. The current registered owners must sign the transfer, and the change is then submitted to the Alberta Land Titles Office for registration. 
 

@@ -5,6 +5,8 @@
     import SearchBox from "#lib/components/form/search-box.svelte";
     import Featured from "#lib/components/guide/featured.svelte";
     import Latest from "#lib/components/guide/latest.svelte";
+    import Category from "#lib/components/guide/category.svelte";
+    import { getPostsInCategory } from "../../../lib/posts.js";
 
     /* const featuredArticles = [
         {
@@ -77,10 +79,23 @@
     ]; */
 
     let { data } = $props();
-    console.log('guide categories', data.categories);
     const featuredArticles = data.posts.filter(d => d.featured).slice(0, 3);
+    console.log('featuredArticles', featuredArticles);
     const latestArticles = data.posts.filter(d => !d.featured).slice(0, 5);
-    const articleCategories = data.categories;
+    // let articleCategories = getPostsInCategory(data.meta.categorySlug, data.meta.slug);
+    let articleCategories = $derived.by(() => {
+        let list = [ ...new Set(data.posts.map(p => p.category)) ].sort();
+        let output = list.map(c => {
+            let articles = data.posts.filter(p => p.category === c);
+            return {
+                id: c.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+                name: c,
+                count: articles.length
+            }
+        });
+        console.log('articleCategories', output);
+        return output;
+    });
 </script>
 
 <svelte:head>
@@ -140,7 +155,8 @@
                 <h3>Browse Guides By Category</h3>
                 <div class="split">
                     {#each articleCategories as category}
-                        {@render articleCategory(category.id, category.name, category.count)}
+                        <Category {...category} />
+                        <!-- {@render articleCategory(category.id, category.name, category.count)} -->
                     {/each}
                 </div>
             </div>
@@ -148,12 +164,12 @@
     </div>
 </main>
 
-{#snippet articleCategory(id, title, count)}
-    <a class="category" href="/guide/{id}" {title}>
+<!-- {#snippet articleCategory(id, title, count)}
+    <a class="category" href="/guide/article/{id}" {title}>
         <span class="title">{title}</span>
         <span class="count">{count} article{count !== 1 ? 's' : ''} <i class="ph ph-arrow-square-out"></i></span>
     </a>
-{/snippet}
+{/snippet} -->
 
 <style>
     .guide {

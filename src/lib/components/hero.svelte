@@ -11,7 +11,7 @@
             <p>We aim to be a full-service firm to families and individuals, addressing all of life's legal needs as they arise - from wills, to corporate matters, to real estate and, if necessary, litigation.</p>
             <div class="cta">
                 <div class="actions">
-                    <a href="/consult" id="consult">Tell us what's going on</a>
+                    <a href="/contact" id="consult">Tell us what's going on</a>
                 </div>
             </div>
         </div>

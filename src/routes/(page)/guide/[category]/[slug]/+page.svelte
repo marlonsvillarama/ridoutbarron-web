@@ -1,17 +1,15 @@
 <script>
     import Crumbs from "#lib/components/crumbs.svelte";
+    import Category from "../../../../../lib/components/guide/category.svelte";
 
     let { data } = $props();
+    console.log('article data', data);
+    const Content = $derived(data.content);
     let dateText = $derived(
         (new Date(data.meta.date)).toLocaleDateString('en', {
             weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
         })
     );
-    let otherArticles = $derived(data.posts.filter(p =>
-        p.category === data.meta.category && p.title !== data.meta.title
-    ).slice(0, 4));
-
-    console.log('categories', data.categories);
 </script>
 
 <svelte:head>
@@ -22,7 +20,8 @@
     <Crumbs items={[
         { link: "/", title: "Home" },
         { link: "/guide", title: "Guide & Resources" },
-        { link: `/guide/${data.meta.slug}`, title: data.meta.title },
+        { link: `/guide/${data.meta.categorySlug}`, title: data.meta.category },
+        { link: data.meta.link, title: data.meta.title },
     ]} />
     
     <div class="split">
@@ -45,21 +44,19 @@
             <section>
                 <h2>Other articles in this category</h2>
                 <ul>
-                    {#each otherArticles as article}
-                    <li><a href="/guide/article/{article.slug}">{article.title}</a></li>
+                    {#each data.related as article}
+                        <li><a href={article.link}>{article.title}</a></li>
                     {/each}
                 </ul>
             </section>
 
             <section>
                 <h2>Browse other categories</h2>
-                <!-- <ul>
-                    <li>
-                        <a class="category" href title>
-                            <span class="title"></span>
-                        </a>
-                    </li>
-                </ul> -->
+                <div class="content">
+                    {#each data.categories as category}
+                        <Category {...category} />
+                    {/each}
+                </div>
             </section>
         </aside>
     </div>
@@ -174,6 +171,11 @@
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         border-bottom: 1px solid var(--accent-lightest);
+    }
+    .article > .split > aside > section > .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
     .article > .split > aside > section > ul > li {
         margin-inline-start: 1rem;

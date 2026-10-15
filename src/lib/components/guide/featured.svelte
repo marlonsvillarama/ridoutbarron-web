@@ -3,7 +3,7 @@
         category = 'Category',
         title = 'Title',
         brief = 'Brief',
-        slug = '/'
+        link = '/'
     } = $props();
 </script>
 
@@ -15,7 +15,7 @@
             <span class="title">{title}</span>
             <p>{brief}</p>
         </div>
-        <a href="/guide/article/{slug}" {title} class="read-link">Read More...</a>
+        <a href={link} {title} class="read-link">Read More...</a>
     </div>
 </article>
 
