@@ -1,20 +1,36 @@
 <script>
     import { page } from "$app/state";
+    // import { afterNavigate } from "$app/navigation";
+
+    let mobileMenu = $state();
+    const closeMobileMenu = () => {
+        mobileMenu.hide();
+    }
 </script>
 
 <nav>
     <button type="button" class="menu" title="Menu" popovertarget="mobile-menu">
         <i class="menu ph ph-list"></i>
     </button>
-    <div class="mobile-menu" id="mobile-menu" popover>
+    <div class="mobile-menu" id="mobile-menu" popover bind:this={mobileMenu}>
         <button class="btn-mobile-menu-close" type="button" popovertarget="mobile-menu" popovertargetaction="hide">
             <i class="ph ph-x"></i> Close
         </button>
-        <a href="/" title="Home" class:active={page.url.pathname === '/'}>Home</a>
-        <a href="/expertise" title="Expertise" class:active={page.url.pathname.startsWith('/expertise')}>Expertise</a>
-        <a href="/team" title="The Team" class:active={page.url.pathname.startsWith('/team')}>The Team</a>
-        <a href="/guide" title="Guide" class:active={page.url.pathname.startsWith('/guide')}>Guide</a>
-        <a href="/contact" title="Contact Us" class:active={page.url.pathname.startsWith('/contact')}>Contact Us</a>
+        <a href="/" title="Home"
+            class:active={page.url.pathname === '/'}
+            onclick={closeMobileMenu}>Home</a>
+        <a href="/expertise" title="Expertise"
+            class:active={page.url.pathname.startsWith('/expertise')}
+            onclick={closeMobileMenu}>Expertise</a>
+        <a href="/team" title="The Team"
+            class:active={page.url.pathname.startsWith('/team')}
+            onclick={closeMobileMenu}>The Team</a>
+        <a href="/guide" title="Guide"
+            class:active={page.url.pathname.startsWith('/guide')}
+            onclick={closeMobileMenu}>Guide</a>
+        <a href="/contact" title="Contact Us"
+            class:active={page.url.pathname.startsWith('/contact')}
+            onclick={closeMobileMenu}>Contact Us</a>
     </div>
     <ul>
         <li><a href="/" title="Home" class:active={page.url.pathname === '/'}>Home</a></li>

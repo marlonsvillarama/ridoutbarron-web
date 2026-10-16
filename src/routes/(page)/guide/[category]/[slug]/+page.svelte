@@ -35,11 +35,11 @@
         </div>
 
         <aside>
-            <div class="stay-informed">
+            <!-- <div class="stay-informed">
                 <h3>Stay Informed</h3>
                 <p>Get the latest guides and insights delivered to your inbox.</p>
                 <button type="button">Subscribe</button>
-            </div>
+            </div> -->
 
             <section>
                 <h2>Other articles in this category</h2>
@@ -50,7 +50,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="categories">
                 <h2>Browse other categories</h2>
                 <div class="content">
                     {#each data.categories as category}
@@ -68,8 +68,14 @@
     }
     .article > .split {
         display: flex;
-        align-items: flex-start;
-        gap: 5rem;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    @media (min-width: 60rem) {
+        .article > .split {
+            flex-direction: row;
+            align-items: flex-start;
+        }
     }
     .article > .split > .content {
         flex: 1;
@@ -107,22 +113,31 @@
     }
     :global(.article > .split > .content > blockquote) {
         background-color: var(--accent-bg-lighter);
-        width: 75%;
+        width: min(30rem, 100%);
         margin: 1rem auto;
-        padding: 2rem 3rem;
-        font: 400 1.5rem var(--font-serif);
+        padding: clamp(1rem, 2vw, 2rem) clamp(2rem, 2vw, 3rem);
+        font: 400 clamp(1.25rem, 3vw, 1.5rem) var(--font-serif);
         line-height: 2.5rem;
         color: var(--dark);
+    }
+    @media (min-width: 60rem) {
+        :global(.article > .split > .content > blockquote) {
+            width: 75%;
+        }
     }
     :global(.article > .split > .content > ol > li) {
         margin-inline-start: 2rem;
         line-height: 1.5rem;
     }
     .article > .split > aside {
-        width: min(30%, 22rem);
         display: flex;
         flex-direction: column;
         gap: 3rem;
+    }
+    @media (min-width: 60rem) {
+        .article > .split > aside {
+            width: min(30%, 22rem);
+        }
     }
     .article > .split > aside > .stay-informed {
         background:
@@ -167,6 +182,12 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+    @media (min-width: 40rem) {
+    .article > .split > aside > .categories > .content {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
     .article > .split > aside > section > ul > li {
         margin-inline-start: 1rem;

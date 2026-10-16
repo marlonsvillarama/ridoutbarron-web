@@ -6,21 +6,28 @@
         fullname = '',
         role = '',
         children,
-        onOpen
+        onOpen = () => {},
+        open = false
     } = $props();
 
-    let isOpen = $state(false);
+    // let isOpen = $state(open);
+
+    const toggleBio = () => {
+        open = !open;
+        onOpen(open);
+    };
 </script>
 
 <div class="profile" {id} style="background-image: url({image});">
-    <div class="details" class:read={isOpen === true}>
+    <div class="details" class:read={open === true}>
         <div class="name">{fullname}</div>
         <div class="role">{role}</div>
-        <div class="bio" class:visible={isOpen === true}>
+        <button type="button" class="profile-btn" data-id={id} onclick={toggleBio} class:hidden={open === true}>{name}'s profile</button>
+        <div class="bio" class:visible={open === true}>
             {@render children?.()}
         </div>
+        <button type="button" class="profile-btn" data-id={id} onclick={toggleBio} class:hidden={open === false}>Close</button>
     </div>
-    <button type="button" class="profile-btn" data-id={id} onclick={() => isOpen = !isOpen}><i class="ph ph-info"></i> Profile</button>
 </div>
 
 <style>
@@ -35,10 +42,10 @@
     }
     .profile > .details {
         position: absolute;
-        top: 80%;
+        top: calc(100% - 10rem);
         left: 0;
         right: 0;
-        min-height: 100%;
+        height: 200%;
         background: linear-gradient(to bottom, transparent 0%, var(--dark-bg-semi-opaque) 10%, var(--dark-bg-semi-opaque) 100%);
         padding: 2rem 1.5rem;
         display: flex;
@@ -51,7 +58,7 @@
     }
     .profile > .details > .name {
         display: block;
-        font: 600 clamp(0.875rem, 2vw, 1.25rem) var(--font-default);
+        font: 600 clamp(1.125rem, 2vw, 1.25rem) var(--font-default);
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -64,7 +71,7 @@
         text-align: center;
         opacity: 0.6;
         color: var(--white);
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
     :global(.profile > .details > .bio) {
         opacity: 0;
@@ -74,14 +81,14 @@
     }
     :global(.profile > .details > .bio.visible > p) {
         color: var(--off-white);
-        font-size: clamp(0.875rem, 2vw, 1rem);
+        font-size: clamp(0.875rem, 1vw, 1rem);
         line-height: 1.25rem;
-        padding: 0.75rem 1.5rem;
+        padding: 0.5rem 0;
         text-decoration: none;
         transition: opacity 500ms ease;
     }
-    .profile > .profile-btn {
-        position: absolute;
+    .profile > .details > .profile-btn {
+        /* position: absolute; */
         top: 0%;
         right: 0%;
         background-color: var(--accent);
@@ -89,18 +96,23 @@
         align-items: center;
         justify-content: center;
         color: var(--white);
-        padding: 0.75rem 1.5rem;
+        padding: 0.625rem 1.5rem;
         border: 0;
-        border-bottom-left-radius: 1rem;
+        border-radius: 3rem;
         cursor: pointer;
         transition: background-color 150ms ease;
+        width: 10rem;
+        margin: 0 auto 0.375rem;
     }
-    .profile > .profile-btn:hover {
+    .profile > .details > .profile-btn.hidden {
+        display: none;
+    }
+    /* .profile > .details > .profile-btn:hover {
         background-color: var(--accent);
-    }
-    .profile > .profile-btn > i {
+    } */
+    /* .profile > .profile-btn > i {
         font-size: 1.25rem;
         margin-right: 0.375rem;
         color: var(--white);
-    }
+    } */
 </style>

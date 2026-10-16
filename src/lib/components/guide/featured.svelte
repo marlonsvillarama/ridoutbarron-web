@@ -48,7 +48,7 @@
         letter-spacing: -0.25px;
     }
     article > .content > .top > .title {
-        font: 400 1.5rem var(--font-serif);
+        font: 400 clamp(1.25rem, 3vw, 1.5rem) var(--font-serif);
         margin-bottom: 1rem;
         line-clamp: 1;
         display: -webkit-box;

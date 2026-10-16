@@ -6,7 +6,7 @@
         <p>
             Legal matters can be complicated. Talking to your lawyer shouldn't be. We keep things clear, practical, and human.
         </p>
-        <a href="/" title="Meet The Team" class="cta">Meet The Team</a>
+        <a href="/team" title="Meet The Team" class="cta">Meet The Team</a>
     </div>
 </section>
 

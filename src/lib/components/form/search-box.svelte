@@ -9,7 +9,7 @@
         <i class="ph ph-magnifying-glass"></i>
         <input type="text" id="search-text" placeholder="Search here...">
     </div>
-    <button type="button" onclick={onsearch}>Search</button>
+    <!-- <button type="button" onclick={onsearch}>Search</button> -->
 </div>
 
 <style>
@@ -21,6 +21,7 @@
     }
     .search-box {
         border-radius: 0.25rem;
+        width: 100%;
     }
     .search-box > i {
         color: var(--accent);
@@ -35,7 +36,12 @@
         border: 1px solid var(--accent-lightest);
         border-radius: 0.25rem;
         font-size: 1rem;
-        width: 20rem;
+        width: 100%;
+    }
+    @media (min-width: 60rem) {
+        .search-box > input[type=text] {
+            width: 20rem;
+        }
     }
     .search-box > input[type=text]:focus {
         outline: 2px solid var(--accent);

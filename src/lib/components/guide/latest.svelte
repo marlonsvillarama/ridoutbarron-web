@@ -29,20 +29,35 @@
     .latest {
         color: var(--darkest);
         cursor: pointer;
+        padding: 1rem;
         position: relative;
-        padding: 1rem 1rem 1rem 3rem;
         text-decoration: none;
         transition: background-color 150ms ease;
+        border: 1px solid var(--accent-very-light);
     }
-    .latest:hover {
-        background-color: var(--accent-very-light);
+    @media (min-width: 40rem) {
+        .latest {
+            background-color: transparent;
+            padding-left: 3rem;
+        }
+    }
+    @media (min-width: 60rem) {
+        .latest:hover {
+            background-color: var(--accent-very-light);
+        }
     }
     .latest > i {
-        position: absolute;
-        top: 12px;
-        left: 0.5rem;
-        font-size: 2rem;
-        color: var(--accent);
+        display: none;
+    }
+    @media (min-width: 40rem) {
+        .latest > i {
+            display: block;
+            position: absolute;
+            top: 12px;
+            left: 0.5rem;
+            font-size: 2rem;
+            color: var(--accent);
+        }
     }
     .latest > h4 {
         font: 600 1.25rem var(--font-default);
@@ -52,17 +67,35 @@
         font: 400 0.875rem var(--font-default);
         opacity: 0.7;
         display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin: 0.25rem 0 0.5rem;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 0.25rem;
+        margin: 1rem 0;
+    }
+    @media (min-width: 40rem) {
+        .latest > .subheader {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
     }
     .latest > .subheader > .category {
         color: var(--accent);
         font-weight: 600;
         text-transform: uppercase;
     }
+    .latest > .subheader > .date {
+        opacity: 0.6;
+        font-style: italic;
+    }
     .latest > .subheader > i {
-        font-size: 1.5rem;
+        display: none;
+    }
+    @media (min-width: 40rem) {
+        .latest > .subheader > i {
+            display: inline-block;
+            font-size: 1.5rem;
+        }
     }
     .latest > p.brief {
         letter-spacing: -0.25px;
@@ -71,6 +104,11 @@
         width: 100%;
         font-size: 0.875rem;
         opacity: 0.7;
+        line-clamp: 3;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .latest > .read {
         /* color: var(--accent); */

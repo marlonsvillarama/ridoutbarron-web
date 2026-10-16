@@ -26,7 +26,7 @@
             <h1>{data.category.name}</h1>
             <span class="subheader">{data.category.count} {data.category.count === 1 ? 'article' : 'articles'}</span>
         </div>
-        <SearchBox />
+        <SearchBox onsearch={() => {}} />
     </div>
 
     <div class="split">
@@ -60,17 +60,42 @@
     }
     .category > .header {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        /* gap: 0.5rem; */
+        flex-direction: column;
+        gap: 0.5rem;
         margin-bottom: 2rem;
         padding-bottom: 1.5rem;
         border-bottom: 1px solid var(--accent-lightest);
     }
+    @media (min-width: 60rem) {
+        .category > .header {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    /* .categories > .split {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    @media (min-width: 40rem) {
+        .categories > .split {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    } */
     .category > .split {
         display: flex;
-        align-items: flex-start;
-        gap: 5rem;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    @media (min-width: 60rem) {
+        .category > .split {
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* align-items: flex-start; */
+            gap: 3rem;
+        }
     }
     .category > .split > .list {
         flex: 1;
@@ -80,10 +105,14 @@
     }
     .category > .split > aside {
         /* border: 1px solid red; */
-        width: min(30%, 22rem);
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+    @media (min-width: 60rem) {
+        .category > .split > aside {
+            width: min(30%, 22rem);
+        }
     }
     .category > .split > aside > h2 {
         font: 400 1.5rem var(--font-serif);
@@ -95,5 +124,11 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+    @media (min-width: 40rem) {
+        .category > .split > aside > .content {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 </style>
