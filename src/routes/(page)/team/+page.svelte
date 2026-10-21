@@ -1,6 +1,6 @@
 <script>
-// @ts-nocheck
-
+    // @ts-nocheck
+    import { reveal } from "#lib/reveal.js";
     import Hero from "#lib/components/page/hero.svelte";
     import Profile from "#lib/components/team/profile.svelte";
 
@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Hero
-    background="/images/page/team_wacky.webp"
+    background="/images/page/lion-bridge.avif"
     texts={[
         'At Ridout Barron, our barristers and solicitors are easy to work with and will try to find creative solutions to our clients\' problems.',
         'Throughout our history, we have maintained our principles of integrity, quality, and flexibility. Our clients\' success has always been our first priority.'
@@ -22,7 +22,7 @@
 
 <main class="container">
     <section>
-        <div class="group">
+        <div class="group reveal-section" use:reveal>
             <h2>Our Lawyers</h2>
             <div class="row">
                 <Profile id="peter" name="Peter" fullname="Peter W. K. Ridout"
@@ -54,7 +54,7 @@
                 </Profile>
             </div>
         </div>
-        <div class="group">
+        <div class="group reveal-section" use:reveal>
             <h2>Our Staff</h2>
             <div class="row">
                 <Profile id="robin" name="Robin" fullname="Robin Ewing"
@@ -77,7 +77,7 @@
                     open={viewProfile === 'marielle'}
                     onOpen={(value) => viewProfile = value ? 'marielle' : ''}>
                     <p>Marielle has a PhD from the Southern Alberta Institute of Technology.</p>
-                    <p>She is an entrepreneur at heart and dreams of owning and operating a chain of fish ball carts. She wants to start her own fish ball mafia in the Philippines.</p>
+                    <p>She is an entrepreneur at heart and dreams of owning and operating a chain of fish ball and fried chicken neck carts. She wants to start her own fish ball mafia in the Philippines.</p>
                     <p>Marielle also recently became a Permanent Resident. Yehey!</p>
                 </Profile>
             </div>
@@ -90,7 +90,9 @@
         align-items: flex-start;
         display: flex;
         gap: 3rem;
-        margin: 3rem auto 5rem;
+        /* margin: 3rem auto 5rem; */
+        margin: 0 auto;
+        padding-bottom: 5rem;
     }
     section {
         flex: 1;

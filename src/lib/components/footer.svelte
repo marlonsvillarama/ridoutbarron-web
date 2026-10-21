@@ -1,8 +1,9 @@
 <script>
-    import { getCategories, getCategory, getPostsInCategory } from '#lib/posts';
+    import { reveal } from '#lib/reveal.js';
+    import { getCategories } from '#lib/posts.js';
 </script>
 
-<footer>
+<footer class="reveal-section" use:reveal>
     <div class="container split">
         <section class="logo">
             <img src="/images/ridoutbarron_logo-001.webp" alt="Ridout Barron" />

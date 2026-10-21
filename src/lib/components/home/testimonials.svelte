@@ -1,13 +1,25 @@
 <script>
 // @ts-nocheck
 
+    import { reveal } from "#lib/reveal.js";
     import { onMount } from "svelte";
+    import { fade } from "svelte/transition";
 
     const items = [
+        {
+            author: 'Avigail Eisenberg',
+            info: '',
+            text: 'I am so grateful for Jacqui\'s hard work on my mother\'s estate. It was wonderful working with her. She has a balanced and effective way of handling difficult moments, which is the perfect attribute in one\'s lawyer. I expect she has many devoted clients.'
+        },
         {
             author: 'Gregory Davis',
             info: 'Client for 15 years',
             text: 'I have been enlisting the services of Ridout Barron off and on for the last 15 years. They are wonderful people and operate a competent, professional, knowledgeable, and personable firm. Additionally, they are available, easy to contact, and a friendly human voice greets you when you call.'
+        },
+        {
+            author: 'Ilana Krygier Lapides',
+            info: '',
+            text: 'When my mother passed away, I had the good fortune to be guided by Ridout Barron to assist with the settling of her estate. Without exception, the service and care i received was excellent... I highly recommend Ridout Barron to anyone seeking legal assistance - you will be glad you did.'
         },
     ];
     let timer;
@@ -19,11 +31,11 @@
     };
 
     onMount(() => {
-        timer = setInterval(nextTestimonial, 3000);
+        timer = setInterval(nextTestimonial, 6000);
     });
 </script>
 
-<section id="testimonials">
+<section id="testimonials" use:reveal class="reveal-section staggered">
     <div class="container split">
         <div class="content">
             <h2>What Our Clients Say</h2>
@@ -31,13 +43,18 @@
                 <div class="testimonial">
                     <i class="ph-fill ph-quotes"></i>
                     <div class="content">
-                        <div class="quote">
+                        <!-- {#each [items[index]] as item (index)} -->
+                        <div class="quote"
+                            in:fade={{ duration: 500 }}
+                            out:fade={{ duration: 500 }}
+                        >
                             <p>{items[index]?.text}</p>
                             <div class="footer">
                                 <span class="author">{items[index]?.author}</span>
                                 <span class="info">{items[index]?.info}</span>
                             </div>
                         </div>
+                        <!-- {/each} -->
                     </div>
                 </div>
             </div>
@@ -53,7 +70,10 @@
 
 <style>
     #testimonials {
-        background-color: var(--off-white);
+        background:
+            /* linear-gradient(160deg, var(--white) 40%, transparent 300%), */
+            radial-gradient(circle at 30% 40%, var(--white) 0%, transparent 1000%),
+            url(/images/svg/5.svg) top left repeat;
         position: relative;
         padding: 0;
         overflow: hidden;
@@ -65,7 +85,7 @@
         #testimonials > .split {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            align-items: center;
+            align-items: flex-start;
             gap: 3rem;
         }
     }
@@ -75,6 +95,7 @@
     #testimonials > .split > .content > h2 {
         color: var(--accent);
         font: 500 clamp(2rem, 5vw, 2.5rem) var(--font-serif);
+        margin-top: 4rem;
         margin-bottom: 1rem;
         text-align: center;
     }

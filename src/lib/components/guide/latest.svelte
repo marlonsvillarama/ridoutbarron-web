@@ -27,6 +27,7 @@
 
 <style>
     .latest {
+        background-color: var(--white);
         color: var(--darkest);
         cursor: pointer;
         padding: 1rem;
@@ -34,10 +35,11 @@
         text-decoration: none;
         transition: background-color 150ms ease;
         border: 1px solid var(--accent-very-light);
+        box-shadow: var(--shadow);
     }
     @media (min-width: 40rem) {
         .latest {
-            background-color: transparent;
+            /* background-color: transparent; */
             padding-left: 3rem;
         }
     }

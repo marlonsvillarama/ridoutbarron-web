@@ -1,11 +1,17 @@
 <script>
     import { page } from "$app/state";
-    // import { afterNavigate } from "$app/navigation";
+    import { afterNavigate } from "$app/navigation";
 
     let mobileMenu = $state();
     const closeMobileMenu = () => {
         mobileMenu.hide();
     }
+
+    afterNavigate(() => {
+        if (mobileMenu && mobileMenu.matches(':popover-open')) {
+            mobileMenu.hidePopover();
+        }
+    })
 </script>
 
 <nav>
@@ -18,19 +24,19 @@
         </button>
         <a href="/" title="Home"
             class:active={page.url.pathname === '/'}
-            onclick={closeMobileMenu}>Home</a>
+            >Home</a>
         <a href="/expertise" title="Expertise"
             class:active={page.url.pathname.startsWith('/expertise')}
-            onclick={closeMobileMenu}>Expertise</a>
+            >Expertise</a>
         <a href="/team" title="The Team"
             class:active={page.url.pathname.startsWith('/team')}
-            onclick={closeMobileMenu}>The Team</a>
+            >The Team</a>
         <a href="/guide" title="Guide"
             class:active={page.url.pathname.startsWith('/guide')}
-            onclick={closeMobileMenu}>Guide</a>
+            >Guide</a>
         <a href="/contact" title="Contact Us"
             class:active={page.url.pathname.startsWith('/contact')}
-            onclick={closeMobileMenu}>Contact Us</a>
+            >Contact Us</a>
     </div>
     <ul>
         <li><a href="/" title="Home" class:active={page.url.pathname === '/'}>Home</a></li>

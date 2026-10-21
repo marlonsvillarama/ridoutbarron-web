@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import Crumbs from "../../../../lib/components/crumbs.svelte";
     import SearchBox from "../../../../lib/components/form/search-box.svelte";
     import Latest from "../../../../lib/components/guide/latest.svelte";
@@ -56,7 +58,10 @@
 
 <style>
     .category {
-        margin: 7rem auto 5rem;
+        /* margin: 7rem auto 5rem; */
+        margin: 0 auto;
+        padding-top: 7rem;
+        padding-bottom: 5rem;
     }
     .category > .header {
         display: flex;

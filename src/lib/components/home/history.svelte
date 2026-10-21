@@ -1,4 +1,5 @@
 <script>
+    import { reveal } from "#lib/reveal.js";
     import TimelinePeriod from "./timeline-period.svelte";
 
     const periods = [
@@ -26,7 +27,7 @@
     ];
 </script>
 
-<section id="history">
+<section id="history" use:reveal class="reveal-section staggered">
     <div class="container">
         <div>
             <h2>We're almost as old as Calgary!</h2>

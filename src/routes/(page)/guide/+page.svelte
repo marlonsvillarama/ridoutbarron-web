@@ -92,7 +92,9 @@
         display: flex;
         flex-direction: column;
         gap: 3rem;
-        margin: 3rem auto 5rem;
+        /* margin: 3rem auto 5rem; */
+        margin: 0 auto;
+        padding-bottom: 5rem;
     }
     :global(.guide > .header > .categories > li > a.active) {
         color: var(--accent);

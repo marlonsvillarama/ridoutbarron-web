@@ -38,10 +38,13 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        /* border: 1px solid red; */
         border-bottom: 1px solid var(--accent-lightest);
-        padding: 4rem 0;
+        padding: 0;
         margin-bottom: 3rem;
         position: relative;
+        /* height: 100vh; */
+
     }
     /* @media (min-width: 60rem) {
         .hero {
@@ -53,7 +56,8 @@
         position: absolute;
         inset: 0;
         width: 100%;
-        height: 35rem;
+        height: 100vh;
+        /* height: 35rem; */
         object-fit: cover;
     }
     .hero > .overlay {
@@ -64,14 +68,18 @@
     }
     @media (min-width: 40rem) {
         .hero {
-            height: 35rem;
+            /* height: 35rem; */
+            height: 100vh;
             border: 0;
         }
         .hero > img {
             display: block;
         }
         .hero > .overlay {
-            background: linear-gradient(to right, var(--off-white) 50%, transparent 120%);
+            background:
+                /* url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat, */
+                radial-gradient(circle at 20% 25%, var(--off-white) 0%, transparent 150%);
+                /* linear-gradient(150deg, transparent -200%, var(--white) 30%, transparent 80%, transparent 200%); */
             display: block;
         }
         .hero > .container > .slogan {
@@ -81,16 +89,19 @@
     .hero > .container {
         height: 100%;
         margin: 0 auto;
-        padding: 4rem 0 0;
+        padding: 6rem 0 3rem;
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        /* justify-content: center; */
     }
     .hero > .container > .slogan {
         width: 100%;
     }
     @media (min-width: 40rem) {
+        .hero > .container {
+            padding-top: 10rem;
+        }
         .hero > .container > .slogan {
             width: 60%;
         }
@@ -102,7 +113,7 @@
     }
     .hero > .container > .slogan > p {
         color: var(--darkest);
-        line-height: 1.5rem;
+        line-height: 1.75rem;
         opacity: 0.8;
     }
     .hero > .container > .slogan > p:not(:last-child) {

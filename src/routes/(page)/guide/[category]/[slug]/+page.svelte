@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import Crumbs from "#lib/components/crumbs.svelte";
     import Category from "#lib/components/guide/category.svelte";
 
@@ -64,7 +66,10 @@
 
 <style>
     .article {
-        margin: 7rem auto 5rem;
+        /* margin: 7rem auto 5rem; */
+        margin: 0 auto;
+        padding-top: 7rem;
+        padding-bottom: 5rem;
     }
     .article > .split {
         display: flex;

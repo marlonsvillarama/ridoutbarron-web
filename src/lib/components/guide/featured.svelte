@@ -24,6 +24,7 @@
         flex: 1;
         display: flex;
         gap: 1rem;
+        background-color: var(--white);
     }
     article > .image {
         width: 9rem;

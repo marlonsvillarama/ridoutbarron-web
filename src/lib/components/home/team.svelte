@@ -1,4 +1,8 @@
-<section id="team">
+<script>
+    import { reveal } from "#lib/reveal.js";
+</script>
+
+<section id="team" use:reveal class="reveal-section staggered">
     <div class="overlay"></div>
     <div class="container">
         <h2>Who We Are</h2>

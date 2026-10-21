@@ -1,4 +1,6 @@
 <script>
+    import { reveal } from "#lib/reveal.js";
+
     let {
         id = '',
         image = "",
@@ -18,7 +20,7 @@
     };
 </script>
 
-<div class="profile" {id} style="background-image: url({image});">
+<div class="profile reveal-section staggered" use:reveal {id} style="background-image: url({image});">
     <div class="details" class:read={open === true}>
         <div class="name">{fullname}</div>
         <div class="role">{role}</div>
@@ -79,7 +81,7 @@
     :global(.profile > .details > .bio.visible) {
         opacity: 0.8;
     }
-    :global(.profile > .details > .bio.visible > p) {
+    :global(.profile > .details > .bio > p) {
         color: var(--off-white);
         font-size: clamp(0.875rem, 1vw, 1rem);
         line-height: 1.25rem;
@@ -87,11 +89,15 @@
         text-decoration: none;
         transition: opacity 500ms ease;
     }
+    :global(.profile > .details > .bio > p:last-child) {
+        margin-bottom: 1rem;
+    }
     .profile > .details > .profile-btn {
         /* position: absolute; */
         top: 0%;
         right: 0%;
         background-color: var(--accent);
+        font-size: clamp(0.875rem, 1vw, 1rem);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -102,7 +108,7 @@
         cursor: pointer;
         transition: background-color 150ms ease;
         width: 10rem;
-        margin: 0 auto 0.375rem;
+        margin: 0.25rem auto 0.375rem;
     }
     .profile > .details > .profile-btn.hidden {
         display: none;

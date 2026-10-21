@@ -14,6 +14,7 @@
 
 <style>
     .category-item {
+        background-color: var(--white);
         border: 1px solid var(--accent-lightest);
         cursor: pointer;
         padding: 1rem;

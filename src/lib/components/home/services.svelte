@@ -1,4 +1,5 @@
 <script>
+    import { reveal } from "#lib/reveal.js";
     import ServiceCard from "./service-card.svelte";
 
     const cards = [
@@ -45,7 +46,7 @@
     ];
 </script>
 
-<section id="services">
+<section id="services" use:reveal class="reveal-section staggered">
     <div class="container split">
         <h2>What We Do</h2>
         <p class="blurb">

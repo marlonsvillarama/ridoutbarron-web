@@ -1,4 +1,8 @@
-<section id="brief">
+<script>
+    import { reveal } from "#lib/reveal.js";
+</script>
+
+<section id="brief" use:reveal class="reveal-section">
     <div class="container split">
         <div class="slogan">
             <span class="s">Clear advice</span><i class="ph ph-dot"></i>
@@ -16,7 +20,11 @@
     #brief {
         margin: 0;
         padding: 0;
-        background-color: var(--off-white);
+        /* background-color: var(--off-white); */
+        background:
+            radial-gradient(circle at 30% 40%, var(--white) 0%, transparent 1000%),
+            /* linear-gradient(160deg, var(--white) 30%, transparent 500%), */
+            url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat;
     }
     #brief > .split {
         padding: clamp(3.5rem, 5vw, 5rem) 0;
