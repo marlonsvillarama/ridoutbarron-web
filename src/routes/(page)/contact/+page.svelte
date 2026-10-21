@@ -104,7 +104,7 @@
         flex-direction: column;
         /* margin: 3rem auto 5rem; */
         margin: 0 auto;
-        padding-top: 7rem;
+        /* padding-top: 7rem; */
         padding-bottom: 5rem;
     }
     @media (min-width: 60rem) {
