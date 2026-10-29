@@ -18,9 +18,10 @@
         'Throughout our history, we have maintained our principles of integrity, quality, and flexibility. Our clients\' success has always been our first priority.'
     ]}
     title="Meet The Team"
+    onreadmore={() => { document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}}
 />
 
-<main class="container">
+<main class="container" id="team">
     <section>
         <div class="group reveal-section" use:reveal>
             <h2>Our Lawyers</h2>
@@ -93,6 +94,7 @@
         /* margin: 3rem auto 5rem; */
         margin: 0 auto;
         padding-bottom: 5rem;
+        scroll-margin-top: 6rem;
     }
     section {
         flex: 1;

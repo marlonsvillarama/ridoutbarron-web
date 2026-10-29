@@ -36,9 +36,10 @@
         'Our guides and resources offer plain-language insights on legal topics that matter to individuals, businesses, and organizations in Alberta.'
     ]}
     title="Guides & Resources"
+    onreadmore={() => { document.getElementById('guide')?.scrollIntoView({ behavior: 'smooth' })}}
 />
 
-<main class="guide container">
+<main class="guide container" id="guide">
     <section class="categories">
         <h3>Browse Guides By Category</h3>
         <div class="split">
@@ -95,6 +96,7 @@
         /* margin: 3rem auto 5rem; */
         margin: 0 auto;
         padding-bottom: 5rem;
+        scroll-margin-top: 6rem;
     }
     :global(.guide > .header > .categories > li > a.active) {
         color: var(--accent);

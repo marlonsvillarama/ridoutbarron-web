@@ -4,11 +4,12 @@
     import Nav from "./nav.svelte";
 
     let scrollY = $state(0);
+    //  || page.url.pathname.length > 1
 </script>
 
 <svelte:window bind:scrollY />
 
-<header class:scrolled={scrollY > 50 || page.url.pathname.length > 1}>
+<header class:scrolled={scrollY > 50}>
     <div class="container">
         <Logo />
         <Nav />

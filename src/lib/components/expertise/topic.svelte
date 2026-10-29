@@ -20,7 +20,7 @@
             {@render content?.()}
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <aside>
             <h2>Meet The Team</h2>
             <span class="subheader">Who you will work with</span>
@@ -28,7 +28,7 @@
         <div class="team">
             {@render team?.()}
         </div>
-    </div>
+    </div> -->
 </div>
 
 <style>
@@ -42,6 +42,7 @@
         /* align-items: flex-start; */
         gap: 2rem;
         /* justify-content: space-between; */
+        padding-bottom: 5rem;
     }
     :global(.topic > .row) {
         display: flex;
@@ -115,11 +116,15 @@
     :global(.topic > .row > .content > ul) {
         list-style-type: none;
     }
-    :global(.topic > .row > .content > ul > li) {
+    :global(.topic > .row > .content > ul > li),
+    :global(.topic > .row > .content > ol > li) {
         margin-inline-start: 1.5rem;
         margin-block-end: 0.5rem;
         opacity: 0.8;
         line-height: 1.75rem;
+    }
+    :global(.topic > .row > .content > ol > li) {
+        margin-inline-start: 2.5rem;
     }
     .hidden {
         display: none;

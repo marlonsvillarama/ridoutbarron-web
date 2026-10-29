@@ -1,9 +1,22 @@
 <script>
 // @ts-nocheck
 
+    import { page } from "$app/state";
     import Hero from "#lib/components/page/hero.svelte";
     import Field from "#lib/components/form/field.svelte";
+    import { onMount } from "svelte";
+    import { browser } from "$app/env";
     // import FieldText from "#lib/components/form/field-text.svelte";
+
+    onMount(() => {
+        let params = page.url.searchParams;
+        if (browser) {
+            window.alert(`params = ${params}`);
+        }
+        if (params.get('form')) {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 </script>
 
 <svelte:head>
@@ -17,9 +30,10 @@
         'Reach out for a confidential conversation - no obligation, just practical advice.'
     ]}
     title="Contact Us"
+    onreadmore={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}}
 />
 
-<main class="container">
+<main class="container" id="contact">
     <section>
         <h2>Send Us A Message</h2>
         <p class="blurb">Fill out the form below and a member of our team will be in touch shortly.</p>
@@ -106,6 +120,7 @@
         margin: 0 auto;
         /* padding-top: 7rem; */
         padding-bottom: 5rem;
+        scroll-margin-top: 6rem;
     }
     @media (min-width: 60rem) {
         main {

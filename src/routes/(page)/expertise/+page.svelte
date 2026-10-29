@@ -3,6 +3,9 @@
     import Topic from "#lib/components/expertise/topic.svelte";
     import Litigation from "#lib/components/expertise/litigation.svelte";
     import LitigationImage from "#lib/components/expertise/litigation-image.svelte";
+    import Corporate from "#lib/components/expertise/corporate.svelte";
+    import RealEstate from "#lib/components/expertise/real-estate.svelte";
+    import WillsEstate from "#lib/components/expertise/wills-estate.svelte";
 
     const topics = [{
         id: 'litigation',
@@ -26,7 +29,8 @@
             'Minute Book Upkeep',
             'Shareholder Matters',
             'Commercial Disputes'
-        ]
+        ],
+        content: Corporate
     }, {
         id: 'real-estate',
         label: 'Real Estate',
@@ -35,7 +39,8 @@
             'Residential Sales',
             'Refinancing & Mortgages',
             'Commercial Real Estate'
-        ]
+        ],
+        content: RealEstate
     }, {
         id: 'wills',
         label: 'Wills & Estates',
@@ -44,7 +49,8 @@
             'Enduring Power of Attorney',
             'Personal Directives',
             'Probate & Estate Administration'
-        ]
+        ],
+        content: WillsEstate
     }];
 
     let selectedTopic = $state(topics[0].id);
@@ -60,9 +66,10 @@
         'At Ridout Barron, our clients\' success is our priority. We understand that spending money and time on legal help is something most people wish to avoid. We strive to give our clients excellent value for the time and money they spend.'
     ]}
     title="Our Expertise"
+    onreadmore={() => { document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}}
 />
 
-<main class="container">
+<main class="container" id="expertise">
     <!-- <h2>What We Do</h2> -->
     <div class="tabs">
         {#each topics as topic, index}
@@ -87,6 +94,7 @@
         flex-direction: column;
         /* gap: 3rem; */
         margin: 0 auto;
+        scroll-margin-top: 6rem;
     }
     /* section {
         flex: 1;
@@ -101,7 +109,7 @@
     main > .tabs {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 2rem;
         margin-bottom: 1.5rem;
     }
     main > .tabs > button {

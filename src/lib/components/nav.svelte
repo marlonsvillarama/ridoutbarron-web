@@ -92,7 +92,7 @@
         transition: background-color 150ms ease;
     }
     nav > ul > li > :global(a.active) {
-        background-color: var(--accent);
+        background-color: var(--accent-dark);
     }
     nav > ul > li > a:not(.active):hover {
         background-color: var(--darker);

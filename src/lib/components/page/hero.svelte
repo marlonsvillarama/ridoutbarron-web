@@ -4,7 +4,8 @@
     let {
         background = '',
         texts = [],
-        title = 'Title'
+        title = 'Title',
+        onreadmore
     } = $props();
 
     // const small = new MediaQuery('min-width: 40rem');
@@ -29,6 +30,7 @@
                 <p>{text}</p>
             {/each}
         </div>
+        <button type="button" class="cta" onclick={onreadmore}>Read More <i class="ph ph-arrow-down"></i></button>
     </div>
 </div>
 
@@ -62,7 +64,8 @@
     }
     .hero > .overlay {
         display: none;
-        background-color: var(--white);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 120%);
+        /* background-color: var(--white); */
         position: absolute;
         inset: 0;
     }
@@ -76,10 +79,11 @@
             display: block;
         }
         .hero > .overlay {
-            background:
+            /* background: */
                 /* url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat, */
-                radial-gradient(circle at 20% 25%, var(--off-white) 0%, transparent 150%);
+                /* radial-gradient(circle at 20% 25%, var(--off-white) 0%, transparent 150%); */
                 /* linear-gradient(150deg, transparent -200%, var(--white) 30%, transparent 80%, transparent 200%); */
+            /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 80%); */
             display: block;
         }
         .hero > .container > .slogan {
@@ -89,14 +93,16 @@
     .hero > .container {
         height: 100%;
         margin: 0 auto;
-        padding: 6rem 0 3rem;
+        padding: 6rem 0 5rem;
         position: relative;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
+        align-items: flex-start;
+        justify-content: space-between;
     }
     .hero > .container > .slogan {
         width: 100%;
+        /* border: 1px solid red; */
     }
     @media (min-width: 40rem) {
         .hero > .container {
@@ -107,16 +113,35 @@
         }
     }
     .hero > .container > .slogan > h1 {
-        color: var(--accent);
+        /* color: var(--accent); */
+        color: var(--white);
         font: 400 clamp(2.5rem, 3vw, 4rem) var(--font-serif);
         margin-bottom: 1rem;
     }
     .hero > .container > .slogan > p {
-        color: var(--darkest);
+        /* color: var(--darkest); */
+        color: var(--off-white);
         line-height: 1.75rem;
         opacity: 0.8;
     }
     .hero > .container > .slogan > p:not(:last-child) {
         margin-bottom: 1rem;
+    }
+    .hero > .container > .cta {
+        background-color: var(--accent-dark);
+        border: 0;
+        border-radius: 3rem;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 1rem;
+        outline: 0;
+        padding: 1rem 2rem;
+        transition: background-color 150ms ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .hero > .container > .cta:hover {
+        background-color: var(--accent);
     }
 </style>
