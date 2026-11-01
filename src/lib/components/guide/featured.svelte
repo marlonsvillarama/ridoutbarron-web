@@ -11,7 +11,7 @@
     <!-- <div class="image"></div> -->
     <div class="content">
         <div class="top">
-            <span class="category">{category}</span>
+            <!-- <span class="category">{category}</span> -->
             <span class="title">{title}</span>
             <p>{brief}</p>
         </div>
@@ -26,11 +26,11 @@
         gap: 1rem;
         background-color: var(--white);
     }
-    article > .image {
+    /* article > .image {
         width: 9rem;
         height: 10rem;
         border: 1px solid green;
-    }
+    } */
     article > .content {
         display: flex;
         flex-direction: column;
@@ -42,12 +42,12 @@
         display: flex;
         flex-direction: column;
     }
-    article > .content > .top > .category {
+    /* article > .content > .top > .category {
         color: var(--accent);
         font-size: 0.875rem;
         text-transform: uppercase;
         letter-spacing: -0.25px;
-    }
+    } */
     article > .content > .top > .title {
         font: 400 clamp(1.25rem, 3vw, 1.5rem) var(--font-serif);
         margin-bottom: 1rem;
@@ -61,6 +61,7 @@
         font-size: 0.875rem;
         opacity: 0.6;
         line-clamp: 2;
+        line-height: 1.25rem;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;

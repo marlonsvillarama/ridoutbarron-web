@@ -2,6 +2,7 @@
     import { page } from "$app/state";
     import { afterNavigate } from "$app/navigation";
 
+    let scrollY = $state(0);
     let mobileMenu = $state();
     const closeMobileMenu = () => {
         mobileMenu.hide();
@@ -14,13 +15,15 @@
     })
 </script>
 
+<svelte:window bind:scrollY />
+
 <nav>
-    <button type="button" class="menu" title="Menu" popovertarget="mobile-menu">
+    <button type="button" class={[ 'menu', scrollY > 50 ? 'light' : '' ]} title="Menu" popovertarget="mobile-menu">
         <i class="menu ph ph-list"></i>
     </button>
     <div class="mobile-menu" id="mobile-menu" popover bind:this={mobileMenu}>
         <button class="btn-mobile-menu-close" type="button" popovertarget="mobile-menu" popovertargetaction="hide">
-            <i class="ph ph-x"></i> Close
+            <i class="ph ph-x"></i>
         </button>
         <a href="/" title="Home"
             class:active={page.url.pathname === '/'}
@@ -28,6 +31,18 @@
         <a href="/expertise" title="Expertise"
             class:active={page.url.pathname.startsWith('/expertise')}
             >Expertise</a>
+        <a href="/expertise?category=civil-litigation" title="Civil Litigation"
+            class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
+            >Civil Litigation</a>
+        <a href="/expertise?category=corporate-commercial" title="Corporate & Commercial"
+            class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
+            >Corporate & Commercial</a>
+        <a href="/expertise?category=real-estate" title="Real Estate"
+            class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
+            >Real Estate</a>
+        <a href="/expertise?category=wills-estate" title="Wills & Estate"
+            class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
+            >Wills & Estate</a>
         <a href="/team" title="The Team"
             class:active={page.url.pathname.startsWith('/team')}
             >The Team</a>
@@ -71,8 +86,11 @@
         outline: 0;
         cursor: pointer;
         display: inline-block;
+        color: var(--darkest);
+        font-size: 1.25rem;
+    }
+    nav > .menu.light {
         color: var(--white);
-        font-size: 1.5rem;
     }
 
     @media (min-width: 60rem) {
@@ -119,17 +137,19 @@
     nav > .mobile-menu {
         border: 0;
         background-color: var(--darker);
+        border-top: 3px solid var(--accent-dark);
         transform: translateX(100%);
         transition: transform 400ms, overlay 400ms ease-out;
         display: block;
-        width: 90vw;
-        max-width: 20rem;
+        width: 100vw;
+        /* max-width: 20rem; */
         inset: unset;
         right: 0;
         top: 0;
         height: 100dvh;
         display: flex;
         flex-direction: column;
+        padding-top: 1rem;
     }
     nav > .mobile-menu:popover-open {
         transform: translateX(0);
@@ -138,14 +158,16 @@
         background-color: var(--dark-bg-semi-light);
     }
     nav > .mobile-menu > .btn-mobile-menu-close {
+        position: absolute;
+        right: 0rem;
+        top: 0;
         border: 0;
-        border-bottom: 1px solid var(--accent);
         background-color: transparent;
         outline: 0;
         color: var(--off-white);
         text-align: right;
         padding: 1rem 1.5rem;
-        font-size: 1rem;
+        font-size: 1.5rem;
         display: flex;
         align-items: center;
         justify-content: end;
@@ -153,11 +175,22 @@
     }
     nav > .mobile-menu > a {
         background-color: transparent;
-        color: var(--off-white);
-        padding: 1rem 1.5rem;
+        color: var(--white);
+        font-weight: 500;
+        padding: 1.25rem 2rem;
         text-decoration: none;
     }
-    nav > .mobile-menu > a:not(:last-child) {
-        border-bottom: 1px solid var(--accent-bg-lightest);
+    nav > .mobile-menu > a.sub {
+        border: 0;
+        cursor: pointer;
+        outline: 0;
+        font-size: 1rem;
+        /* font-weight: 400; */
+        /* opacity: 0.8; */
+        margin-left: 2rem;
+        text-align: left;
     }
+    /* nav > .mobile-menu > a:not(:last-child) {
+        border-bottom: 1px solid var(--accent-bg-lightest);
+    } */
 </style>

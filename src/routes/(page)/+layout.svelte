@@ -13,12 +13,12 @@
 <Footer />
 
 <style>
-	.background	{
+	/* .background	{ */
         /* background:
             radial-gradient(circle at 30% 40%, var(--white) 0%, transparent 1000%),
             url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat; */
 		/* padding: 3rem 0 3rem; */
-	}
+	/* } */
     :global(a.cta) {
         background-color: var(--accent);
         border-radius: 3rem;

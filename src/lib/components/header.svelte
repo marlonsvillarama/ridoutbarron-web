@@ -1,14 +1,13 @@
 <script>
-    import { page } from "$app/state";
     import Logo from "./logo.svelte";
     import Nav from "./nav.svelte";
 
     let scrollY = $state(0);
-    //  || page.url.pathname.length > 1
 </script>
 
 <svelte:window bind:scrollY />
 
+ <!-- || page.url.pathname.length > 2 -->
 <header class:scrolled={scrollY > 50}>
     <div class="container">
         <Logo />
@@ -33,7 +32,7 @@
     }
     header > .container {
         margin: 0 auto;
-        padding: 2rem 0;
+        padding: clamp(1.5rem, 3vw, 2rem) 0;
         display: flex;
         align-items: center;
         justify-content: space-between;

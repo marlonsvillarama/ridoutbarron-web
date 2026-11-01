@@ -8,13 +8,16 @@
     import { browser } from "$app/env";
     // import FieldText from "#lib/components/form/field-text.svelte";
 
+    let contactForm;
+
     onMount(() => {
         let params = page.url.searchParams;
-        if (browser) {
-            window.alert(`params = ${params}`);
-        }
-        if (params.get('form')) {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        // if (browser) {
+        //     window.alert(`params = ${params}`);
+        // }
+        console.log('params form ==> ', params.get('form'));
+        if (params.get('form') === 'T') {
+            contactForm?.scrollIntoView({ behavior: 'smooth' });
         }
     });
 </script>
@@ -25,15 +28,16 @@
 
 <Hero
     background="/images/page/peace-bridge-inner.avif"
-    texts={[
-        'Whether you have a question, need guidance, or are ready to more forward, we\'re here to help.',
-        'Reach out for a confidential conversation - no obligation, just practical advice.'
-    ]}
+    // texts={[
+    //     'Whether you have a question, need guidance, or are ready to more forward, we\'re here to help.',
+    //     'Reach out for a confidential conversation - no obligation, just practical advice.'
+    // ]}
+    // title="Contact Us"
     title="Contact Us"
-    onreadmore={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}}
+    description="Reach out today, and let's talk about how our team can help you move forward"
 />
 
-<main class="container" id="contact">
+<main class="container" id="contact" bind:this={contactForm}>
     <section>
         <h2>Send Us A Message</h2>
         <p class="blurb">Fill out the form below and a member of our team will be in touch shortly.</p>

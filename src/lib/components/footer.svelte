@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { reveal } from '#lib/reveal.js';
     import { getCategories } from '#lib/posts.js';
 </script>
@@ -107,14 +109,20 @@
     footer .contact-row {
         display: flex;
         align-items: flex-start;
-        gap: 2rem;
-        margin-bottom: 0.5rem;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
     }
     footer .contact-row > i {
         margin-top: 2px;
     }
     footer .contact-row > .details > .title {
-        opacity: 0.4;
+        font-size: 0.875rem;
+        opacity: 0.7;
+        /* opacity: 0.6; */
+    }
+    footer .contact-row > .details > p {
+        color: var(--white);
+        font-size: 1rem;
     }
     footer section > .links {
         display: flex;

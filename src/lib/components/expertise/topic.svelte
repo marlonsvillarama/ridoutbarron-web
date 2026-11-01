@@ -1,5 +1,6 @@
 <script>
     import { getPostsInCategory } from "#lib/posts.js";
+    import Featured from "../guide/featured.svelte";
     
     let {
         content,
@@ -7,18 +8,23 @@
         label = 'Label',
         team,
         show = false,
+        articles = []
     } = $props();
 </script>
 
 <div class="topic" class:flex={show === true} class:hidden={show === false} id="topic-{id}">
     <div class="row">
-        <aside>
-            <h2>{label}</h2>
-            <span class="subheader">Overview</span>
-        </aside>
         <div class="content">
+            <!-- <h2>{label}</h2> -->
             {@render content?.()}
         </div>
+        <aside>
+            <h2>Featured Articles</h2>
+            <!-- <span class="subheader">Overview</span> -->
+            {#each articles as article}
+            <Featured {...article} />
+            {/each}
+        </aside>
     </div>
     <!-- <div class="row">
         <aside>
@@ -46,8 +52,16 @@
     }
     :global(.topic > .row) {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
         gap: 3rem;
+    }
+    @media (min-width: 60rem) {
+        :global(.topic > .row) {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 3rem;
+        }
     }
     :global(.topic > .row:not(:last-child)) {
         border-bottom: 1px solid var(--accent-bg-lightest);
@@ -60,14 +74,20 @@
         gap: 3rem;
     }
     :global(.topic > .row > aside ) {
-        border-left: 3px solid var(--semi-light);
-        padding: 0 1.5rem 0.5rem;
+        /* border-left: 3px solid var(--semi-light);
+        padding: 0 1.5rem 0.5rem; */
         /* border: 1px solid red; */
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
-    :global(.topic > .row > aside > h2) {
+    @media (min-width: 60rem) {
+        :global(.topic > .row > aside ) {
+            border-left: 3px solid var(--semi-light);
+            padding: 0 1.5rem 0.5rem;
+        }
+    }
+    :global(.topic > .row > .content > h2) {
         color: var(--darkest);
         font: 500 2rem var(--font-serif);
     }
@@ -104,12 +124,12 @@
     }
     :global(.topic > .row > .content > p.summary) {
         color: var(--darkest);
-        font: 400 1.75rem var(--font-serif);
+        font: 400 clamp(1.25rem, 3vw, 1.75rem) var(--font-serif);
         letter-spacing: -0.25px;
-        line-height: 2.5rem;
+        line-height: clamp(2rem, 3vw, 2.5rem);
     }
     :global(.topic > .row > .content > p:not(.summary)) {
-        opacity: 0.7;
+        /* opacity: 0.7; */
         font-weight: 400;
         line-height: 1.75rem;
     }
@@ -120,7 +140,7 @@
     :global(.topic > .row > .content > ol > li) {
         margin-inline-start: 1.5rem;
         margin-block-end: 0.5rem;
-        opacity: 0.8;
+        /* opacity: 0.8; */
         line-height: 1.75rem;
     }
     :global(.topic > .row > .content > ol > li) {

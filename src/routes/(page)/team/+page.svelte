@@ -13,15 +13,19 @@
 
 <Hero
     background="/images/page/lion-bridge.avif"
-    texts={[
-        'At Ridout Barron, our barristers and solicitors are easy to work with and will try to find creative solutions to our clients\' problems.',
-        'Throughout our history, we have maintained our principles of integrity, quality, and flexibility. Our clients\' success has always been our first priority.'
-    ]}
+    // texts={[
+    //     'At Ridout Barron, our barristers and solicitors are easy to work with and will try to find creative solutions to our clients\' problems.',
+    //     'Throughout our history, we have maintained our principles of integrity, quality, and flexibility. Our clients\' success has always been our first priority.'
+    // ]}
     title="Meet The Team"
-    onreadmore={() => { document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}}
+    description="A small, dedicated team that works directly with you from first meeting to final resolution"
 />
 
 <main class="container" id="team">
+    <p class="summary">
+        As a small firm, we keep things personal. You'll work directly with the lawyers handling your file, not get passed down a chain. Meet the people behind the practice and the experience they bring to every client.
+    </p>
+
     <section>
         <div class="group reveal-section" use:reveal>
             <h2>Our Lawyers</h2>
@@ -88,13 +92,20 @@
 
 <style>
     main {
-        align-items: flex-start;
+        /* align-items: flex-start; */
         display: flex;
-        gap: 3rem;
+        flex-direction: column;
+        /* gap: 3rem; */
         /* margin: 3rem auto 5rem; */
         margin: 0 auto;
         padding-bottom: 5rem;
         scroll-margin-top: 6rem;
+    }
+    main > p.summary {
+        color: var(--darker);
+        font: 400 clamp(1.25rem, 3vw, 1.5vw) var(--font-default);
+        line-height: clamp(1.25rem, 3vw, 2.5vw);
+        margin-bottom: 3rem;
     }
     section {
         flex: 1;

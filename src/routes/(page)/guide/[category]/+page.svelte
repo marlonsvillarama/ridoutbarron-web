@@ -41,7 +41,7 @@
         <aside>
             <h2>Other Categories</h2>
             <div class="content">
-                {#each data.categories as category}
+                {#each data.categories.filter(c => c.slug !== data.category.slug) as category}
                     <Category {...category} />
                 {/each}
             </div>

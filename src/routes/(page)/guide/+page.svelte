@@ -16,8 +16,10 @@
         let list = [ ...new Set(data.posts.map(p => p.category)) ].sort();
         let output = list.map(c => {
             let articles = data.posts.filter(p => p.category === c);
+            let id = c.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
             return {
-                id: c.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
+                id,
+                link: `/guide/${id}`,
                 name: c,
                 count: articles.length
             }
@@ -32,14 +34,18 @@
 
 <Hero
     background="/images/page/peak.avif"
-    texts={[
-        'Our guides and resources offer plain-language insights on legal topics that matter to individuals, businesses, and organizations in Alberta.'
-    ]}
+    // texts={[
+    //     'Our guides and resources offer plain-language insights on legal topics that matter to individuals, businesses, and organizations in Alberta.'
+    // ]}
     title="Guides & Resources"
-    onreadmore={() => { document.getElementById('guide')?.scrollIntoView({ behavior: 'smooth' })}}
+    description="Clear, plain-language answers to help you understand before you need to ask"
 />
 
 <main class="guide container" id="guide">
+    <p class="summary">
+        Legal processes can feel unfamiliar and overwhelming. Our guide explains common questions, key terms, and what to expect at each step in plain language, so you can make informed decisions with confidence.
+    </p>
+
     <section class="categories">
         <h3>Browse Guides By Category</h3>
         <div class="split">
@@ -97,6 +103,12 @@
         margin: 0 auto;
         padding-bottom: 5rem;
         scroll-margin-top: 6rem;
+    }
+    main > p.summary {
+        color: var(--darker);
+        font: 400 clamp(1.25rem, 3vw, 1.5vw) var(--font-default);
+        line-height: clamp(1.25rem, 3vw, 2.5vw);
+        margin-bottom: 0rem;
     }
     :global(.guide > .header > .categories > li > a.active) {
         color: var(--accent);

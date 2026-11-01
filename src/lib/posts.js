@@ -7,7 +7,6 @@ export function slugify(text) {
   return String(text)
     .toLowerCase()
     .trim()
-    .replace(/&/g, ' and ')
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '') // strip accents
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
