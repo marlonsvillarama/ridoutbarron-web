@@ -24,10 +24,14 @@
 />
 
 <main class="category container">
-    <Crumbs items={[
+    <div class="back">
+        <i class="ph ph-caret-double-left"></i>
+        <a href="/guide" title="Guides & Resources">All Categories</a>
+    </div>
+    <!-- <Crumbs items={[
         { link: "/guide", title: "Guide & Resources" },
         { link: data.category.link, title: data.category.name },
-    ]} />
+    ]} /> -->
 
     <div class="header">
         <!-- <div class="title">

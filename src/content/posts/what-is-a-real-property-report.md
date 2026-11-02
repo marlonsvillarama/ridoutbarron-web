@@ -1,5 +1,5 @@
 ---
-title: "Adding or Removing Someone From Title"
+title: "What Is A Real Property Report?"
 date: "2025-09-02"
 category: "Real Estate"
 featured: false

@@ -26,12 +26,16 @@
 />
 
 <main class="article container">
-    <Crumbs items={[
+    <div class="back">
+        <i class="ph ph-caret-double-left"></i>
+        <a href="/guide/{data.meta.categorySlug}" title={data.meta.category}>{data.meta.category}</a>
+    </div>
+    <!-- <Crumbs items={[
         // { link: "/", title: "Home" },
         { link: "/guide", title: "Guide & Resources" },
         { link: `/guide/${data.meta.categorySlug}`, title: data.meta.category },
         { link: data.meta.link, title: data.meta.title },
-    ]} />
+    ]} /> -->
     
     <div class="split">
         <div class="content">
@@ -77,6 +81,14 @@
         margin: 0 auto;
         /* padding-top: 7rem; */
         padding-bottom: 5rem;
+    }
+    .article > .back {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .article > .back > a {
+        color: var(--accent);
     }
     .article > .split {
         display: flex;
