@@ -23,7 +23,10 @@
 
 <main class="container" id="team">
     <p class="summary">
-        As a small firm, we keep things personal. You'll work directly with the lawyers handling your file, not get passed down a chain. Meet the people behind the practice and the experience they bring to every client.
+        At Ridout Barron, our barristers and solicitors are easy to work with and will try to find creative solutions to our clients' problems.
+    </p>
+    <p>
+        As a small firm, we keep things personal. You'll work directly with the lawyers handling your file, not get passed down a chain. Meet the people behind the practice and the experience they bring to every client. Throughout our history, we have maintained our principles of integrity, quality, and flexibility. Our clients' success has always been our first priority.
     </p>
 
     <section>
@@ -102,16 +105,21 @@
         scroll-margin-top: 6rem;
     }
     main > p.summary {
-        color: var(--darker);
+        /* color: var(--darker);
         font: 400 clamp(1.25rem, 3vw, 1.5vw) var(--font-default);
         line-height: clamp(1.25rem, 3vw, 2.5vw);
-        margin-bottom: 3rem;
+        margin-bottom: 3rem; */
+        font: 500 1.25rem var(--font-serif);
+        letter-spacing: -0.25px;
+        line-height: 2.25rem;
+        margin-bottom: 1rem;
     }
     section {
         flex: 1;
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        margin-top: 2rem;
     }
     section > .group > h2 {
         font: 700 2rem var(--font-serif);

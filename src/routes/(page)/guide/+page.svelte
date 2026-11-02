@@ -3,6 +3,7 @@
 
     import Hero from "#lib/components/page/hero.svelte";
     import SearchBox from "#lib/components/form/search-box.svelte";
+    import Advice from "#lib/components/page/advice.svelte";
     import Featured from "#lib/components/guide/featured.svelte";
     import Latest from "#lib/components/guide/latest.svelte";
     import Category from "#lib/components/guide/category.svelte";
@@ -77,13 +78,14 @@
         </div>
 
         <aside>
-            <div class="advice">
+            <Advice />
+            <!-- <div class="advice">
                 <h2>Need more help?</h2>
                 <p>
                     It's normal to have questions. We're here to make the process straightforward and comfortable from the start.
                 </p>
                 <a href="/contact" title="Contact Us">Contact Us <i class="ph ph-arrow-right"></i></a>
-            </div>
+            </div> -->
             
             <!-- <div class="stay-informed">
                 <h3>Stay Informed</h3>
@@ -105,10 +107,14 @@
         scroll-margin-top: 6rem;
     }
     main > p.summary {
-        color: var(--darker);
+        /* color: var(--darker);
         font: 400 clamp(1.25rem, 3vw, 1.5vw) var(--font-default);
         line-height: clamp(1.25rem, 3vw, 2.5vw);
-        margin-bottom: 0rem;
+        margin-bottom: 0rem; */
+        font: 500 1.25rem var(--font-serif);
+        letter-spacing: -0.25px;
+        line-height: 2.25rem;
+        margin-bottom: 1rem;
     }
     :global(.guide > .header > .categories > li > a.active) {
         color: var(--accent);
@@ -190,7 +196,7 @@
         }
     }
 
-    .advice {
+    /* .advice {
         padding: 2rem;
         background-color: var(--accent-lightest);
         display: flex;
@@ -219,7 +225,7 @@
     }
     .advice > a:hover {
         opacity: 1.0;
-    }
+    } */
     
     .guide > .split > aside > .stay-informed {
         background:

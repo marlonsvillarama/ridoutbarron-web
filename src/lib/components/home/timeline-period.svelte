@@ -86,7 +86,7 @@
         margin-bottom: 0.5rem;
     }
     .period > .content > .article > .main > p {
-        line-height: 1.5rem;
+        /* line-height: 1.5rem; */
         opacity: 0.7;
         padding-left: 1rem;
     }

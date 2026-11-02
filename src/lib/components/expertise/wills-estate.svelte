@@ -28,4 +28,4 @@
     Most people know what a <strong>Will</strong> is and how important it is to have one, however more people are learning about the importance of an <strong>Enduring Power of Attorney</strong> and <strong>Personal Directive</strong>.
 </p> -->
 
-<a href="/contact?form=T" title="Talk to us" class="cta">Work with us</a>
+<!-- <a href="/contact?form=T" title="Talk to us" class="cta">Work with us</a> -->

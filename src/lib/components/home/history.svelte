@@ -75,7 +75,7 @@
         padding-bottom: 1.5rem;
     }
     #history > .container > :first-child > p {
-        line-height: 1.625rem;
+        /* line-height: 1.625rem; */
         opacity: 0.8;
     }
     #history > .container > :first-child > p:not(:last-child) {

@@ -52,7 +52,7 @@
     }
     #team > .container > p {
         font-size: 1rem;
-        line-height: 1.625rem;
+        /* line-height: 1.625rem; */
         margin-bottom: 2rem;
         opacity: 0.8;
         text-align: center;

@@ -70,7 +70,7 @@
     .hero > .container > .slogan > p {
         display: none;
         font-weight: 300;
-        line-height: 1.75rem;
+        /* line-height: 1.75rem; */
         margin: 0;
     }
     @media (min-height: 30rem) {

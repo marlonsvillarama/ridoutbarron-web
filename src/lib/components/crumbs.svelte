@@ -37,9 +37,9 @@
 </div>
 
 <style>
-    .crumbs {
+    /* .crumbs {
         margin-bottom: 2rem;
-    }
+    } */
     .crumb-select {
         display: flex;
         align-items: center;

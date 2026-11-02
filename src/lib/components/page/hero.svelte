@@ -4,6 +4,7 @@
     let {
         background = '',
         texts = [],
+        full = true,
         title = 'Title',
         description = ''
     } = $props();
@@ -19,9 +20,9 @@
 
 <!-- <div class="hero" style="background-image: linear-gradient(to right, var(--off-white) 40%, transparent 100%), url({background})"> -->
 <!-- <div class="hero" style:bg={}="background-image: linear-gradient(to right, var(--off-white) 30%, transparent 90%)"> -->
-<div class="hero">
-    <img src={background} alt={title} />
-    <div class="overlay"></div>
+<div class={[ "hero", full ? 'full' : '' ]}>
+    <img src={background} alt={title} class:full={full} />
+    <div class={[ "overlay", full ? 'full' : '' ]}></div>
 
     <div class="container">
         <div class="slogan">
@@ -58,16 +59,19 @@
         }
     } */
     .hero > img {
-        display: none;
+        /* display: none; */
         position: absolute;
         inset: 0;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         /* height: 30rem; */
         object-fit: cover;
     }
+    .hero > img.full {
+        height: 100%;
+    }
     .hero > .overlay {
-        display: none;
+        /* display: none; */
         background: radial-gradient(circle at 30% 60%, rgba(0, 0, 0, 0.5) 0%, transparent 200%);
         /* background: radial-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 120%); */
         /* background-color: var(--white); */
@@ -75,17 +79,17 @@
         inset: 0;
     }
     @media (min-width: 60rem) {
-        .hero {
+        .hero.full {
             /* height: 30rem; */
-            height: 100vh;
+            height: 65vh;
             border: 0;
             /* background-size: cover;
             background-position: center;
             background-repeat: no-repeat; */
         }
-        .hero > img {
+        /* .hero > img {
             display: block;
-        }
+        } */
         .hero > .overlay {
             /* background: */
                 /* url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat, */
@@ -114,7 +118,7 @@
         width: 100%;
         /* border: 1px solid red; */
     }
-    @media (min-width: 60rem) {
+    /* @media (min-width: 60rem) { */
         /* .hero > .container { */
             /* padding-top: 10rem; */
             /* border: 1px solid red; */
@@ -123,7 +127,7 @@
             padding-top: 1rem; */
             /* width: 50%; */
         /* } */
-    }
+    /* } */
     @media (min-width: 60rem) {
         .hero > .container > .slogan {
             /* padding-top: 5rem; */
@@ -135,8 +139,8 @@
     }
     .hero > .container > .slogan > h1 {
         /* color: var(--accent); */
-        /* color: var(--white); */
-        color: var(--darkest);
+        color: var(--white);
+        /* color: var(--darkest); */
         font: 500 clamp(1rem, 3vw, 1.25rem) var(--font-serif);
         line-height: 1.75rem;
         /* opacity: 0.8; */
@@ -144,12 +148,12 @@
         margin-bottom: 1rem;
     }
     .hero > .container > .slogan > p {
-        color: var(--darkest);
-        /* color: var(--white); */
-        font: 600 clamp(1.5rem, 3vw, 5rem) var(--font-default);
+        /* color: var(--darkest); */
+        color: var(--white);
+        font: 600 clamp(1.5rem, 3vw, 4rem) var(--font-default);
         letter-spacing: -0.25px;
         /* line-height: clamp(2.5rem, calc(2.5rem + 5vw), 3.5rem); */
-        line-height: clamp(2rem, 5vw, 2.75rem);
+        line-height: clamp(2rem, 3.5vw, 4.5rem);
         /* margin-bottom: 1rem; */
         /* border: 1px solid red; */
     }

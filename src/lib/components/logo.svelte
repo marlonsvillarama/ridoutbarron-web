@@ -10,7 +10,8 @@
 
 <style>
     .logo {
-        color: var(--darkest);
+        /* color: var(--darkest); */
+        color: var(--white);
         font: 400 clamp(1.25rem, 3vw, 2rem) var(--font-default);
         letter-spacing: -0.5px;
         position: relative;

@@ -14,8 +14,8 @@
     <li>General corporate law, corporate reorganizations and minute book maintenance</li>
 </ul>
 
-<p>
+<!-- <p>
     If necessary, to ensure that our clients' interests are protected we provide commercial litigation services.
 </p>
 
-<a href="/contact" title="Talk to us" class="cta">Work with us</a>
+<a href="/contact" title="Talk to us" class="cta">Work with us</a> -->

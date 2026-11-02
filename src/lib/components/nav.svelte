@@ -29,27 +29,35 @@
             class:active={page.url.pathname === '/'}
             >Home</a>
         <a href="/expertise" title="Expertise"
+            data-sveltekit-reload
             class:active={page.url.pathname.startsWith('/expertise')}
             >Expertise</a>
-        <a href="/expertise?category=civil-litigation" title="Civil Litigation"
+        <a href="/expertise/civil-litigation" title="Civil Litigation"
+            data-sveltekit-reload
             class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
             >Civil Litigation</a>
-        <a href="/expertise?category=corporate-commercial" title="Corporate & Commercial"
+        <a href="/expertise/corporate-commercial" title="Corporate & Commercial"
+            data-sveltekit-reload
             class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
             >Corporate & Commercial</a>
-        <a href="/expertise?category=real-estate" title="Real Estate"
+        <a href="/expertise/real-estate" title="Real Estate"
+            data-sveltekit-reload
             class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
             >Real Estate</a>
-        <a href="/expertise?category=wills-estate" title="Wills & Estate"
+        <a href="/expertise/wills-estate" title="Wills & Estate"
+            data-sveltekit-reload
             class={[ 'sub', page.url.pathname.startsWith('/expertise') ? 'active' : '' ]}
             >Wills & Estate</a>
         <a href="/team" title="The Team"
+            data-sveltekit-reload
             class:active={page.url.pathname.startsWith('/team')}
             >The Team</a>
         <a href="/guide" title="Guide"
+            data-sveltekit-reload
             class:active={page.url.pathname.startsWith('/guide')}
             >Guide</a>
         <a href="/contact" title="Contact Us"
+            data-sveltekit-reload
             class:active={page.url.pathname.startsWith('/contact')}
             >Contact Us</a>
     </div>
@@ -86,7 +94,8 @@
         outline: 0;
         cursor: pointer;
         display: inline-block;
-        color: var(--darkest);
+        /* color: var(--darkest); */
+        color: var(--white);
         font-size: 1.25rem;
     }
     nav > .menu.light {

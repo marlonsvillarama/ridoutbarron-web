@@ -2,12 +2,15 @@
 // @ts-nocheck
 
     import { page } from "$app/state";
+    import { onMount } from "svelte";
     import Hero from "#lib/components/page/hero.svelte";
+    import Crumbs from "#lib/components/crumbs.svelte";
+    import Advice from "#lib/components/page/advice.svelte";
+    import Featured from "#lib/components/guide/featured.svelte";
     import Litigation from "#lib/components/expertise/litigation.svelte";
     import Corporate from "#lib/components/expertise/corporate.svelte";
     import RealEstate from "#lib/components/expertise/real-estate.svelte";
     import WillsEstate from "#lib/components/expertise/wills-estate.svelte";
-    import { onMount } from "svelte";
 
     let { data } = $props();
     const topics = [{
@@ -30,9 +33,21 @@
 
     let pathParams = page.url.pathname.split('/');
     let topic = $derived(topics.find(t => t.id === pathParams[pathParams.length - 1]));
-    onMount(() => {
+    let featuredArticles = $derived(data.posts.filter(p => p.categorySlug === topic.id));
+    // console.log('featuredArticles', featuredArticles);
 
+    onMount(() => {
+        pathParams = page.url.pathname.split('/');
+        featuredArticles = data.posts.filter(p => p.categorySlug === topic.id);
+        console.log('featuredArticles', featuredArticles);
     });
+    // let crumbs = [{
+    //     link: '/expertise',
+    //     title: 'Expertise'
+    // }, {
+    //     link: `/expertise/${topic.id}`,
+    //     title: topic.label
+    // }];
 </script>
 
 <svelte:head>
@@ -46,25 +61,39 @@
     // ]}
     // title="Practical, experienced guidance across the legal issues facing Calgarians today"
     title={"Our Expertise"}
-    description={topic.label}
+    full={false}
+    description={topic?.label}
 />
 
 <main class="container">
+    <!-- <Crumbs items={crumbs} /> -->
+
     <div class="row">
         <div class="content">
+            {#if topic}
             <topic.content />
+            {/if}
         </div>
         <aside>
-            sidebar
+            <Advice />
         </aside>
     </div>
+
+    <section class="featured">
+        <h3>{topic.label} Articles</h3>
+        <div class="row">
+            {#each featuredArticles.slice(0, 3) as article}
+                <Featured {...article} />
+            {/each}
+        </div>
+    </section>
 </main>
 
 <style>
     main {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
         margin: 3rem auto;
         scroll-margin-top: 6rem;
     }
@@ -96,23 +125,70 @@
     /* :global(main > .row > .content > p:not(:last-of-type)) {
         margin-bottom: 1rem;
     } */
-    /* :global(main > .content > ul) {
-        list-style-type: none;
-    } */
+    :global(main > .row > .content > ol),
+    :global(main > .row > .content > ul) {
+        margin-bottom: 1rem;
+    }
+    :global(main > .row > .content > ol > li),
     :global(main > .row > .content > ul > li) {
         margin-inline-start: 2rem;
         color: var(--darkest);
         /* font-size: 0.875rem; */
-        font-weight: 300;
+        /* font-weight: 300; */
+        line-height: 1.75rem;
     }
+    :global(main > .row > .content > ol > li:not(:last-child)),
     :global(main > .row > .content > ul > li:not(:last-child)) {
         margin-bottom: 0.5rem;
     }
     main > .row > aside {
-        width: min(28rem, 100%);
+        /* width: min(28rem, 100%); */
         display: flex;
         flex-direction: column;
+            align-items: center;
+        justify-content: center;
         gap: 3rem;
-        border: 1px solid red;
+        /* border: 1px solid red; */
+        position: relative;
     }
+    @media (min-width: 40rem) {
+        main > .row > aside {
+            justify-content: center;
+        }
+    }
+    @media (min-width: 60rem) {
+        main > .row > aside {
+            width: min(28rem, 100%);
+        }
+    }
+
+    .featured > h3 {
+        font: bold 1.5rem var(--font-serif);
+        margin-bottom: 0.5rem;
+    }
+    .featured > .row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: clamp(1rem, 3vw, 1.5rem);
+        /* flex-wrap: wrap; */
+    }
+    /* @media (min-width: 40rem) {
+        .featured > .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    } */
+    @media (min-width: 60rem) {
+        .featured > .row {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    /* main > .featured > .row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    } */
 </style>

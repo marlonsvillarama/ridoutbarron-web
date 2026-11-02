@@ -97,3 +97,7 @@ body {
 .show-block {
     display: block;
 }
+
+p {
+    line-height: 1.75rem;
+}

@@ -77,7 +77,7 @@
             max-width: 60%;
         }
     }
-    #brief > .split > .blurb > p {
+    /* #brief > .split > .blurb > p {
         line-height: 1.75rem;
-    }
+    } */
 </style>
