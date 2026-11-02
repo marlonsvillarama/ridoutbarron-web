@@ -1,6 +1,7 @@
 <script>
 // @ts-nocheck
 
+    import Hero from "#lib/components/page/hero.svelte";
     import Crumbs from "../../../../lib/components/crumbs.svelte";
     import SearchBox from "../../../../lib/components/form/search-box.svelte";
     import Latest from "../../../../lib/components/guide/latest.svelte";
@@ -16,18 +17,23 @@
     <title>{data.category.name} | Guides & Resources</title>
 </svelte:head>
 
+<Hero
+    background="/images/page/peak.avif"
+    title="Guide & Resources"
+    description={data.category.name}
+/>
+
 <main class="category container">
     <Crumbs items={[
-        { link: "/", title: "Home" },
         { link: "/guide", title: "Guide & Resources" },
         { link: data.category.link, title: data.category.name },
     ]} />
 
     <div class="header">
-        <div class="title">
+        <!-- <div class="title">
             <h1>{data.category.name}</h1>
             <span class="subheader">{data.category.count} {data.category.count === 1 ? 'article' : 'articles'}</span>
-        </div>
+        </div> -->
         <SearchBox onsearch={() => {}} />
     </div>
 
@@ -60,13 +66,14 @@
     .category {
         /* margin: 7rem auto 5rem; */
         margin: 0 auto;
-        padding-top: 7rem;
+        /* padding-top: 7rem; */
         padding-bottom: 5rem;
     }
     .category > .header {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        margin-top: 2rem;
         margin-bottom: 2rem;
         padding-bottom: 1.5rem;
         border-bottom: 1px solid var(--accent-lightest);

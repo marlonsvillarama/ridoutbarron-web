@@ -1,6 +1,7 @@
 <script>
 // @ts-nocheck
 
+    import Hero from "#lib/components/page/hero.svelte";
     import Crumbs from "#lib/components/crumbs.svelte";
     import Category from "#lib/components/guide/category.svelte";
 
@@ -18,9 +19,15 @@
 	<title>Ridout Barron - Barristers & Solicitors | {data.meta.title}</title>
 </svelte:head>
 
+<Hero
+    background="/images/page/peak.avif"
+    title={data.meta.category}
+    description={data.meta.title}
+/>
+
 <main class="article container">
     <Crumbs items={[
-        { link: "/", title: "Home" },
+        // { link: "/", title: "Home" },
         { link: "/guide", title: "Guide & Resources" },
         { link: `/guide/${data.meta.categorySlug}`, title: data.meta.category },
         { link: data.meta.link, title: data.meta.title },
@@ -29,7 +36,7 @@
     <div class="split">
         <div class="content">
             <div class="header">
-                <h1>{data.meta.title}</h1>
+                <!-- <h1>{data.meta.title}</h1> -->
                 <span class="subheader">{dateText} <span class="duration">({data.meta.duration} minute read)</span></span>
             </div>
 
@@ -68,13 +75,14 @@
     .article {
         /* margin: 7rem auto 5rem; */
         margin: 0 auto;
-        padding-top: 7rem;
+        /* padding-top: 7rem; */
         padding-bottom: 5rem;
     }
     .article > .split {
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        margin-top: 2rem;
     }
     @media (min-width: 60rem) {
         .article > .split {
