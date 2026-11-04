@@ -1,4 +1,6 @@
 <script>
+    // import { onMount } from "svelte";
+
     let {
         items = [],
         label = 'Text',
@@ -6,23 +8,51 @@
         name = 'fld-text',
         placeholder = '',
         required = false,
-        type = 'text'
+        type = 'text',
+        value = $bindable(''),
+        onvalidate = null
     } = $props();
+
+    let isValid = $state(true);
+    const validateField = () => {
+        isValid = !!(required && value) || !required;
+        console.log(`${label}; required = ${required}`, isValid);
+        onvalidate?.();
+    };
+
+    // onMount(() => {
+    //     required = true;
+    //     validateField();
+    // })
 </script>
 
-<div class="field" class:required={required}>
+<div class="field" class:required={required}
+    onblur={validateField}
+>
     <label for={name}>{label}</label>
 
     {#if type === 'select'}
-        <select {name} id={name}>
+        <select {name} id={name} bind:value onchange={validateField}>
             {#each items as item}
                 <option value={item.value}>{item.label}</option>
             {/each}
         </select>
     {:else if type === 'textarea'}
-        <textarea {name} id={name}></textarea>
+        <textarea {name} id={name} bind:value onblur={validateField}></textarea>
     {:else}
-        <input {type} {name} id={name} maxlength={max} {placeholder} />
+        <input {type} {name} id={name} maxlength={max} {placeholder} bind:value onblur={validateField} />
+    {/if}
+
+    {#if !isValid}
+        <span class="error">
+            {#if type === 'select'}
+                Please indicate the area you would like to consult us with.
+            {:else if type === 'textarea'}
+                Please include a short message.
+            {:else}
+                Please enter your {label}.
+            {/if}
+        </span>
     {/if}
 </div>
 
@@ -66,5 +96,9 @@
         height: 8rem;
         resize: none;
         overflow: auto;
+    }
+    .field > .error {
+        color: red;
+        font-size: 0.875rem;
     }
 </style>

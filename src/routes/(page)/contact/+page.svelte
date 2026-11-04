@@ -5,20 +5,115 @@
     import Hero from "#lib/components/page/hero.svelte";
     import Field from "#lib/components/form/field.svelte";
     import { onMount } from "svelte";
-    import { browser } from "$app/env";
+    // import { onMount } from "svelte";
+    // import { browser } from "$app/env";
     // import FieldText from "#lib/components/form/field-text.svelte";
 
-    let contactForm;
+    // let contactForm;
+    let formData = $state({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        category: '',
+        message: ''
+    });
+    // let first_name = $state('');
+    // let last_name = $state('');
+    // let email = $state('');
+    // let phone = $state('');
+    // let category = $state('');
+    // let message = $state('');
+    // $effect(() => {
+    //     console.log('first_name', first_name);
+    //     console.log('last_name', last_name);
+    //     console.log('email', email);
+    //     console.log('phone', phone);
+    //     console.log('category', category);
+    //     console.log('message', message);
+    // });
 
-    onMount(() => {
-        let params = page.url.searchParams;
+    // onMount(() => {
+    //     let params = page.url.searchParams;
         // if (browser) {
         //     window.alert(`params = ${params}`);
         // }
-        console.log('params form ==> ', params.get('form'));
-        if (params.get('form') === 'T') {
-            contactForm?.scrollIntoView({ behavior: 'smooth' });
+    //     console.log('params form ==> ', params.get('form'));
+    //     if (params.get('form') === 'T') {
+    //         contactForm?.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // });
+
+    let submitting = $state(false);
+    let submitted = $state(false);
+    let isValid = $state(false);
+    let hasError = $state(false);
+
+    const requiredFields = [
+        'first_name',
+        'last_name',
+        'email',
+        'phone',
+        'message'
+    ];
+
+    const validateForm = () => {
+        submitted = false;
+        hasError = false;
+        console.log(`before validateForm; isValid = ${isValid}`);
+        let validCount = 0;
+        requiredFields.forEach(field => {
+            if (formData[field]) {
+                validCount++
+            }
+        });
+        isValid = requiredFields.length === validCount;
+        console.log(`after validateForm; isValid = ${isValid}`);
+    };
+
+    const sendErrorMessage = async (data) => {
+        const resp = await fetch('/submit-error', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(formData)
+        });
+        let respJson = await resp.json();
+        console.log('submit-error response', respJson);
+    };
+
+    const submitInquiry = async () => {
+        validateForm();
+        if (!isValid) {
+            return;
         }
+
+        submitting = true;
+
+        const resp = await fetch('/inquire', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(formData)
+        });
+        let respJson = await resp.json();
+        console.log('respJson', respJson);
+
+        submitting = false;
+        submitted = true;
+        hasError = respJson.status !== 200;
+
+        if (hasError) {
+            sendErrorMessage(respJson);
+        }
+    };
+
+    onMount(() => {
+        submitting = false;
+        submitted = false;
+        Object.keys(formData).forEach(key => formData[key] = '')
     });
 </script>
 
@@ -28,43 +123,41 @@
 
 <Hero
     background="/images/page/peace-bridge-inner.avif"
-    // texts={[
-    //     'Whether you have a question, need guidance, or are ready to more forward, we\'re here to help.',
-    //     'Reach out for a confidential conversation - no obligation, just practical advice.'
-    // ]}
-    // title="Contact Us"
     title="Contact Us"
     description="Reach out today, and let's talk about how our team can help you move forward"
 />
 
-<main class="container" id="contact" bind:this={contactForm}>
+<main class="container" id="contact">
     <section>
         <h2>Send Us A Message</h2>
         <p class="blurb">Fill out the form below and a member of our team will be in touch shortly.</p>
-        <div id="message-form">
+            <!-- class:hidden={submitted}
+            class:flex={!submitted} -->
+        <div id="message-form"
+        >
             <div class="row">
-                <Field name="first-name" label="First Name" required={true} />
-                <Field name="last-name" label="Last Name" required={true} />
+                <Field name="first-name" label="First Name" required={true} bind:value={formData.first_name} onvalidate={validateForm} />
+                <Field name="last-name" label="Last Name" required={true} bind:value={formData.last_name} onvalidate={validateForm} />
             </div>
 
             <div class="row">
-                <Field name="email" label="Email Address" required={true} type="email" />
-                <Field name="phone" label="Phone Number" required={true} type="phone" />
+                <Field name="email" label="Email Address" required={true} type="email" bind:value={formData.email} onvalidate={validateForm} />
+                <Field name="phone" label="Phone Number" required={true} type="phone" bind:value={formData.phone} onvalidate={validateForm} />
             </div>
 
             <!-- <div class="field"> -->
-                <Field name="category" label="How can we help?" type="select"
-                    items={[
-                        { value: 'litigation', label: 'Civil Litigation' },
-                        { value: 'corporate', label: 'Corporate & Commercial' },
-                        { value: 'real-estate', label: 'Real Estate' },
-                        { value: 'wills', label: 'Wills & Estates' }
-                    ]}
-                />
+            <Field name="category" label="How can we help?" type="select" bind:value={formData.category}
+                items={[
+                    { value: 'litigation', label: 'Civil Litigation' },
+                    { value: 'corporate', label: 'Corporate & Commercial' },
+                    { value: 'real-estate', label: 'Real Estate' },
+                    { value: 'wills', label: 'Wills & Estates' }
+                ]}
+            />
             <!-- </div> -->
 
             <!-- <div class="field"> -->
-                <Field name="description" label="Your Message" type="textarea" />
+            <Field name="description" label="Your Message" type="textarea" required={true} bind:value={formData.message} onvalidate={validateForm} />
             <!-- </div> -->
 
             <div class="confidential">
@@ -72,7 +165,52 @@
                 <p>Your information is confidential. We will never share your information without your consent.</p>
             </div>
 
-            <button>Send Message</button>
+            {#if submitted && isValid && hasError}
+                <div class="error">Oops! There was an error submitting the form.</div>
+            {/if}
+
+            <!-- <div class="button-container"> -->
+            {#if isValid}
+                {#if submitted && !hasError}
+                    <div class="thank-you">
+                        Thank you for your message!
+                    </div>
+                    <!-- <div class={[ hasError ? 'remind' : 'thank-you' ]}>
+                        { hasError ? 'Please fill out all required fields' : 'Thank you for your message!' }
+                    </div> -->
+                {:else}
+                    <button type="button" onclick={submitInquiry}
+                        class:submitting={submitting === true}
+                    >
+                        {#if submitting}
+                            <div class="loader"></div>
+                        {:else}
+                            Send Message
+                        {/if}
+                    </button>
+                {/if}
+            {:else}
+                <div class="remind">
+                    Please fill out all required fields
+                </div>
+            {/if}
+
+            <!-- {#if isValid && !submitted}
+                <button type="button" onclick={submitInquiry}
+                    class:submitting={submitting === true}
+                >
+                    {#if submitting}
+                        <div class="loader"></div>
+                    {:else}
+                        Send Message
+                    {/if}
+                </button>
+            {:else}
+                <div class="thank-you">
+                    Thank you for your message!
+                </div>
+            {/if} -->
+            <!-- </div> -->
         </div>
     </section>
 
@@ -152,16 +290,24 @@
         flex-direction: column;
         /* gap: 0.25rem; */
         margin-bottom: 3rem;
+        position: relative;
     }
+    /* #message-form.flex {
+        display: flex;
+    }
+    #message-form.hidden {
+        display: none;
+    } */
     #message-form > .row {
         display: flex;
+        align-items: flex-start;
         flex-direction: column;
         gap: 2rem;
     }
     @media (min-width: 40rem) {
         #message-form > .row {
             flex-direction: row;
-            align-items: center;
+            /* align-items: center; */
             /* gap: 2rem' */
         }
     }
@@ -177,23 +323,60 @@
     #message-form > .confidential > p {
         font-weight: 600;
     }
+    #message-form > .error {
+        background-color: var(--lighter);
+        color: red;
+        text-align: center;
+        padding: 1rem 0;
+    }
     #message-form > button {
         background-color: var(--accent);
         border: none;
         border-radius: 3rem;
         color: var(--white);
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
         font-size: 1rem;
         font-weight: 600;
         padding: 1rem 1.5rem;
         text-transform: uppercase;
-        transition: opacity 150ms ease, box-shadow 150ms ease;
+        transition: opacity 150ms ease, box-shadow 150ms ease, background-color 150ms ease, opacity 150ms ease;
         opacity: 0.8;
     }
     #message-form > button:hover {
         box-shadow: var(--shadow);
         opacity: 1.0;
     }
+    /* #message-form > button > i {
+        font-size: 1.5rem;
+    } */
+    #message-form > button.submitting {
+        background-color: var(--semi-light);
+        pointer-events: none;
+        cursor: not-allowed;
+        /* opacity: 0.6; */
+    }
+    .remind,
+    .thank-you {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--semi-light);
+        border: none;
+        border-radius: 3rem;
+        color: var(--semi-dark);
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 1rem 1.5rem;
+        /* text-transform: uppercase; */
+    }
+    .thank-you {
+        color: var(--darkest);
+    }
+
     aside {
         display: flex;
         flex-direction: column;
@@ -271,4 +454,37 @@
     #advice > a:hover {
         opacity: 1.0;
     }
+
+    /* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+/* #046D8B */
+.loader {
+  width: 60px;
+  height: 20px;
+  display: grid;
+  color: var(--accent-darker);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  --c:#0000 calc(100%/3),var(--accent-darker) 0 calc(2*100%/3),#0000 0;
+  --c1:linear-gradient(90deg,var(--c));
+  --c2:linear-gradient( 0deg,var(--c));
+  background: var(--c1),var(--c2),var(--c1),var(--c2);
+  background-size: 300% 4px,4px 300%;
+  background-repeat: no-repeat;
+  animation: l15 1.5s infinite;
+}
+.loader:after {
+  animation-delay: -.75s;
+}
+@keyframes l15 {
+  0%   {background-position: 50%  0,100% 100%,0    100%,0 0}
+  25%  {background-position: 0    0,100% 50% ,0    100%,0 0}
+  50%  {background-position: 0    0,100% 0   ,50%  100%,0 0}
+  75%  {background-position: 0    0,100% 0   ,100% 100%,0 50%}
+ 75.01%{background-position: 100% 0,100% 0   ,100% 100%,0 50%}
+  100% {background-position: 50%  0,100% 0   ,100% 100%,0 100%}
+}
 </style>

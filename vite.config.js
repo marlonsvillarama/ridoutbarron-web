@@ -16,7 +16,7 @@ export default defineConfig({
 			},
 			extensions: ['.svelte', '.md', '.svx'],
 			adapter: adapter(),
-			preprocess: [mdsvex({ extensions: ['.svx', '.md'] })]
+			preprocess: [mdsvex({ extensions: ['.svx', '.md'] }), vitePreprocess()]
 		})
 	]
 });

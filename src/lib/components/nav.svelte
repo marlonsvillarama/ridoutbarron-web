@@ -83,6 +83,13 @@
         align-items: first baseline;
         gap: 1rem;
     }
+    nav > button.menu {
+        /* margin-top: -0.5rem; */
+        /* border: 1px solid red; */
+    }
+    nav > button.menu > i {
+        font-size: 1.75rem;
+    }
     nav > ul {
         list-style-type: none;
         display: none;
