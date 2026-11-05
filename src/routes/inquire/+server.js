@@ -22,9 +22,9 @@ export async function POST({ request }) {
 
     try {
         const { data, error } = await resend.emails.send({
-            from: requestData.email,
-            to: ['marlonsvillarama@gmail.com'],
-            replyTo: ['marlonsvillarama@gmail.com'],
+            from: ['info@ridoutbarron.com'],
+            to: requestData.email,
+            replyTo: ['info@ridoutbarron.com'],
             subject: 'Ridout Barron - Thank you for your message.',
             html: buildEmail(requestData)
         });

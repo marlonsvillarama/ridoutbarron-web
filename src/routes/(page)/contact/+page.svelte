@@ -146,7 +146,8 @@
             </div>
 
             <!-- <div class="field"> -->
-            <Field name="category" label="How can we help?" type="select" bind:value={formData.category}
+            <Field name="category" label="How can we help?" type="select"
+                required={true} bind:value={formData.category}
                 items={[
                     { value: 'litigation', label: 'Civil Litigation' },
                     { value: 'corporate', label: 'Corporate & Commercial' },
@@ -313,7 +314,7 @@
     }
     #message-form > .confidential {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
     }
     #message-form > .confidential > i {

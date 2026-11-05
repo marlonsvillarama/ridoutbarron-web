@@ -25,8 +25,7 @@ export async function POST({ request }) {
     try {
         const { data, error } = await resend.emails.send({
             from: requestData.email,
-            to: ['marlonsvillarama@gmail.com'],
-            replyTo: ['marlonsvillarama@gmail.com'],
+            to: ['info@ridoutbarron.com'],
             subject: 'RidoutBarron - Web inquiry failed',
             html: buildEmail(requestData)
         });

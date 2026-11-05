@@ -1,5 +1,6 @@
 <script>
     // import { onMount } from "svelte";
+    import FieldSelect from "./field-select.svelte";
 
     let {
         items = [],
@@ -16,6 +17,18 @@
     let isValid = $state(true);
     const validateField = () => {
         isValid = !!(required && value) || !required;
+
+        if (type === 'email' && isValid) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            isValid = emailPattern.test(value.trim());
+        }
+        else if (type === 'phone' && isValid) {
+            const cleaned = value.replace(/\D/g, '');
+            console.log('phone cleaned', cleaned);
+            isValid = cleaned.length === 10 || cleaned.length === 11;
+            value = cleaned;
+        }
+
         console.log(`${label}; required = ${required}`, isValid);
         onvalidate?.();
     };
@@ -32,11 +45,14 @@
     <label for={name}>{label}</label>
 
     {#if type === 'select'}
-        <select {name} id={name} bind:value onchange={validateField}>
+        <!-- <button type="button" id={name} onclick={}></button> -->
+        <!-- <select {name} id={name} bind:value onchange={validateField}>
+            <button><selectedcontent></selectedcontent></button>
             {#each items as item}
                 <option value={item.value}>{item.label}</option>
             {/each}
-        </select>
+        </select> -->
+        <FieldSelect id={name} bind:value {items} onchange={validateField} onblur={validateField} />
     {:else if type === 'textarea'}
         <textarea {name} id={name} bind:value onblur={validateField}></textarea>
     {:else}
@@ -62,6 +78,7 @@
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
+        width: 100%;
     }
     .field > label {
         opacity: 0.7;
@@ -73,7 +90,7 @@
     .field > input[type=email],
     .field > input[type=phone],
     .field > input[type=text],
-    .field > select,
+    /* .field > select, */
     .field > textarea {
         background-color: var(--off-white);
         border: 1px solid var(--accent-lightest);
@@ -85,7 +102,7 @@
     .field > input[type=email]:focus,
     .field > input[type=phone]:focus,
     .field > input[type=text]:focus,
-    .field > select:focus,
+    /* .field > select:focus, */
     .field > textarea:focus {
         outline: 2px solid var(--accent);
         outline-offset: 1px;
@@ -96,6 +113,29 @@
         height: 8rem;
         resize: none;
         overflow: auto;
+    }
+    .field > select,
+    .field > select::picker(select) {
+        appearance: base-select;
+    }
+    .field > select > button {
+        background-color: var(--off-white);
+        border: 1px solid var(--accent-lightest);
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        outline: none;
+        padding: 0.75rem 1rem;
+    }
+    .field > select::picker(select) {
+        background-color: #222;
+        border: 1px solid var(--accent-lightest);
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        outline: none;
+    }
+    .field > select option {
+        padding: 0.75rem 1rem;
+        color: var(--darker);
     }
     .field > .error {
         color: red;
