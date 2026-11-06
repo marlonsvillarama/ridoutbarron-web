@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-	<title>Ridout Barron - Barristers & Solicitors | Our Expertise</title>
+	<title>Ridout Barron - Barristers & Solicitors | Our Expertise - {topic?.label}</title>
 </svelte:head>
 
 <Hero

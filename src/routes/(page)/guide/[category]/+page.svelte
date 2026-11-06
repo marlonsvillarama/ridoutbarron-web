@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <title>{data.category.name} | Guides & Resources</title>
+    <title>{data.category.name} | Articles - {data.category.name}</title>
 </svelte:head>
 
 <Hero
