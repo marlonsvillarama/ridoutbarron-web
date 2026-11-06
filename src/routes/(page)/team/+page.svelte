@@ -3,8 +3,17 @@
     import { reveal } from "#lib/reveal.js";
     import Hero from "#lib/components/page/hero.svelte";
     import Profile from "#lib/components/team/profile.svelte";
+    // import { profiles } from "#lib/profiles.js";
 
     let viewProfile = $state('');
+    // let { data } = $props();
+    // const profiles = $derived(data.profiles.map(p => {
+    //     return {
+    //         [p.slug]: p.content
+    //     }
+    // }));
+    // console.log('profiles', profiles);
+    // const peter = $derived(data.profiles.find(p => p.slug === 'peter'));
 </script>
 
 <svelte:head>
@@ -37,29 +46,20 @@
                     image="/images/team/mid/peter_mid.webp"
                     role="Barrister & Solicitor, Partner"
                     open={viewProfile === 'peter'}
-                    onOpen={(value) => viewProfile = value ? 'peter' : ''}>
-                    <p>Peter's practice focuses on civil litigation with a particular focus on real estate litigation, construction law, and commercial litigation including shareholder's disputes and fraud.</p>
-                    <p>Peter was called to the Bar in Ontario in 1993 and Alberta in 1997. He has appeared at all levels of court in Ontario, the Alberta Court of Queen's Bench, the Alberta Court of Appeal, the Federal Court of Canada, Trial Division, and the Federal Court of Appeal.</p>
-                    <p>Outside of law, Peter enjoys spending time with his family, biking, skiing, hiking, and politics.</p>
-                </Profile>
+                    onOpen={(value) => viewProfile = value ? 'peter' : ''}
+                />
                 <Profile id="jacqui" name="Jacqui" fullname="Jacqueline A. Barron"
                     image="/images/team/mid/jacqui_mid.webp"
                     role="Barrister & Solicitor, Partner"
                     open={viewProfile === 'jacqui'}
-                    onOpen={(value) => viewProfile = value ? 'jacqui' : ''}>
-                    <p>Jacqueline is a proud third-generation Calgarian and comes from a long line of legal greats. She began her career in Wills and Estate Law in 1991 when she worked at the Official Guardian's Office in Toronto. In 1996, she and Peter W.K. Ridout joined the firm of Barron and Barron in Calgary.</p>
-                    <p>She and her husband live with their standard poodle, Miss Eleanor Roosevelt Ridout ("Ellie"). Together, they enjoy travel, films, political debate, dog walking, the culinary and fermented arts, and occasionally, working together.</p>
-                    <!-- <p>Outside of law, Peter enjoys spending time with his family, biking, skiing, hiking, and politics.</p> -->
-                </Profile>
+                    onOpen={(value) => viewProfile = value ? 'jacqui' : ''}
+                />
                 <Profile id="lilian" name="Lilian" fullname="Lilian J. Howard"
                     image="/images/team/mid/lilian_mid.webp"
                     role="Barrister & Solicitor, Associate"
                     open={viewProfile === 'lilian'}
-                    onOpen={(value) => viewProfile = value ? 'lilian' : ''}>
-                    <p>Lilian joined Ridout Barron in 2025 after completing her Juris Doctor at the University of Alberta Faculty of Law. Before law school, she earned her Bachelor of Arts from the University of British Columbia.</p>
-                    <p>While at the University of Alberta, Lilian spent three years volunteering with Student Legal Services of Edmonton. She worked with clients on civil, human rights, and family matters, gaining hands-on experience helping people navigate legal problems well before entering practice.</p>
-                    <p>Lilian brings a thoughtful and practical approach to her work and enjoys making complicated legal issues easier for clients to understand.</p>
-                </Profile>
+                    onOpen={(value) => viewProfile = value ? 'lilian' : ''}
+                />
             </div>
         </div>
         <div class="group reveal-section" use:reveal>
@@ -69,25 +69,20 @@
                     image="/images/team/mid/robin_mid.webp"
                     role="Senior Real Estate Paralegal"
                     open={viewProfile === 'robin'}
-                    onOpen={(value) => viewProfile = value ? 'robin' : ''}>
-                    <p>Insert profile here...</p>
-                </Profile>
+                    onOpen={(value) => viewProfile = value ? 'robin' : ''}
+                />
                 <Profile id="rana" name="Rana" fullname="Rana El Hajj Ahmad"
                     image="/images/team/mid/rana_mid.webp"
                     role="Paralegal"
                     open={viewProfile === 'rana'}
-                    onOpen={(value) => viewProfile = value ? 'rana' : ''}>
-                    <p>Insert profile here...</p>
-                </Profile>
+                    onOpen={(value) => viewProfile = value ? 'rana' : ''}
+                />
                 <Profile id="marielle" name="Marielle" fullname="Marielle Villarama"
                     image="/images/team/mid/marielle_mid.webp"
                     role="Office Manager"
                     open={viewProfile === 'marielle'}
-                    onOpen={(value) => viewProfile = value ? 'marielle' : ''}>
-                    <p>Marielle has a PhD from the Southern Alberta Institute of Technology.</p>
-                    <p>She is an entrepreneur at heart and dreams of owning and operating a chain of fish ball and fried chicken neck carts. She wants to start her own fish ball mafia in the Philippines.</p>
-                    <p>Marielle also recently became a Permanent Resident. Yehey!</p>
-                </Profile>
+                    onOpen={(value) => viewProfile = value ? 'marielle' : ''}
+                />
             </div>
         </div>
     </section>

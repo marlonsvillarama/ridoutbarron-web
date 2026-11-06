@@ -59,7 +59,23 @@
     margin: 0;
     padding: 0;
 }
-
+/* ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark);
+    border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 0.5rem;
+    border: 0px solid #f1f1f1; Creates padding around the thumb
+}
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent);
+} */
 body {
     background-color: var(--white);
     color: var(--charcoal);
