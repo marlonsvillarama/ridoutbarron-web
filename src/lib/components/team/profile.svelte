@@ -97,18 +97,19 @@
     }
     .profile > .details > .name {
         display: block;
-        font: 600 clamp(1.125rem, 2vw, 1.25rem) var(--font-default);
+        font: 600 clamp(1.125rem, 5vw, 1.375rem) var(--font-default);
         text-align: center;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         color: var(--white);
         margin-bottom: 0.125rem;
     }
     .profile > .details > .role {
         display: block;
-        font-size: 0.875rem;
+        font-size: 1rem;
+        font-weight: 500;
         text-align: center;
-        opacity: 0.6;
+        opacity: 0.7;
         color: var(--white);
         margin-bottom: 0.75rem;
     }
@@ -116,12 +117,13 @@
         opacity: 0;
     }
     :global(.profile > .details > .bio.visible) {
-        opacity: 0.8;
+        /* opacity: 0.8; */
+        opacity: 1;
     }
     :global(.profile > .details > .bio > p) {
         color: var(--off-white);
-        font-size: clamp(0.875rem, 1vw, 1rem);
-        line-height: 1.5rem;
+        font-size: clamp(0.875rem, 5vw, 1rem);
+        line-height: 1.75rem;
         padding: 0.5rem 0;
         text-decoration: none;
         transition: opacity 500ms ease;
@@ -134,7 +136,7 @@
         top: 0%;
         right: 0%;
         background-color: var(--accent);
-        font-size: clamp(0.875rem, 1vw, 1rem);
+        font-size: clamp(0.875rem, 5vw, 1rem);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -144,7 +146,7 @@
         border-radius: 3rem;
         cursor: pointer;
         transition: background-color 150ms ease;
-        width: 10rem;
+        width: 12rem;
         margin: 0.25rem auto 0.375rem;
     }
     .profile > .details > .profile-btn.hidden {
