@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <title>{data.category.name} | Articles - {data.category.name}</title>
+    <title>{data.category.name} | {data.category.name}</title>
 </svelte:head>
 
 <Hero
@@ -24,22 +24,22 @@
 />
 
 <main class="category container">
-    <div class="back">
+    <!-- <div class="back">
         <i class="ph ph-caret-double-left"></i>
         <a href="/guide" title="Guides & Resources">All Categories</a>
-    </div>
+    </div> -->
     <!-- <Crumbs items={[
         { link: "/guide", title: "Guide & Resources" },
         { link: data.category.link, title: data.category.name },
     ]} /> -->
 
-    <div class="header">
+    <!-- <div class="header"> -->
         <!-- <div class="title">
             <h1>{data.category.name}</h1>
             <span class="subheader">{data.category.count} {data.category.count === 1 ? 'article' : 'articles'}</span>
         </div> -->
-        <SearchBox onsearch={() => {}} />
-    </div>
+        <!-- <SearchBox onsearch={() => {}} /> -->
+    <!-- </div> -->
 
     <div class="split">
         <div class="list">
@@ -52,7 +52,7 @@
             <h2>Other Categories</h2>
             <div class="content">
                 {#each data.categories.filter(c => c.slug !== data.category.slug) as category}
-                    <Category {...category} />
+                    <Category {...category} full={true} />
                 {/each}
             </div>
             <!-- <ul>
@@ -77,7 +77,7 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        margin-top: 2rem;
+        margin-top: 0rem;
         margin-bottom: 2rem;
         padding-bottom: 1.5rem;
         border-bottom: 1px solid var(--accent-lightest);
@@ -108,9 +108,9 @@
     @media (min-width: 60rem) {
         .category > .split {
             flex-direction: row;
-            flex-wrap: wrap;
-            /* align-items: flex-start; */
-            gap: 3rem;
+            /* flex-wrap: wrap; */
+            align-items: flex-start;
+            gap: 5rem;
         }
     }
     .category > .split > .list {
@@ -124,6 +124,8 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        position: sticky;
+        top: 6rem;
     }
     @media (min-width: 60rem) {
         .category > .split > aside {

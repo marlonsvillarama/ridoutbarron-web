@@ -183,7 +183,7 @@
     }
 
     .featured > h3 {
-        font: bold 1.5rem var(--font-serif);
+        font: bold 1.25rem var(--font-serif);
         margin-bottom: 0.5rem;
     }
     .featured > .row {
@@ -213,7 +213,8 @@
         background:
             radial-gradient(circle at 30% 20%, var(--off-white) 0%, transparent 500%),
             url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat;
-        border-left: 3px solid var(--accent);
+        border-left: 5px solid var(--accent);
+        border-radius: 0.5rem;
         display: flex;
         flex-direction: column;
         height: 10rem;

@@ -189,6 +189,8 @@
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        position: sticky;
+        top: 6rem;
     }
     @media (min-width: 60rem) {
         .guide > .split > aside {

@@ -36,6 +36,7 @@
         flex-direction: column;
         justify-content: space-between;
         background-color: var(--accent-very-light);
+        border-radius: 0.5rem;
         padding: 1.5rem 2rem;
     }
     article > .content > .top {
@@ -49,7 +50,7 @@
         letter-spacing: -0.25px;
     } */
     article > .content > .top > .title {
-        font: 400 clamp(1.25rem, 3vw, 1.5rem) var(--font-serif);
+        font: 600 clamp(1.25rem, 3vw, 1.25rem) var(--font-serif);
         margin-bottom: 1rem;
         line-clamp: 1;
         display: -webkit-box;
@@ -59,7 +60,7 @@
     }
     article > .content > .top > p {
         font-size: 0.875rem;
-        opacity: 0.6;
+        opacity: 0.8;
         line-clamp: 2;
         line-height: 1.25rem;
         display: -webkit-box;
@@ -75,7 +76,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        /* font: 500 0.875rem var(--font-default); */
-        font-family: var(--font-serif);
+        font: 500 0.875rem var(--font-default);
+        /* font-family: var(--font-serif); */
     }
 </style>

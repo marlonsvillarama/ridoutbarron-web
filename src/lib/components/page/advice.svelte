@@ -10,10 +10,11 @@
     .advice {
         padding: 2rem;
         background-color: var(--accent-lightest);
+        border-radius: 0.5rem;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        width: min(28rem, 100%);
+        /* width: min(28rem, 100%); */
     }
     .advice > h2 {
         font: 700 1.5rem var(--font-serif);

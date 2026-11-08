@@ -11,28 +11,58 @@
     import Corporate from "#lib/components/expertise/corporate.svelte";
     import RealEstate from "#lib/components/expertise/real-estate.svelte";
     import WillsEstate from "#lib/components/expertise/wills-estate.svelte";
+    import Team from "#lib/components/expertise/team.svelte";
 
     let { data } = $props();
     const topics = [{
         id: 'civil-litigation',
         label: 'Civil Litigation',
+        team: {
+            image: 'peter-lilian.avif',
+            content: [
+                'Peter and Lilian are our litigators...',
+                'More description here'
+            ]
+        },
         content: Litigation
     }, {
         id: 'corporate-commercial',
         label: 'Corporate & Commercial',
+        team: {
+            image: 'peter-jacqui.avif',
+            content: [
+                'Peter and Jacqui description...',
+                'More description here'
+            ]
+        },
         content: Corporate
     }, {
         id: 'real-estate',
         label: 'Real Estate',
+        team: {
+            image: 'jacqui-solo.avif',
+            content: [
+                'Jacqui real estate description...',
+                'More description here'
+            ]
+        },
         content: RealEstate
     }, {
         id: 'wills-estate',
         label: 'Wills & Estate',
+        team: {
+            image: 'jacqui-solo.avif',
+            content: [
+                'Jacqui real estate description...',
+                'More description here'
+            ]
+        },
         content: WillsEstate
     }];
 
     let pathParams = page.url.pathname.split('/');
     let topic = $derived(topics.find(t => t.id === pathParams[pathParams.length - 1]));
+    let otherTopics = $derived(topics.filter(t => t.id !== pathParams[pathParams.length - 1]));
     let featuredArticles = $derived(data.posts.filter(p => p.categorySlug === topic.id));
     // console.log('featuredArticles', featuredArticles);
 
@@ -41,13 +71,6 @@
         featuredArticles = data.posts.filter(p => p.categorySlug === topic.id);
         console.log('featuredArticles', featuredArticles);
     });
-    // let crumbs = [{
-    //     link: '/expertise',
-    //     title: 'Expertise'
-    // }, {
-    //     link: `/expertise/${topic.id}`,
-    //     title: topic.label
-    // }];
 </script>
 
 <svelte:head>
@@ -73,8 +96,24 @@
             {#if topic}
             <topic.content />
             {/if}
+
+            <div class="other-categories">
+                <h3>Explore other areas</h3>
+                <div class="list">
+                    {#each otherTopics as otherTopic}
+                    <a href="/expertise/{otherTopic.id}" title={otherTopic.label}
+                        data-sveltekit-reload
+                    >{otherTopic.label}</a>
+                    {/each}
+                </div>
+            </div>
         </div>
         <aside>
+            <!-- <Team image="/images/expertise/{topic.team.image}">
+                {#each topic.team.content as content}
+                    <p>{content}</p>
+                {/each}
+            </Team> -->
             <Advice />
         </aside>
     </div>
@@ -106,6 +145,7 @@
         main > .row {
             flex-direction: row;
             align-items: flex-start;
+            gap: 5rem;
         }
     }
     main > .row > .content {
@@ -141,15 +181,46 @@
     :global(main > .row > .content > ul > li:not(:last-child)) {
         margin-bottom: 0.5rem;
     }
+
+    .other-categories {
+        margin-top: 3rem;
+    }
+    .other-categories > h3 {
+        font: bold 1.5rem var(--font-serif);
+        margin-bottom: 0.5rem;
+        /* margin-bottom: 1rem; */
+    }
+    .other-categories > .list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .other-categories > .list > a {
+        background-color: var(--accent);
+        /* border: 1px solid var(--accent-lightest); */
+        border-radius: 0.5rem;
+        color: var(--white);
+        cursor: pointer;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background-color 150ms ease, color 150ms ease;
+    }
+
     main > .row > aside {
         /* width: min(28rem, 100%); */
+        position: sticky;
+        top: 6rem;
         display: flex;
         flex-direction: column;
-            align-items: center;
+        align-items: center;
         justify-content: center;
         gap: 3rem;
         /* border: 1px solid red; */
-        position: relative;
+        /* position: relative; */
     }
     @media (min-width: 40rem) {
         main > .row > aside {

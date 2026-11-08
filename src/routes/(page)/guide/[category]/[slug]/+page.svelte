@@ -64,10 +64,10 @@
             </section>
 
             <section class="categories">
-                <h2>Browse other categories</h2>
+                <h2>Browse categories</h2>
                 <div class="content">
                     {#each data.categories as category}
-                        <Category {...category} />
+                        <Category {...category} full={true} />
                     {/each}
                 </div>
             </section>
@@ -137,13 +137,18 @@
         margin-bottom: 1rem;
     }
     :global(.article > .split > .content > blockquote) {
-        background-color: var(--accent-bg-lighter);
+        background-color: var(--dark);
         width: min(30rem, 100%);
         margin: 1rem auto;
         padding: clamp(1rem, 2vw, 2rem) clamp(2rem, 2vw, 3rem);
         font: 400 clamp(1.25rem, 3vw, 1.5rem) var(--font-serif);
-        line-height: 2.5rem;
-        color: var(--dark);
+        line-height: 2.75rem;
+        /* color: var(--dark); */
+        color: var(--white);
+        text-align: center;
+    }
+    :global(.article > .split > .content > blockquote > p) {
+        line-height: 2.25rem;
     }
     @media (min-width: 60rem) {
         :global(.article > .split > .content > blockquote) {
@@ -158,6 +163,8 @@
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        position: sticky;
+        top: 6rem;
     }
     @media (min-width: 60rem) {
         .article > .split > aside {
@@ -209,7 +216,7 @@
         gap: 1rem;
     }
     @media (min-width: 40rem) {
-    .article > .split > aside > .categories > .content {
+        .article > .split > aside > .categories > .content {
             flex-direction: row;
             flex-wrap: wrap;
         }

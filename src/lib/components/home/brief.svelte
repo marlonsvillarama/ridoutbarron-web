@@ -22,7 +22,7 @@
         padding: 0;
         /* background-color: var(--off-white); */
         background:
-            radial-gradient(circle at 30% 40%, var(--white) 0%, transparent 1000%),
+            radial-gradient(circle at 30% 40%, var(--white) 0%, transparent 500%),
             /* linear-gradient(160deg, var(--white) 30%, transparent 500%), */
             url(/images/svg/1_edited.svg) top left / 140px 117.6px repeat;
     }

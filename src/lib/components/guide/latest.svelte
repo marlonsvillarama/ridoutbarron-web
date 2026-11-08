@@ -35,6 +35,7 @@
         text-decoration: none;
         transition: background-color 150ms ease;
         border: 1px solid var(--accent-very-light);
+        border-radius: 0.5rem;
         box-shadow: var(--shadow);
     }
     @media (min-width: 40rem) {

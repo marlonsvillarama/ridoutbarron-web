@@ -7,7 +7,7 @@
             id: 'litigation',
             title: 'Civil Litigation',
             items: [
-                'Contruction Law',
+                'Construction Law',
                 'Condominium Disputes',
                 'Professional Negligence',
                 'Shareholder Disputes',

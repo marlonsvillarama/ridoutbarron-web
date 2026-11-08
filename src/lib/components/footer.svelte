@@ -16,6 +16,10 @@
 
         <section>
             <h4>Contact Us</h4>
+            {@render officeDetails("clock", "Office Hours",
+                `Monday - Friday (excluding holidays)<br/>
+                9:00 am - 5:00 am`
+            )}
             {@render officeDetails("map-pin", "Address",
                 `802 13th Avenue SW<br/>
                 Calgary, Alberta T2R 0L2`
@@ -23,10 +27,6 @@
             {@render officeDetails("phone", "Phone", "+1-403-278-3730")}
             {@render officeDetails("printer", "Fax", "+1-403-271-8016")}
             {@render officeDetails("envelope", "Email", "info@ridoutbarron.com")}
-            {@render officeDetails("clock", "Office Hours",
-                `Monday - Friday (excluding holidays)<br/>
-                9:00 am - 5:00 am`
-            )}
         </section>
 
         <section>

@@ -3,6 +3,7 @@
 
     import { page } from "$app/state";
     import Hero from "#lib/components/page/hero.svelte";
+    import NewToWorking from "#lib/components/page/new-to-working.svelte";
     import Field from "#lib/components/form/field.svelte";
     import { onMount } from "svelte";
     // import { onMount } from "svelte";
@@ -216,27 +217,30 @@
     </section>
 
     <aside>
-        <div id="advice">
+        <!-- <div id="advice">
             <h2>New to working with a lawyer?</h2>
             <p>
                 It's normal to have questions. We're here to make the process straightforward and comfortable from the start.
             </p>
             <a href="/guide" title="Guide & Resources">View Our Guide <i class="ph ph-arrow-right"></i></a>
-        </div>
+        </div> -->
+        <NewToWorking />
 
         <div id="office">
             <h2>Our Office</h2>
-            {@render officeDetails("map-pin", "Address",
-                `802 13th Avenue SW<br/>
-                Calgary, Alberta T2R 0L2`
-            )}
-            {@render officeDetails("phone", "Phone", "+1-403-278-3730")}
-            {@render officeDetails("printer", "Fax", "+1-403-271-8016")}
-            {@render officeDetails("envelope", "Email", "info@ridoutbarron.com")}
-            {@render officeDetails("clock", "Office Hours",
-                `Monday - Friday (excluding holidays)<br/>
-                9:00 am - 5:00 am`
-            )}
+            <div class="details">
+                {@render officeDetails("clock", "Office Hours",
+                    `Monday - Friday (excluding holidays)<br/>
+                    9:00 am - 5:00 am`
+                )}
+                {@render officeDetails("map-pin", "Address",
+                    `802 13th Avenue SW<br/>
+                    Calgary, Alberta T2R 0L2`
+                )}
+                {@render officeDetails("phone", "Phone", "+1-403-278-3730")}
+                {@render officeDetails("printer", "Fax", "+1-403-271-8016")}
+                {@render officeDetails("envelope", "Email", "info@ridoutbarron.com")}
+            </div>
         </div>
 
         <div id="map" class="row">
@@ -250,7 +254,7 @@
     <i class="ph ph-{icon}"></i>
     <div class="details">
         <span class="title">{title}</span>
-        <p>{@html text}</p>
+        <div>{@html text}</div>
     </div>
 </div>
 {/snippet}
@@ -272,8 +276,10 @@
             align-items: flex-start;
         }
     }
-    section {
+    #contact > section {
         flex: 1;
+        position: sticky;
+        top: 6rem;
     }
     section > h2 {
         font: 700 clamp(1.5rem, 3vw, 2rem) var(--font-serif);
@@ -385,36 +391,44 @@
     }
     @media (min-width: 60rem) {
         aside {
-            width: 24rem;
+            flex: 1;
+            /* width: 24rem; */
             border-left: 1px solid var(--accent-lightest);
             padding-left: 3rem;
         }
     }
 
-    #office { display: none }
+    /* #office { display: none } */
     #office > h2 {
         font: 700 2rem var(--font-serif);
         margin-bottom: 1rem;
     }
-    #office > .row {
+    #office > .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    #office > .details > .row {
         display: flex;
         align-items: flex-start;
         gap: 1rem;
         margin-bottom: 2rem;
     }
-    #office > .row > i {
+    #office > .details > .row > i {
         font-size: 1.75rem;
         color: var(--accent);
     }
-    #office > .row > .details {
+    #office > .details > .row > .details {
         margin-top: 0.125rem;
         line-height: 1.5rem;
     }
-    #office > .row > .details > .title {
-        font: 600 1.125rem var(--font-default);
+    #office > .details > .row > .details > .title {
+        font: 400 1rem var(--font-default);
+        opacity: 0.8;
     }
-    #office > .row > .details > p {
-        opacity: 0.7;
+    #office > .details > .row > .details > div {
+        /* opacity: 0.7; */
+        font-weight: 600;
     }
     #map {
         display: none;
@@ -425,9 +439,10 @@
         }
     }
 
-    #advice {
+    /* #advice {
         padding: 2rem;
         background-color: var(--accent-lightest);
+        border-radius: 0.5rem;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -454,7 +469,7 @@
     }
     #advice > a:hover {
         opacity: 1.0;
-    }
+    } */
 
     /* HTML: <div class="loader"></div> */
 /* HTML: <div class="loader"></div> */

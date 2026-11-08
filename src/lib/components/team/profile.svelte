@@ -53,6 +53,7 @@
     .profile {
         flex: 1;
         border: 0;
+        border-radius: 0.5rem;
         aspect-ratio: 1 / 1.5;
         background-size: cover;
         background-position: center;
@@ -97,10 +98,10 @@
     }
     .profile > .details > .name {
         display: block;
-        font: 600 clamp(1.125rem, 5vw, 1.375rem) var(--font-default);
+        font: 600 clamp(1.125rem, 5vw, 1.25rem) var(--font-default);
         text-align: center;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         color: var(--white);
         margin-bottom: 0.125rem;
     }
